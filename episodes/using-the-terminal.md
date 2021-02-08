@@ -284,7 +284,7 @@ You can find the most commonly used commands with a short description below by c
 
 ### Redirection and some other useful commands
 
-* `cat` will print the content of files on your terminal screen. It's positional argument is a file list separated by spaces. 
+* `cat` will print the content of files on your terminal screen. It's positional argument is a file list separated by spaces.
 
   ```text
   $ cat my-code.py

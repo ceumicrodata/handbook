@@ -47,11 +47,11 @@ New computations get a new, universally unique `kind` \(technically an uuid\).
 
 ### Bead concepts
 
-Data packages can be in one of two states. Under active development in a [workspace](), or packaged and stored as a [bead](). Beads are stored in a [box](), which is just a collection of completed beads.
+Data packages can be in one of two states. Under active development in a [workspace](bead.md), or packaged and stored as a [bead](bead.md). Beads are stored in a [box](bead.md), which is just a collection of completed beads.
 
 ![](https://github.com/ceumicrodata/bead/blob/master/doc/workflows.png)
 
-To see how workspaces are created from beads and vice versa, also see [usecases](usecases.md)
+To see how workspaces are created from beads and vice versa, also see [usecases](https://github.com/ceumicrodata/handbook/tree/0d24ef4013ece622bb0b3ffa4946c11916f23eb7/episodes/usecases.md)
 
 #### Workspace
 
@@ -101,7 +101,7 @@ A _box_ is where beads are saved to and loaded from. It also gives names to bead
 
 1. install python if not already installed.
 
-   Latest release depends on Python 3.8.5. 
+   Latest release depends on Python 3.8.5.
 
 2. download latest version from [https://github.com/e3krisztian/bead/releases/tag/v0.8.1](https://github.com/e3krisztian/bead/releases/tag/v0.8.1)
 
@@ -113,7 +113,7 @@ A _box_ is where beads are saved to and loaded from. It also gives names to bead
 
    for Linux known good locations are:
 
-6. `$HOME/bin`  \(single-user, laptop, desktop, traditional location\)
+6. `$HOME/bin` \(single-user, laptop, desktop, traditional location\)
 7. `$HOME/.local/bin` \(single-user, laptop, desktop, new XDG standard?\)
 8. `/usr/local/bin` \(system, servers, multi-user\)
 

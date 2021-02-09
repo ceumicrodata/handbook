@@ -14,6 +14,6 @@
 
 ## About us
 
-* [People](about-us/peolpe.md)
+* [People](about-us/people.md)
 * [Projects](about-us/projects.md)
 

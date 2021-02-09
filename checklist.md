@@ -5,6 +5,10 @@ description: To-dos before starting the onboarding process
 
 # Checklist
 
+> ### Prerequisites
+>
+> Make sure that you have a signed contract. Even though some lessons are useful in general, it is best if you have full access to the microdata resources \(e.g. server, slack, github, etc.\) first. To gain access to every resource, you need a CEU-issued e-mail address, which you should receive shortly after signing your contract.
+
 Follow the checklist below to make sure the new member has access to every resource.
 
 * Add new member to the ceumicrodata Slack. You can follow [these steps.](https://slack.com/intl/en-hu/help/articles/201330256-Invite-new-members-to-your-workspace)

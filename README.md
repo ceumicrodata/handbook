@@ -12,7 +12,9 @@ This is how this page works: We have lessons designed for you that are going to 
 
 Enjoy both the lessons and your time at MicroData!
 
-> ## Prerequisites
+> ## License
 >
-> Make sure that you have a signed contract. Even though some lessons are useful in general, it is best if you have full access to the microdata resources \(e.g. server, slack, github, etc.\) first. To gain access to every resource, you need a CEU-issued e-mail address, which you should receive shortly after signing your contract.
+> The content of this Handbook is provided under a Creative Commons Attribution-NonCommercial license \(CC BY-NC 4.0\). You are free to share and adapt this material under the restrictions described at [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/). Full license documentation is available [here](https://creativecommons.org/licenses/by-nc/4.0/legalcode).
+
+
 

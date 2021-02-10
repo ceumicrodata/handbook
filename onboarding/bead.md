@@ -95,25 +95,25 @@ A _box_ is where beads are saved to and loaded from. It also gives names to bead
 
 1. install python if not already installed.
 
-   Latest release depends on Python 3.8.5. 
+   Latest release depends on Python 3.8.5.
 
 2. download latest version from [https://github.com/e3krisztian/bead/releases/tag/v0.8.1](https://github.com/e3krisztian/bead/releases/tag/v0.8.1)
 
    you will need only the platform specific binary:
 
-3. `bead` for linux & mac
-4. `bead.cmd` for windows
-5. put the downloaded file in a location, that is on the PATH
+  * `bead` for linux & mac
+  * `bead.cmd` for windows
+3. put the downloaded file in a location, that is on the PATH
 
    for Linux known good locations are:
 
-6. `$HOME/bin`  \(single-user, laptop, desktop, traditional location\)
-7. `$HOME/.local/bin` \(single-user, laptop, desktop, new XDG standard?\)
-8. `/usr/local/bin` \(system, servers, multi-user\)
+  * `$HOME/bin`  \(single-user, laptop, desktop, traditional location\)
+  * `$HOME/.local/bin` \(single-user, laptop, desktop, new XDG standard?\)
+  * `/usr/local/bin` \(system, servers, multi-user\)
 
    for windows the python/scripts directory is a good candidate.
 
-9. \(linux and mac only\): make the file executable
+4. (linux and mac only): make the file executable
 
 For user install, the directories do not exist by default and they are only added to the `PATH` if exist.
 
@@ -146,7 +146,7 @@ The bead help guide you through the usage of the bead.
 $ bead -h
 
 ```text
-usage: bead [-h] {new,develop,save,status,nuke,web,zap,xmeta,version,input,box} 
+usage: bead [-h] {new,develop,save,status,nuke,web,zap,xmeta,version,input,box}
 
 positional arguments:
   {new,develop,save,status,nuke,web,zap,xmeta,version,input,box}
@@ -328,7 +328,7 @@ The output of the computation is stored under `data/*`. An outide collaborator w
 /somepath$ unzip -p BeadBox/hello_20160527T130218513418+0200.zip data/greeting
 Hello World!
 
-/somepath$ unzip -v BeadBox/hello_20160527T130218513418+0200.zip 
+/somepath$ unzip -v BeadBox/hello_20160527T130218513418+0200.zip
 Archive:  BeadBox/hello_20160527T130218513418+0200.zip
 
     This file is a BEAD zip archive.
@@ -371,4 +371,3 @@ Archive:  BeadBox/hello_20160527T130218513418+0200.zip
 The following graph summarizes the internal structure of a workspace and the logical links to other beads.
 
 ## Bead boxes
-

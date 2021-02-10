@@ -143,6 +143,8 @@ cd -
 
 ## Basic workflow
 
+![](../.gitbook/assets/workflows.png)
+
 ### Bead help
 
 The bead help guide you through the usage of the bead.
@@ -350,6 +352,8 @@ Archive:  BeadBox/hello_20160527T130218513418+0200.zip
 {: .bash}
 
 The following graph summarizes the internal structure of a workspace and the logical links to other beads.
+
+![](../.gitbook/assets/internals.png)
 
 ## Bead boxes
 

@@ -304,6 +304,8 @@ Two firms \(identified by frame id\) are connected if they share an address \(hq
 
 ### The bead chain
 
+![](../.gitbook/assets/kozbeszerzes_lts_2019_flowchart.png)
+
 The input data is from the Procurement Authority website [http://www.kozbeszerzes.hu](http://www.kozbeszerzes.hu). The final bead is the `kozbeszerzes-LTS-2019`. The bead chain is made up of these elements:
 
 * `kceu_oldhtml`: Mock bead \(output only\). Contains tenders between 1997 and 2006. These files cannot be retrieved from the website anymore. The files are in html format in the output folder.

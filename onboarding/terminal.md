@@ -341,11 +341,12 @@ If you specify multiple files, it will con`cat`enate \(its name comes from here\
 
 ### File Permissions
 
-For concise description, please visit the _File Permissions_ section of the following link: &lt;[https://datacarpentry.org/shell-economics/03-working-with-files/index.html](https://datacarpentry.org/shell-economics/03-working-with-files/index.html) /&gt;
+For concise description, please visit the _File Permissions_ section of the following link: [https://datacarpentry.org/shell-economics/03-working-with-files/index.html](https://datacarpentry.org/shell-economics/03-working-with-files/index.html)
 
 ## Useful resources for learning Terminal:
 
-* Introdutction to the Command Line for Economics: &lt;[https://datacarpentry.org/shell-economics](https://datacarpentry.org/shell-economics) /&gt;
-* Official Ubuntu tutorial: &lt;[https://ubuntu.com/tutorials/command-line-for-beginners\#1-overview](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview) /&gt;
-* The Linux Command Line by William Shotts: &lt;[http://linuxcommand.org/tlcl.php](http://linuxcommand.org/tlcl.php) /&gt; \(freely available\)
+* Introdutction to the Command Line for Economics: [https://datacarpentry.org/shell-economics](https://datacarpentry.org/shell-economics)
+* The Unix Shell: [https://swcarpentry.github.io/shell-novice/](https://swcarpentry.github.io/shell-novice/)
+* Official Ubuntu tutorial: [https://ubuntu.com/tutorials/command-line-for-beginners\#1-overview](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
+* The Linux Command Line by William Shotts: [http://linuxcommand.org/tlcl.php](http://linuxcommand.org/tlcl.php) \(freely available\)
 

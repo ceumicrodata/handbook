@@ -3,14 +3,14 @@ title: 'bead: Chaining your data and code together'
 teaching: 0
 exercises: 0
 questions:
-  - How do you ensure that your data products are reprodicuble?
+  - How do you ensure that your data products are reproducible?
 objectives:
   - 'Use `bead`, a command-line tool to create, update and share data products.'
 keypoints:
   - Keep and share data together with the code that produced it.
-  - 'When sharing data with someone else, always do it in a bead.'
+  - 'When sharing your data, always do it in a bead.'
   - 'Never refer to external data from a bead, use bead inputs.'
-description: Changing your data and code together
+description: Chaining your data and code together
 ---
 
 # Bead
@@ -33,25 +33,15 @@ a BEAD captures all three named parts:
 
 * `output` - _data files_ \(results of the computation\)
 * `function` - _source code files_, that when run hopefully compute `output` from `inputs`
-* `inputs` - are other BEADs' `output` and thus stored as _references to_ those _BEADs_
+* `inputs` - are other bead' `output` and thus stored as _references to_ those _beads_
 
 As a special case pure data can be thought of as _constant computation_ having only output but neither inputs nor source code.
 
-A BEAD has some other metadata - notably it has a `kind` property which is shared by different versions of the conceptually same computation \(input or function may be updated/improved\) and a timestamp when the computation was frozen.
-
-The `kind` and timestamp properties enable a meaningful `update` operation on inputs.
-
-New computations get a new, universally unique `kind` \(technically an uuid\).
-
-![](https://github.com/ceumicrodata/bead/blob/master/doc/internals.png)
-
 ### Bead concepts
 
-Data packages can be in one of two states. Under active development in a [workspace](bead.md), or packaged and stored as a [bead](bead.md). Beads are stored in a [box](bead.md), which is just a collection of completed beads.
+Data packages can be in one of two states. Under active development in a [workspace](), or packaged and stored as a [bead](). Beads are stored in a [box](), which is just a collection of completed beads.
 
-![](https://github.com/ceumicrodata/bead/blob/master/doc/workflows.png)
-
-To see how workspaces are created from beads and vice versa, also see [usecases](https://github.com/ceumicrodata/handbook/tree/0d24ef4013ece622bb0b3ffa4946c11916f23eb7/episodes/usecases.md)
+To see how workspaces are created from beads and vice versa, also see [usecases](usecases.md)
 
 #### Workspace
 
@@ -93,6 +83,10 @@ Main properties of a bead:
 * freeze name
 * references to its inputs \(`kind`, `content_id`\)
 
+The main changes from v. 0.0.2. to 0.8.1 that beads are referenced by names from here on.
+
+It is important to mention that we should not create a new bead with a name already in use.
+
 ### Box
 
 A _box_ is where beads are saved to and loaded from. It also gives names to beads and provide minimal search functionality. Currently, boxes are implemented a flat directories on the file system.
@@ -101,7 +95,7 @@ A _box_ is where beads are saved to and loaded from. It also gives names to bead
 
 1. install python if not already installed.
 
-   Latest release depends on Python 3.8.5.
+   Latest release depends on Python 3.8.5. 
 
 2. download latest version from [https://github.com/e3krisztian/bead/releases/tag/v0.8.1](https://github.com/e3krisztian/bead/releases/tag/v0.8.1)
 
@@ -113,7 +107,7 @@ A _box_ is where beads are saved to and loaded from. It also gives names to bead
 
    for Linux known good locations are:
 
-6. `$HOME/bin` \(single-user, laptop, desktop, traditional location\)
+6. `$HOME/bin`  \(single-user, laptop, desktop, traditional location\)
 7. `$HOME/.local/bin` \(single-user, laptop, desktop, new XDG standard?\)
 8. `/usr/local/bin` \(system, servers, multi-user\)
 
@@ -142,8 +136,6 @@ cd -
 \(source: [https://stackoverflow.com/c/ceu-microdata/questions/18](https://stackoverflow.com/c/ceu-microdata/questions/18)\)
 
 ## Basic workflow
-
-![](../.gitbook/assets/workflows.png)
 
 ### Bead help
 
@@ -190,11 +182,11 @@ optional arguments:
 
 ### Create a new bead
 
-Initial setup:
+Initial setup. The `latest` bead-box already made on the haflinger.
 
 ```text
-$ mkdir /somepath/BeadBox
-$ bead box add latest /somepath/BeadBox
+$ mkdir /somepath/bead-box/latest
+$ bead box add latest /somepath/bead-box/latest
 Will remember box latest
 ```
 
@@ -213,7 +205,7 @@ Add some data to the output of this new bead which we can use later. This bead h
 
 ```text
 /somepath$ cd name/
-/somepath/name$ echo World > output/name
+/somepath/name$ echo World > output/who-do-i-greet
 ```
 
 {: .bash}
@@ -226,7 +218,8 @@ Successfully stored bead.
 {: .bash}
 
 ```text
-/somepath/name$ bead zap name
+cd ..
+/somepath/$ bead zap name
 Deleted workspace /somepath/name
 ```
 
@@ -252,16 +245,16 @@ Created hello
 Add data from an existing bead at `input/<input-name>/`:
 
 ```text
-/somepath/hello$ bead input add name who-do-i-greet
-name loaded on who-do-i-greet.
+/somepath/hello$ bead input add name
+Loading new data to name ... Done
 ```
 
 {: .bash}
 
-Create a program `greet` that produces a greeting, using `input/who-do-i-greet` as an input:
+Create a program `greet` that produces a greeting, using `input/name` as an input:
 
 ```text
-read name < input/who-do-i-greet/name
+read name < input/name/who-do-i-greet
 echo "Hello $name!" > output/greeting
 ```
 
@@ -283,6 +276,26 @@ Hello World!
 ```
 
 {: .bash}
+
+### Visually display the bead chain
+
+Bead web is a new feature of version 0.8.1. You can check the details with `bead web -h`
+
+```text
+$ bead web color auto-rewire heads / source-bead target-bead / png filename.png
+```
+
+{: .bash}
+
+Auto-rewire is required for the new bead.
+
+Color is optional.
+
+Heads are optional: if loaded they will only plot the latest version of each bead plus what is referenced by another bead.
+
+If you change the source bead to `..` it plots the entire bead structure leading to the target bead. If you change the target bead to `..` it plots the entire structure starting from the source bead. It is very important that before and after `/` you need a space character.
+
+Instead of png it can be `svg filename.svg` if you prefer that format.
 
 ### Package the data and send it to an outside collaborator
 
@@ -352,8 +365,6 @@ Archive:  BeadBox/hello_20160527T130218513418+0200.zip
 {: .bash}
 
 The following graph summarizes the internal structure of a workspace and the logical links to other beads.
-
-![](../.gitbook/assets/internals.png)
 
 ## Bead boxes
 

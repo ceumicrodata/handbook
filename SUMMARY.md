@@ -6,9 +6,9 @@
 ## Episodes
 
 * [Setup](episodes/setup.md)
-* [Using the terminal](episodes/using-the-terminal.md)
+* [Using the terminal](episodes/terminal.md)
 * [Git and GitHub](episodes/git-and-github.md)
-* [Server](episodes/how-to-use-the-haflinger-server.md)
+* [Server](episodes/server.md)
 * [Bead](episodes/bead.md)
 * [Datasets](episodes/datasets.md)
 * [Working with data](episodes/working-with-data.md)

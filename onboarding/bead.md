@@ -41,7 +41,7 @@ As a special case pure data can be thought of as _constant computation_ having o
 
 Data packages can be in one of two states. Under active development in a **workspace**, or packaged and stored as a **bead**. Beads are stored in a **box**, which is just a collection of completed beads.
 
-To see how workspaces are created from beads and vice versa, also see [usecases](usecases.md)
+To see how workspaces are created from beads and vice versa, also see [usecases](https://github.com/ceumicrodata/handbook/tree/dfcf104bf45cbd4b8b4d012d12e4b250351126ac/onboarding/usecases.md)
 
 #### Workspace
 
@@ -101,19 +101,20 @@ A _box_ is where beads are saved to and loaded from. It also gives names to bead
 
    you will need only the platform specific binary:
 
-  * `bead` for linux & mac
-  * `bead.cmd` for windows
+   * `bead` for linux & mac
+   * `bead.cmd` for windows
+
 3. put the downloaded file in a location, that is on the PATH
 
    for Linux known good locations are:
 
-  * `$HOME/bin`  \(single-user, laptop, desktop, traditional location\)
-  * `$HOME/.local/bin` \(single-user, laptop, desktop, new XDG standard?\)
-  * `/usr/local/bin` \(system, servers, multi-user\)
+   * `$HOME/bin`  \(single-user, laptop, desktop, traditional location\)
+   * `$HOME/.local/bin` \(single-user, laptop, desktop, new XDG standard?\)
+   * `/usr/local/bin` \(system, servers, multi-user\)
 
    for windows the python/scripts directory is a good candidate.
 
-4. (linux and mac only): make the file executable
+4. \(linux and mac only\): make the file executable
 
 For user install, the directories do not exist by default and they are only added to the `PATH` if exist.
 
@@ -371,3 +372,4 @@ Archive:  BeadBox/hello_20160527T130218513418+0200.zip
 The following graph summarizes the internal structure of a workspace and the logical links to other beads.
 
 ## Bead boxes
+

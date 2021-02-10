@@ -235,5 +235,5 @@ The example dataset is semi-colon and not comma separated. For all the commands 
 
 ## Useful resources for learning csvkit:
 
-* The csvkit tutorial and documentation: &lt;[https://csvkit.readthedocs.io/en/1.0.5/tutorial.html](https://csvkit.readthedocs.io/en/1.0.5/tutorial.html) /&gt;
+* The csvkit tutorial and documentation: [https://csvkit.readthedocs.io/en/1.0.5/tutorial.html](https://csvkit.readthedocs.io/en/1.0.5/tutorial.html)
 

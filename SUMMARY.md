@@ -1,23 +1,29 @@
 # Table of contents
 
-* [MicroData Onboarding](README.md)
-* [Checklist](checklist.md)
+* [Welcome at MicroData!](README.md)
+* [Code of conduct](code-of-conduct.md)
 
-## Episodes
+## Onboarding
 
-* [Setup](episodes/setup.md)
-* [Using the terminal](episodes/terminal.md)
-* [Git and GitHub](episodes/git-and-github.md)
-* [Server](episodes/server.md)
-* [Bead](episodes/bead.md)
-* [Datasets](episodes/datasets.md)
-* [Working with data](episodes/working-with-data.md)
-* [Tools](episodes/tools.md)
-* [Best practices](episodes/best-practices.md)
-* [Stata style guide](episodes/stata-style-guide.md)
-* [Csvkit](episodes/csvkit.md)
+* [Checklist](onboarding/checklist.md)
+* [Setup](onboarding/setup.md)
+* [Using the terminal](onboarding/terminal.md)
+* [Git and GitHub](onboarding/git-and-github.md)
+* [Server](onboarding/server.md)
+* [Bead](onboarding/bead.md)
+* [Working with data](onboarding/working-with-data.md)
+* [Best practices](onboarding/best-practices.md)
+* [Stata style guide](onboarding/stata-style-guide.md)
 
-## About us
+## Tools
+
+* [Datasets](tools/datasets.md)
+* [Make](tools/make.md)
+* [Julia](tools/julia.md)
+* [Tools](tools/tools.md)
+* [Csvkit](tools/csvkit.md)
+
+## about us
 
 * [People](about-us/people.md)
 * [Projects](about-us/projects.md)

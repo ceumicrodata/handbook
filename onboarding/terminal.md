@@ -23,7 +23,10 @@ keypoints:
 
 You probably mostly use your computer via something called a GUI, or Graphical User Interface. Practically any modern operating system comes with a GUI. It is the GUI that, for example, allows you to instruct your computer to run applications by double clicking on an application's icon instead of issuing your commands in writing.
 
-However, it is not the only way to use your computer. Before the quick rise in computing capacity and memory, graphical interfaces were impossible to develop. Originally computers are instructed via written commands in something called a CLI, or Command Line Interface. Practically anything that is feasible using a GUI can be done using the CLI, even though it might be much more difficult. Then why bother with using the CLI at all? - you might ask. There are two main reasons for familiarizing yourself with the CLI at MicroData: 1. The servers that we use have very limited graphical support, and you will mostly use an Ubuntu terminal when you work on the servers. 2. Most freshly developed tools for data analysis simply do not have a GUI. It takes a lot of resources to develop GUIs, and most open source developers focus their attention to the core performance of the tools instead of a GUI. If you want to use these, you have to familiarize yourself with the CLI of your computer.
+However, it is not the only way to use your computer. Before the quick rise in computing capacity and memory, graphical interfaces were impossible to develop. Originally computers are instructed via written commands in something called a CLI, or Command Line Interface. Practically anything that is feasible using a GUI can be done using the CLI, even though it might be much more difficult. Then why bother with using the CLI at all? - you might ask. There are two main reasons for familiarizing yourself with the CLI at MicroData:
+
+1. The servers that we use have very limited graphical support, and you will mostly use an Ubuntu terminal when you work on the servers.
+2. Most freshly developed tools for data analysis simply do not have a GUI. It takes a lot of resources to develop GUIs, and most open source developers focus their attention to the core performance of the tools instead of a GUI. If you want to use these, you have to familiarize yourself with the CLI of your computer.
 
 ### How are commands interpreted?
 

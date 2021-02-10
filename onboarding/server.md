@@ -39,8 +39,6 @@ You can connect to the servers from a Terminal window using either of the follow
   $ ssh USER@haflinger.ceu.hu -p PORT -X
 ```
 
-{: .language-bash}
-
 ### MacOS
 
 You can connect to the servers from a Terminal window using either of the following commands \(substitute your username and port number appropriately\)
@@ -49,15 +47,11 @@ You can connect to the servers from a Terminal window using either of the follow
   $ ssh USER@haflinger.ceu.hu -p PORT
 ```
 
-{: .language-bash}
-
 For a graphical server connection a useful tool is XQuartz. Using XQuartz you can enable X11 forwarding. In an XQuartz terminal you can connect to the graphical server by issuing the following command: \(substitute your username and port number appropriately\)
 
 ```text
   $ ssh USER@haflinger.ceu.hu -p PORT -y
 ```
-
-{: .language-bash}
 
 ### Windows
 
@@ -68,8 +62,6 @@ A good example how you can start the viewer from the cmd. You have to change the
 ```text
   $ vncviewer.exe -SecurityNotificationTimeout=0 -WarnUnencrypted=0 -Quality=High -Scaling=100%x100% haflinger.ceu.hu:%vnc_port%
 ```
-
-{: .language-bash}
 
 ### Private and public keys for easier connection
 

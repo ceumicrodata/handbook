@@ -18,9 +18,10 @@
 ## Tools
 
 * [Datasets](tools/datasets.md)
+* [Tools](tools/tools.md)
+* [How to work on server](tools/how-to-work-on-server.md)
 * [Make](tools/make.md)
 * [Julia](tools/julia.md)
-* [Tools](tools/tools.md)
 * [Csvkit](tools/csvkit.md)
 
 ## about us

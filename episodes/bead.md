@@ -39,7 +39,7 @@ As a special case pure data can be thought of as _constant computation_ having o
 
 ### Bead concepts
 
-Data packages can be in one of two states. Under active development in a [workspace](), or packaged and stored as a [bead](). Beads are stored in a [box](), which is just a collection of completed beads.
+Data packages can be in one of two states. Under active development in a **workspace**, or packaged and stored as a **bead**. Beads are stored in a **box**, which is just a collection of completed beads.
 
 To see how workspaces are created from beads and vice versa, also see [usecases](usecases.md)
 
@@ -136,6 +136,8 @@ cd -
 \(source: [https://stackoverflow.com/c/ceu-microdata/questions/18](https://stackoverflow.com/c/ceu-microdata/questions/18)\)
 
 ## Basic workflow
+
+![](../.gitbook/assets/workflows.png)
 
 ### Bead help
 
@@ -363,6 +365,8 @@ Archive:  BeadBox/hello_20160527T130218513418+0200.zip
 ```
 
 {: .bash}
+
+![](../.gitbook/assets/internals.png)
 
 The following graph summarizes the internal structure of a workspace and the logical links to other beads.
 

@@ -10,7 +10,7 @@ keypoints:
   - Keep and share data together with the code that produced it.
   - 'When sharing your data, always do it in a bead.'
   - 'Never refer to external data from a bead, use bead inputs.'
-description: Chaining your data and code together
+description: Changing your data and code together
 ---
 
 # Bead

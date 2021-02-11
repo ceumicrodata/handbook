@@ -23,9 +23,9 @@
 * [Make](tools/make.md)
 * [Julia](tools/julia.md)
 * [Csvkit](tools/csvkit.md)
+* [Try](tools/try.md)
 
 ## about us
 
 * [People](about-us/people.md)
 * [Projects](about-us/projects.md)
-

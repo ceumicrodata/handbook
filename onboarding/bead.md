@@ -132,7 +132,7 @@ chmod +x bead
 cd -
 ```
 
-{: .bash}
+
 
 \(source: [https://stackoverflow.com/c/ceu-microdata/questions/18](https://stackoverflow.com/c/ceu-microdata/questions/18)\)
 

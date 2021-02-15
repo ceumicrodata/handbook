@@ -40,7 +40,7 @@ Clean data is the best possible representation of information in the data in a w
 
 Derived data usually contains only a subset of the information in the original data, but is built to be reused in different projects. You can aggregate to yearly frequency, select only a subset of columns, that sort of thing. Think SELECT, WHERE, GROUP BY clauses.
 
-> Example: All countries in Europe. {: .callout}
+> Example: All countries in Europe.
 
 ### Stage 4: analysis sample
 

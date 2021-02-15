@@ -43,13 +43,13 @@ You can connect to the servers from a Terminal window using either of the follow
 
 You can connect to the servers from a Terminal window using either of the following commands \(substitute your username and port number appropriately\)
 
-```text
+```bash
   $ ssh USER@haflinger.ceu.hu -p PORT
 ```
 
 For a graphical server connection a useful tool is XQuartz. Using XQuartz you can enable X11 forwarding. In an XQuartz terminal you can connect to the graphical server by issuing the following command: \(substitute your username and port number appropriately\)
 
-```text
+```bash
   $ ssh USER@haflinger.ceu.hu -p PORT -y
 ```
 
@@ -59,7 +59,7 @@ PuTTy provides a CLI for the server. On Windows you can download a simple REAL V
 
 A good example how you can start the viewer from the cmd. You have to change the "%vnc\_port%" part to your own port number.
 
-```text
+```bash
   $ vncviewer.exe -SecurityNotificationTimeout=0 -WarnUnencrypted=0 -Quality=High -Scaling=100%x100% haflinger.ceu.hu:%vnc_port%
 ```
 
@@ -79,7 +79,7 @@ Finally, you can alias the command that connects you to server:
 
 Copy the following text into the `config` file which is located in your .ssh folder: \(substitute your usernames and port number appropriately\)
 
-```text
+```bash
 Host haflinger
         HostName haflinger.ceu.hu
         User USER
@@ -93,7 +93,7 @@ This allows you to connect to the haflinger server by typing the `ssh haflinger`
 
 Add the following lines to your `.bashrc` file located in your home folder \(by typing `nano .bashrc`\):
 
-```text
+```bash
 alias haflinger='ssh USER@haflinger.ceu.hu -p PORT'
 ```
 

@@ -187,108 +187,84 @@ optional arguments:
 
 Initial setup. The `latest` bead-box already made on the haflinger.
 
-```text
+```bash
 $ mkdir /somepath/bead-box/latest
 $ bead box add latest /somepath/bead-box/latest
 Will remember box latest
 ```
 
-{: .bash}
-
 This is where completed beads will be stored. Create an empty bead with name `name`:
 
-```text
+```bash
 /somepath$ bead new name
 Created name
 ```
 
-{: .bash}
-
 Add some data to the output of this new bead which we can use later. This bead has no computation, only data.
 
-```text
+```bash
 /somepath$ cd name/
 /somepath/name$ echo World > output/who-do-i-greet
 ```
 
-{: .bash}
-
-```text
+```bash
 /somepath/name$ bead save latest
 Successfully stored bead.
 ```
 
-{: .bash}
-
-```text
+```bash
 cd ..
 /somepath/$ bead zap name
 Deleted workspace /somepath/name
 ```
 
-{: .bash}
-
 ### Working with inputs in a new bead
 
 Create a new data package:
 
-```text
+```bash
 /somepath$ bead new hello
 Created hello
 ```
 
-{: .bash}
-
-```text
+```bash
 /somepath$ cd hello/
 ```
 
-{: .bash}
-
 Add data from an existing bead at `input/<input-name>/`:
 
-```text
+```bash
 /somepath/hello$ bead input add name
 Loading new data to name ... Done
 ```
 
-{: .bash}
-
 Create a program `greet` that produces a greeting, using `input/name` as an input:
 
-```text
+```bash
 read name < input/name/who-do-i-greet
 echo "Hello $name!" > output/greeting
 ```
 
-{: .bash}
-
 Run the program:
 
-```text
+```bash
 /somepath/hello$ bash greet
 ```
 
-{: .bash}
-
 This script has create a text file in `output/greeting`. Let us verify its content:
 
-```text
+```bash
 /somepath/hello$ cat output/greeting
 Hello World!
 ```
-
-{: .bash}
 
 ### Visually display the bead chain
 
 Bead web is a new feature of version 0.8.1. You can check the details with `bead web -h`
 
-```text
+```bash
 $ bead web color auto-rewire heads / source-bead target-bead / png filename.png
 ```
-
-{: .bash}
 
 Auto-rewire is required for the new bead.
 
@@ -304,28 +280,24 @@ Instead of png it can be `svg filename.svg` if you prefer that format.
 
 Save our new bead:
 
-```text
+```bash
 /somepath/hello$ bead save latest
 Successfully stored bead.
 ```
 
-{: .bash}
-
 This stores output, computation and references to inputs. Now the content of `/somepath/BeadBox` is
 
-```text
+```bash
 /somepath$ ls -1 BeadBox/
 hello_20160527T130218513418+0200.zip
 name_20160527T113419427017+0200.zip
 ```
 
-{: .bash}
-
 These are regular \(and, in this case, small\) zip files, which can be transferred by usual means \(e.g. emailed\) to collaborators. The recipient can process them via the `bead` tool, keep the integrity of provenance information, and adding further dependencies as needed. Even withouth the tool, she can access the data by directly unzipping the file and inspecting its content.
 
 The output of the computation is stored under `data/*`. An outide collaborator without access to `bead` can just ignore the computation and all other metadata.
 
-```text
+```bash
 /somepath$ unzip -p BeadBox/hello_20160527T130218513418+0200.zip data/greeting
 Hello World!
 
@@ -364,8 +336,6 @@ Archive:  BeadBox/hello_20160527T130218513418+0200.zip
     --------          -------  ---                            -------
     1277                  732  43%                            4 files
 ```
-
-{: .bash}
 
 ![](../.gitbook/assets/internals.png)
 

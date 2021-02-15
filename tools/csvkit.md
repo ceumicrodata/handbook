@@ -25,91 +25,87 @@ csvkit is a command-line tool written in Python to be used for simple data wrang
 
 The csvkit tool can be installed with the following command \(if you use Python 2.7 you might type `sudo pip install csvkit` instead\).
 
-```text
+```bash
 $ sudo pip3 install csvkit
 ```
 
-{: .bash}
-
 For illustration purposes an example [dataset](https://perso.telecom-paristech.fr/eagan/class/igr204/datasets) is also used in this tutorial. The data contain information on cars and their characteristics. To get the data you should type the following command. The dataset has a second row with information on data type that is removed for later analysis purposes with the head and tail commands - an alternative way to do this is by using `sed 2,2d cars.csv > cars-tutorial.csv`.
 
-```text
+```bash
 $ wget https://perso.telecom-paristech.fr/eagan/class/igr204/data/cars.csv
 $ head -1 cars.csv > cars-tutorial.csv
 $ tail -n+3 cars.csv >> cars-tutorial.csv
 ```
 
-{: .bash}
-
 ## The most important csvkit commands
 
 The example dataset is semi-colon and not comma separated. For all the commands presented below the input delimiter can be set with the `-d` argument: in this case as -`d ";"`. Setting the input delimiter with `-d` changes the decimal separator in the ouput as well. To change it back to dot from comma, `csvformat -D "."` should be used after any command where it is relevant.
 
-* `csvlook` shows the data in a Markdown-compatible format. `cat` may also be used instead of `csvlook` to open a csv file, but the latter is more readable. This command can be combined with `head` in order to have a look at the first few lines of the data. As seen here and in later examples, csvkit commands can be piped together and with other commands.
+* `csvlook` shows the data in a Markdown-compatible format. `cat` may also be used instead of `csvlook` to open a csv file, but the latter is more readable. This command can be combined with `head` in order to have a look at the first few lines of the data. As seen here and in later examples, csvkit commands can be piped together and with other commands. For the latter command the following output can be seen.
 
-  ```text
-  $ csvlook -d ";" cars-tutorial.csv | csvformat -D "."
-  $ head -5 cars-tutorial.csv | csvlook -d ";" | csvformat -D "."
-  ```
+{% tabs %}
+{% tab title="Bash" %}
+```bash
+$ csvlook -d ";" cars-tutorial.csv | csvformat -D "."
+$ head -5 cars-tutorial.csv | csvlook -d ";" | csvformat -D "."
+```
+{% endtab %}
 
-  {: .bash}
+{% tab title="Output" %}
+```text
+| Car                       | MPG | Cylinders | Displacement | Horsepower | Weight | Acceleration | Model | Origin |
+| ------------------------- | --- | --------- | ------------ | ---------- | ------ | ------------ | ----- | ------ |
+| Chevrolet Chevelle Malibu |  18 |         8 |          307 |        130 |  3 504 |         12.0 |    70 | US     |
+| Buick Skylark 320         |  15 |         8 |          350 |        165 |  3 693 |         11.5 |    70 | US     |
+| Plymouth Satellite        |  18 |         8 |          318 |        150 |  3 436 |         11.0 |    70 | US     |
+| AMC Rebel SST             |  16 |         8 |          304 |        150 |  3 433 |         12.0 |    70 | US     |
+```
+{% endtab %}
+{% endtabs %}
 
-  For the latter command the following output can be seen.
+* `csvcut` shows the column names in the data if the `-n` argument is specified. It can also help to select certain columns of the data with the `-c` argument and the corresponding column numbers \(or names\). The code and output is the following:
 
-  ```text
-  | Car                       | MPG | Cylinders | Displacement | Horsepower | Weight | Acceleration | Model | Origin |
-  | ------------------------- | --- | --------- | ------------ | ---------- | ------ | ------------ | ----- | ------ |
-  | Chevrolet Chevelle Malibu |  18 |         8 |          307 |        130 |  3 504 |         12.0 |    70 | US     |
-  | Buick Skylark 320         |  15 |         8 |          350 |        165 |  3 693 |         11.5 |    70 | US     |
-  | Plymouth Satellite        |  18 |         8 |          318 |        150 |  3 436 |         11.0 |    70 | US     |
-  | AMC Rebel SST             |  16 |         8 |          304 |        150 |  3 433 |         12.0 |    70 | US     |
-  ```
+{% tabs %}
+{% tab title="Bash" %}
+```bash
+$ csvcut -n -d ";" cars-tutorial.csv
+```
+{% endtab %}
 
-  {: .output}
+{% tab title="Output" %}
+```text
+1: Car
+2: MPG
+3: Cylinders
+4: Displacement
+5: Horsepower
+6: Weight
+7: Acceleration
+8: Model
+9: Origin
+```
+{% endtab %}
+{% endtabs %}
 
-* `csvcut` shows the column names in the data if the `-n` argument is specified. It can also help to select certain columns of the data with the `-c` argument and the corresponding column numbers \(or names\).
+The following two commands have identical outputs: car, miles per gallon consumption and origin columns, as shown below. For space constraints only the first few rows are printed out.
 
-  ```text
-  $ csvcut -n -d ";" cars-tutorial.csv
-  ```
+```text
+$ csvcut -c 1,2,9 -d ";" cars-tutorial.csv | head -5 | csvlook
+$ csvcut -c Car,MPG,Origin -d ";" cars-tutorial.csv | head -5 | csvlook
+```
 
-  {: .bash}
+{: .bash}
 
-  The output is the following:
+```text
+| Car                       | MPG | Origin |
+| ------------------------- | --- | ------ |
+| Chevrolet Chevelle Malibu |  18 | US     |
+| Buick Skylark 320         |  15 | US     |
+| Plymouth Satellite        |  18 | US     |
+| AMC Rebel SST             |  16 | US     |
+```
 
-  ```text
-  1: Car
-  2: MPG
-  3: Cylinders
-  4: Displacement
-  5: Horsepower
-  6: Weight
-  7: Acceleration
-  8: Model
-  9: Origin
-  ```
-
-  {: .output}
-
-  The following two commands have identical outputs: car, miles per gallon consumption and origin columns, as shown below. For space constraints only the first few rows are printed out.
-
-  ```text
-  $ csvcut -c 1,2,9 -d ";" cars-tutorial.csv | head -5 | csvlook
-  $ csvcut -c Car,MPG,Origin -d ";" cars-tutorial.csv | head -5 | csvlook
-  ```
-
-  {: .bash}
-
-  ```text
-  | Car                       | MPG | Origin |
-  | ------------------------- | --- | ------ |
-  | Chevrolet Chevelle Malibu |  18 | US     |
-  | Buick Skylark 320         |  15 | US     |
-  | Plymouth Satellite        |  18 | US     |
-  | AMC Rebel SST             |  16 | US     |
-  ```
-
-  {: .output}
+{: .output}
 
 * `csvstat` calculates summary statistics for all columns. It recognizes the data type of the column and prints out descriptive information accordingly. `csvstat` may be piped together with `csvcut` to calculate descriptive statistics only for certain columns.
 

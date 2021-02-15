@@ -44,7 +44,7 @@ Firm name search tool merges the eight-digit registration number \(first 8 digit
 * Python2 and the tool must be available on the PATH
 * a proprietary database index file \(available only to members of CEU MicroData\)
 
-```text
+```python
 name-to-taxids-YYYY-MM-DD "firm name" input.csv output.csv
 ```
 
@@ -52,7 +52,7 @@ where "firm name" is the field name for firm name in `input.csv` and there is an
 
 The tool provides command line help, so for further details run
 
-```text
+```python
 name-to-taxids-YYYY-MM-DD -h
 ```
 
@@ -65,11 +65,9 @@ name-to-taxids-YYYY-MM-DD -h
 
 #### An example how to run firm name search tool in python2
 
-```text
+```bash
 $ python name-to-taxids-20161004 name temp/distinct_firms.csv temp/distinct_firms_fname.csv --index 'input/firm-name-index/complex_firms.sqlite'
 ```
-
-{: .bash}
 
 The tool searches for tax numbers for items in the `name` field. You must have to add the whitelist path manually: `'input/firm-name-index/complex_firms.sqlite'`
 
@@ -126,7 +124,7 @@ An extra tuning parameter is introduced with --idf-shift which tweaks the matche
 
 ### An example how to run pir name search tool in python3
 
-```text
+```bash
 Run from python3 with settlement option
 
 python3 pir_search-0.8.0 input/pir-index/index.json name temp/distinct_firms.csv temp/distinct_firms_pname.csv --settlement settlement --hun-stop-words \
@@ -280,7 +278,7 @@ Usage: timemachine.py \[-h\] \[-s START\] \[-e END\] \[-u\] entity\_resolved rov
 
 In this example we would like to clean the raw NACE input dates by ceg\_id:
 
-```text
+```bash
 $ python3 timemachine_mp.py -u temp/rovat_902_fortm_fotev.csv input/frame-20190508/frame_with_dates.csv alrovat_id teaor ceg_id temp/rovat_902_tm.csv 25
 ```
 

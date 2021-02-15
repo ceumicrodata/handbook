@@ -21,7 +21,7 @@ Write `save "data/worker.dta"`, not ~~`save "data\worker.dta"`~~. The former wor
 
 #### Write out file extensions
 
-Write `save "data/worker.dta"` and `do "regression.do"`, not ~~`save "data/worker`~~ or ~~`do "regression"`~~. Even though some extensions are appended by Stata by default, it is better to be explicit to help future readers of your code.
+Write `save "data/worker.dta"` and `do "regression.do"`, not ~~`save "data/worker"`~~ or ~~`do "regression"`~~. Even though some extensions are appended by Stata by default, it is better to be explicit to help future readers of your code.
 
 #### Put file paths in quotes
 
@@ -80,7 +80,7 @@ foreach X of variable wage mean_male_wage {
 }
 ```
 
-{: .source} not
+not
 
 ```text
 foreach X of variable wage mean_male_wage {
@@ -89,8 +89,7 @@ scalar `X'_median = r(p50)
 }
 ```
 
-{: .error}
-
 #### Each .do file should be shorter than 120 lines
 
 Longer scripts are much more difficult to read and understand by others. If your script is longer, break it up into smaller components by creating several .do files and calling them.
+

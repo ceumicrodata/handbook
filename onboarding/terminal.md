@@ -88,6 +88,9 @@ $ pwd
 ~/Documents/GitRepos/CEU_MD_Onboard/onboarding/
 ```
 
+`$ pwd  
+~/Documents/GitRepos/CEU_MD_Onboard/onboarding`
+
 Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typing the `pwd`. \(Don't worry about the tilde \("~"\) sign. You are going to learn about it in a minute.
 
 * `cd` changes the working directory. It has a positional argument, which is the target directory. The target directory can be either given as an absolute path or a relative path.

@@ -68,13 +68,13 @@ You can find the most commonly used commands with a short description below by c
 
 {% tabs %}
 {% tab title="Bash" %}
-```
+```bash
 $ pwd
 ```
 {% endtab %}
 
 {% tab title="Output" %}
-```
+```bash
 ~/Documents/GitRepos/CEU_MD_Onboard/onboarding/
 ```
 {% endtab %}
@@ -293,7 +293,7 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
 
 ### Redirection and some other useful commands
 
-* `cat` will print the content of files on your terminal screen. It's positional argument is a file list separated by spaces. 
+* `cat` will print the content of files on your terminal screen. It's positional argument is a file list separated by spaces.
 
   ```text
   $ cat my-code.py

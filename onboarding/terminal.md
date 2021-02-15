@@ -65,20 +65,30 @@ You can find the most commonly used commands with a short description below by c
 ### Navigation
 
 * `pwd` returns the path to the current working directory. In most cases this is part of the command prompt, however, if you are deep down in the folder structure, the command prompt will only display a few parent directories.
+* 
+{% tabs %}
+{% tab title="Bash" %}
+$ pwd
+{% endtab %}
 
-  ```text
-  $ pwd
-  ```
+{% tab title="Output" %}
+~/Documents/GitRepos/onboarding/
+{% endtab %}
+{% endtabs %}
 
-  {: .language-bash}
+```text
+$ pwd
+~/Documents/GitRepos/CEU_MD_Onboard/onboarding/
+```
 
-  ```text
-  ~/Documents/GitRepos/CEU_MD_Onboard/onboarding/
-  ```
+```text
+#Bash
+$ pwd
+#Outut
+~/Documents/GitRepos/CEU_MD_Onboard/onboarding/
+```
 
-  {: .output}
-
-  Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typing the `pwd`. \(Don't worry about the tilde \("~"\) sign. You are going to learn about it in a minute.
+Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typing the `pwd`. \(Don't worry about the tilde \("~"\) sign. You are going to learn about it in a minute.
 
 * `cd` changes the working directory. It has a positional argument, which is the target directory. The target directory can be either given as an absolute path or a relative path.
 

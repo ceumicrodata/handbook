@@ -89,13 +89,15 @@ $ csvcut -n -d ";" cars-tutorial.csv
 
 The following two commands have identical outputs: car, miles per gallon consumption and origin columns, as shown below. For space constraints only the first few rows are printed out.
 
-```text
+{% tabs %}
+{% tab title="Bash" %}
+```bash
 $ csvcut -c 1,2,9 -d ";" cars-tutorial.csv | head -5 | csvlook
 $ csvcut -c Car,MPG,Origin -d ";" cars-tutorial.csv | head -5 | csvlook
 ```
+{% endtab %}
 
-{: .bash}
-
+{% tab title="Output" %}
 ```text
 | Car                       | MPG | Origin |
 | ------------------------- | --- | ------ |
@@ -104,8 +106,8 @@ $ csvcut -c Car,MPG,Origin -d ";" cars-tutorial.csv | head -5 | csvlook
 | Plymouth Satellite        |  18 | US     |
 | AMC Rebel SST             |  16 | US     |
 ```
-
-{: .output}
+{% endtab %}
+{% endtabs %}
 
 * `csvstat` calculates summary statistics for all columns. It recognizes the data type of the column and prints out descriptive information accordingly. `csvstat` may be piped together with `csvcut` to calculate descriptive statistics only for certain columns.
 

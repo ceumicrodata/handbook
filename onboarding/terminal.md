@@ -80,7 +80,7 @@ $ pwd
 {% endtab %}
 {% endtabs %}
 
-  Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typing the `pwd`. \(Don't worry about the tilde \("~"\) sign. You are going to learn about it in a minute.
+Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typing the `pwd`. \(Don't worry about the tilde \("~"\) sign. You are going to learn about it in a minute.
 
 * `cd` changes the working directory. It has a positional argument, which is the target directory. The target directory can be either given as an absolute path or a relative path.
 
@@ -351,3 +351,4 @@ For concise description, please visit the _File Permissions_ section of the foll
 * The Unix Shell: [https://swcarpentry.github.io/shell-novice/](https://swcarpentry.github.io/shell-novice/)
 * Official Ubuntu tutorial: [https://ubuntu.com/tutorials/command-line-for-beginners\#1-overview](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
 * The Linux Command Line by William Shotts: [http://linuxcommand.org/tlcl.php](http://linuxcommand.org/tlcl.php) \(freely available\)
+

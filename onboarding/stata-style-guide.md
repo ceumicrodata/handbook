@@ -17,11 +17,11 @@ keypoints: null
 
 > ## Use forward slash in path names
 >
-> Write `save "data/worker.dta"`, not ~~`save "data\worker.dta`~~. The former works on all three major platforms, the latter omnly on Windows. {: .callout}
+> Write `save "data/worker.dta"`, not ~~`save "data\worker.dta"`~~. The former works on all three major platforms, the latter only on Windows.
 >
 > ## Write out file extensions
 >
-> Write `save "data/worker.dta"` and `do "regression.do"`, not ~~`save "data/worker`~~ or ~~`do "regression"`~~. Even though some extensions are appended by Stata by default, it is better to be explicit to help future readers of your code. {: .callout}
+> Write `save "data/worker.dta"` and `do "regression.do"`, not ~~`save "data/worker`~~ or ~~`do "regression"`~~. Even though some extensions are appended by Stata by default, it is better to be explicit to help future readers of your code.
 >
 > ## Put file paths in quotes
 >

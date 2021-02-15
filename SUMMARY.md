@@ -23,7 +23,6 @@
 * [Make](tools/make.md)
 * [Julia](tools/julia.md)
 * [Csvkit](tools/csvkit.md)
-* [Try](tools/try.md)
 
 ## about us
 

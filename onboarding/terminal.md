@@ -92,8 +92,6 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   $ cd ../../srv/sandbox/
   ```
 
-  {: .language-bash}
-
   In relative paths you can reference the parent directory by two dots `..`, thus if you want to go to the parent directory, you should issue `cd ..`. Some more commonly used `cd` commands:
 
   ```text
@@ -109,8 +107,6 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   #going to the Desktop directory in the home directory
   $ cd ~/Desktop
   ```
-
-  {: .language-bash}
 
   The tilde \("~"\) character in the last command is a shortcut for indicating the home directory.
 
@@ -131,8 +127,6 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   $ xdg-open my-picture.png
   ```
 
-  {: .language-bash}
-
 ### File System Exploration
 
 * `ls` lists the content of the current working directory. It has a wide set of optional arguments that you can combine to get a listing you prefer. A few of these are:
@@ -149,15 +143,11 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   $ ls -ltrha
   ```
 
-  {: .language-bash}
-
 * `less` will show you the content of a text file. It has one positional argument, the text file. It's worth noting that it can be any text file, for example `.py` python codes can be viewed as well as `.csv` data files.
 
   ```text
   $ less trial.py
   ```
-
-  {: .language-bash}
 
   You can scroll up and down using the arrows on your keyboard and exit by pressing `q`.
 
@@ -165,17 +155,19 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
 
 * `file` will determine file type. In fact, one of the common ideas in Unix-like operating systems such as Linux is that “everything is a file.”
 
-  ```text
-  $ file picture.jpg
-  ```
+{% tabs %}
+{% tab title="Bash" %}
+```bash
+$ file picture.jpg
+```
+{% endtab %}
 
-  {: .language-bash}
-
-  ```text
-  picture.jpg: JPEG image data, JFIF standard 1.01
-  ```
-
-  {: .output}
+{% tab title="Output" %}
+```
+picture.jpg: JPEG image data, JFIF standard 1.01
+```
+{% endtab %}
+{% endtabs %}
 
 ### Files and Directories Manipulation
 
@@ -189,8 +181,6 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   $ cp -R my-folder/ ../
   ```
 
-  {: .language-bash}
-
 * `mv` moves a file or folder. It has two positional arguments, the source and the target path.
 
   ```text
@@ -201,8 +191,6 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   $ mv my-folder ../
   ```
 
-  {: .language-bash}
-
   It is also the way to rename files.
 
   ```text
@@ -210,15 +198,11 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   $ mv old-filename.txt new-filename.txt
   ```
 
-  {: .language-bash}
-
 * `mkdir` creates a new folder in the current working directory. It has a single positional argument, which is the name of the new folder.
 
   ```text
   $ mkdir my-new-folder
   ```
-
-  {: .language-bash}
 
   It can also have multiple optional arguments if you wish to create multiple folders.
 
@@ -226,15 +210,11 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   $ mkdir dir1 dir2 dir3
   ```
 
-  {: .language-bash}
-
   It is even possible to create nested folder structures by providing the `-p` argument.
 
   ```text
   $ mkdir -p dir4/dir5/dir6
   ```
-
-  {: .language-bash}
 
 * `rmdir` removes an empty directory. It's only positional argument is the folder to be removed. It only removes empty folders, you need to delete it's content first.
 * `rm` removes a file. It has a positional argument, which is a list of files to be removed. You can give multiple files separated by spaces to remove.
@@ -247,8 +227,6 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   $ rm my-text.txt my-data.dta
   ```
 
-  {: .language-bash}
-
   **IMPORTANT**: If you remove a file by `rm` it will be **permanently** deleted, be careful with it!
 
 * Recursive `rm` removes a directory with all of its subdirectories and files. It can be accessed with the `-r` optional argument.
@@ -257,8 +235,6 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   $ rm my_folder/ -r
   ```
 
-  {: .language-bash}
-
   **IMPORTANT**: Recursive `rm` will remove the directory with all of it's content **permanently**.
 
 * Recursive forced `rm` removes a directory with all of its subfolders and files even if the files are read-only. It can be executed using the `rf` optional argument.
@@ -266,8 +242,6 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   ```text
   $ rm my_folder/ -rf
   ```
-
-  {: .language-bash}
 
   **IMPORTANT**: deletion is **permanent**. You should not use it in general, it is only a last resort. The presence of read-only files strongly suggests that they should not be deleted using `rm`, but in some other ways \(e.g. `bead nuke` in case of beads\). There are some cases when this is useful, but use it with care and only if it is unavoidable.
 
@@ -287,8 +261,6 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   $ cat test_*
   ```
 
-  {: .language-bash}
-
   You are going to learn about `cat` command in the next section.
 
 ### Redirection and some other useful commands
@@ -299,8 +271,6 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   $ cat my-code.py
   ```
 
-  {: .language-bash}
-
 If you specify multiple files, it will con`cat`enate \(its name comes from here\), meaning that linking together and output each of them, one after the other, as a single block of text as it could be seen at the end of the **Files and Directories Manipulation** section.
 
 * `head` and `tail` shows you the first and last few lines of a text file, respectively. It has one positional argument, the text file.
@@ -310,21 +280,21 @@ If you specify multiple files, it will con`cat`enate \(its name comes from here\
   $ tail my-data.csv
   ```
 
-  {: .language-bash}
-
 * `echo` will print the value of its argument on your terminal screen.
 
-  ```text
-  $ echo hello world!
-  ```
+{% tabs %}
+{% tab title="Bash" %}
+```bash
+$ echo hello world!
+```
+{% endtab %}
 
-  {: .language-bash}
-
-  ```text
-  hello world!
-  ```
-
-  {: .output}
+{% tab title="Output" %}
+```
+hello world!
+```
+{% endtab %}
+{% endtabs %}
 
 * Some, other useful commands and shortcuts:
 

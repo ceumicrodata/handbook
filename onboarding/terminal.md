@@ -48,7 +48,7 @@ It should be followed by a blinking cursor. This is called the command prompt. I
 
 These are possibly the most important pieces of information that you need to be aware of when using the CLI. What do they tell you?
 
-1. username: This is your username on your computer. In most cases it will not change. In many systems you can switch to a user called root, that can do anything on the computer that a standard user cannot. You should only see your username there, if it changes you should close the Terminal and start a new session unless you are really sure about what you are doing. 
+1. username: This is your username on your computer. In most cases it will not change. In many systems you can switch to a user called root, that can do anything on the computer that a standard user cannot. You should only see your username there, if it changes you should close the Terminal and start a new session unless you are really sure about what you are doing.
 2. machine: This is separated from the username by an `@` sign in most cases. It will change for example if you log in to the server. You will be able to control the MicroData servers using the Terminal as well. It is important to know whether you are controlling your own computer or the server in the Terminal window, always make sure that you are working on the proper machine.
 3. current\_directory: This is usually separated from the name of the machine by a colon. In many operating systems you have something called your home folder or user folder. It is usually referenced in the Terminal by the `~` sign. If you change the working directory \(which will be discussed in a second\), it will change accordingly. For example on an other machine and in a different folder it might be something like this:
 
@@ -80,7 +80,7 @@ $ pwd
 {% endtab %}
 {% endtabs %}
 
-Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typing the `pwd`. \(Don't worry about the tilde \("~"\) sign. You are going to learn about it in a minute.
+  Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typing the `pwd`. \(Don't worry about the tilde \("~"\) sign. You are going to learn about it in a minute.
 
 * `cd` changes the working directory. It has a positional argument, which is the target directory. The target directory can be either given as an absolute path or a relative path.
 
@@ -103,7 +103,7 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   #going to the root folder
   $ cd /
 
-  #going up to the parent directory 
+  #going up to the parent directory
   $ cd ..
 
   #going to the Desktop directory in the home directory
@@ -127,7 +127,7 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   #On MacOS
   $ open my-picture.png
 
-  #On (most) Linux distros 
+  #On (most) Linux distros
   $ xdg-open my-picture.png
   ```
 
@@ -185,7 +185,7 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
   #Copy a file to the parent folder
   $ cp my-file.txt ../my-file.txt
 
-  #Copy a folder to the parent folder by using -R recursive option 
+  #Copy a folder to the parent folder by using -R recursive option
   $ cp -R my-folder/ ../
   ```
 
@@ -273,11 +273,11 @@ Now, we are at the _~/Documents/GitRepos/CEU\_MD\_Onboard/onboarding/_ after typ
 
 * Some useful shortcuts which could be used with the some of the above-mentioned commands:
 
-  * `?` , a question mark can be used to indicate "any single character". 
+  * `?` , a question mark can be used to indicate "any single character".
   * `*`, an asterisk can be used to indicate "zero or more characters".
 
   ```text
-  #Instead of using 
+  #Instead of using
   $ cat test_1.txt test_2.txt test_3.txt
 
   #Better usage is
@@ -351,4 +351,3 @@ For concise description, please visit the _File Permissions_ section of the foll
 * The Unix Shell: [https://swcarpentry.github.io/shell-novice/](https://swcarpentry.github.io/shell-novice/)
 * Official Ubuntu tutorial: [https://ubuntu.com/tutorials/command-line-for-beginners\#1-overview](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
 * The Linux Command Line by William Shotts: [http://linuxcommand.org/tlcl.php](http://linuxcommand.org/tlcl.php) \(freely available\)
-

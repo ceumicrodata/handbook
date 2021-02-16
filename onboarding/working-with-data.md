@@ -16,6 +16,18 @@ description: How to work with the data
 
 # Working with data
 
+> ### Overview
+>
+> Questions
+>
+> * What are the general rules about working with data?
+> * How to handle sensitive data?
+>
+> Objectives
+>
+> * Distinguish data at different stages of processing.
+> * Protect sensitive data with appropriate measures.
+
 ## Stages of data
 
 ### Stage 0: raw data
@@ -79,4 +91,9 @@ Access is limited to authorized individuals within CEU. Special care should be t
 The data is not available publicly. It either has large business value or relates to sensitive information on individuals specifically protected by GDPR. \(For example, addresses of individuals, political connections, names of company partners.\) Major embarrassment and certain legal implications if accidentally made public.
 
 Access is limited to authorized individuals within CEU. Data can only be stored and transported on encrypted medium. Sharing outside CEU may be allowed, but decided on a case-by-case basis and encryption rules still apply.
+
+> ### Key Points
+>
+> * Never modify raw data.
+> * Always keep CAT3 data on encrypted medium.
 

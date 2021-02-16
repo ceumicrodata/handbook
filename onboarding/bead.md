@@ -15,6 +15,16 @@ description: Changing your data and code together
 
 # Bead
 
+> ### Overview
+>
+> Questions
+>
+> * How do you ensure that your data products are reproducible?
+>
+> Objectives
+>
+> * 'Use `bead`, a command-line tool to create, update and share data products.'
+
 ## The problem
 
 Researchers and analysts need to know the provenance of their data to trust its integrity and to quickly redo the analysis when requirements change. However, in a diverse and agile team, knowledge about data is often tacit, and is destroyed when a team member leaves. This leads to a duplication of effort. Additionally, the multitude of software tools and work methods create frictions in the analytics process. Existing solutions are either too rigid to be widely adopted or involve too much face-to-face communication, reducing researcher and analyst productivity.
@@ -342,4 +352,10 @@ Archive:  BeadBox/hello_20160527T130218513418+0200.zip
 The following graph summarizes the internal structure of a workspace and the logical links to other beads.
 
 ## Bead boxes
+
+> ### Key Points
+>
+> * Keep and share data together with the code that produced it.
+> * When sharing your data, always do it in a bead.
+> * Never refer to external data from a bead, use bead inputs.
 

@@ -18,6 +18,19 @@ keypoints:
 
 # Best practices
 
+> ### Overview
+>
+> Questions
+>
+> * How to name files and variables?
+> * What code style do we use?
+> * How to ensure reproducible research?
+>
+> Objectives
+>
+> * Use verbose, helpful file and variable names.
+> * Read and write data in a way facilitating reproducibility.
+
 These guidelines help us share data among themselves. Always make the extra effort to make your work understandable to others: you are in the best position to explain what you did. If you follow these guidelines, you only have to do this once for every data product you create.
 
 ## Naming files and folders
@@ -52,4 +65,11 @@ These guidelines help us share data among themselves. Always make the extra effo
 1. Python code must follow [PEP-8](https://www.python.org/dev/peps/pep-0008/).
 2. Stata code must follow [this guide](http://www.stata-journal.com/sjpdf.html?articlenum=pr0018).
 3. Stata code should be no longer than 120 lines. If longer, break it up.
+
+> ### Key Points
+>
+> * Name variables and datasets with nouns of what they contain.
+> * Name scripts with verbs of what they do.
+> * Every piece of data is written by a script.
+> * Every piece of data is written by _one_ script.
 

@@ -17,6 +17,20 @@ description: How to use csvkit
 
 # Csvkit
 
+> ### Overview
+>
+> Questions
+>
+> * How to open data with csvkit?
+> * How to select certain rows and columns of the data? How to append them after filtering?
+> * How to sort and describe basic characteristics of the data?
+>
+> Objectives
+>
+> * Learn how to install csvkit and how to use csvlook
+> * Learn csvgrep, csvcut and csvstack commands
+> * Learn csvsort and csvstat commands
+
 ## The use of csvkit
 
 csvkit is a command-line tool written in Python to be used for simple data wrangling and analysis tasks. This tutorial presents the most important commands implemented in it. The following sections rely heavily on the official csvkit [tutorial](https://csvkit.readthedocs.io/en/1.0.5/tutorial.html).
@@ -117,8 +131,6 @@ $ csvcut -c Car,MPG,Origin -d ";" cars-tutorial.csv | head -5 | csvlook
   $ csvcut -c 1,2,9 -d ";" cars-tutorial.csv | csvstat | csvformat -D "."
   ```
 
-  {: .bash}
-
   ```text
   "  1. ""Car"""
 
@@ -215,8 +227,6 @@ $ csvcut -c Car,MPG,Origin -d ";" cars-tutorial.csv | head -5 | csvlook
   $ csvgrep -c Origin -m Europe -d ";" cars-tutorial.csv > cars-tutorial-europe.csv
   ```
 
-  {: .bash}
-
 * `csvstack` appends datasets with identical column names. There might be cases where it makes sense to specify the `-g` argument which adds a column identifying the source csv. In the following example it is not needed.
 
   The three csv files created in the previous example can be stacked. Since there were three countries of origin, this command should have the same length as the original data.
@@ -226,8 +236,6 @@ $ csvcut -c Car,MPG,Origin -d ";" cars-tutorial.csv | head -5 | csvlook
   $ csvstack cars-tutorial-us.csv cars-tutorial-europe.csv cars-tutorial-japan.csv | wc -l
   $ wc cars-tutorial.csv -l
   ```
-
-  {: .bash}
 
   Both files have 407 rows as expected \(406 plus the header\).
 

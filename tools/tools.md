@@ -21,6 +21,19 @@ description: Tools in MicroData
 
 # Tools
 
+> ### Overview
+>
+> Questions
+>
+> * What is a programing tool and why we use them?
+> * How to read a tool manual and understand the outputs?
+>
+> Objectives
+>
+> * Join a unique ID to a raw .csv with different input types
+> * Choose the right cut offs and specify the good matches
+> * Get to know how to run a tool on the server with good options
+
 ## The problem
 
 There are lots of occasions when we would like to automate some tasks by the help of programming tools.
@@ -137,8 +150,6 @@ python3 pir_search-0.8.0 input/pir-index/index.json name temp/distinct_firms.csv
 --idf-shift 100 --extramatches
 ```
 
-{: .bash}
-
 The pir\_score output could be between 0 &lt;= x &lt; 1. Pir\_score==1 AND pir\_err==0 is the perfect match.
 
 The bigger the pir\_err score the match is more likely wrong.
@@ -159,7 +170,7 @@ You can find downloadable official balance and income statements from e-beszámo
 
 You can easily find the firm you are searching for if you change the tax\_id or the ceg\_id in the html:
 
-```text
+```bash
 Example pages with fictive tax_id
 
 http://complexweb.microdata.servers.ceu.hu/cegs_by_tax_id/12345678 to 
@@ -170,8 +181,6 @@ Example pages by ceg_id
 http://complexweb.microdata.servers.ceu.hu/ceg/0101234567 to
 http://complexweb.microdata.servers.ceu.hu/ceg/0101234568
 ```
-
-{: .bash}
 
 You can write Postgre SQL queries to request more complex searches:
 
@@ -282,7 +291,10 @@ In this example we would like to clean the raw NACE input dates by ceg\_id:
 $ python3 timemachine_mp.py -u temp/rovat_902_fortm_fotev.csv input/frame-20190508/frame_with_dates.csv alrovat_id teaor ceg_id temp/rovat_902_tm.csv 25
 ```
 
-{: .bash}
-
 You can see the `-u` unique option means that we have one NACE main activity code at the same time. The unique column is the `teaor` and the code is using the `frame_with_dates.csv` which identify one frame\_id-tax\_id pair for each firm. The `25` means that we choose multiprocessing with maximum 25 cores.
+
+> ### Key Points
+>
+> * Tools are helping you to automate tasks like joining unique ID-s for an input variable.
+> * Firm name tool good for firm matching and PIR tool is good for state organizations matching
 

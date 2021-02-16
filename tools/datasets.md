@@ -19,6 +19,19 @@ description: Key datasets in MicroData
 
 # Datasets
 
+> ### Overview
+>
+> Questions
+>
+> * Which are the most important datasets and how to join them together?
+> * What is an LTS dataset?
+> * Where do I find the datasets on the server?
+>
+> Objectives
+>
+> * Understand the difference between primary and foreign keys
+> * Get to know major databases
+
 ## Main datasets
 
 The three main important datasets are the `merleg-LTS-2019`, the `cegjegyzek-LTS-2019` and the `procurement-LTS-2019`. The meaning of LTS is `long-term support` and `2019` is the input year when the data arrived.
@@ -325,4 +338,9 @@ The input data is from the Procurement Authority website [http://www.kozbeszerze
 We have scraped, parsed and cleaned version of the biggest online media providers in the `media-bead-box`
 
 We have firm year month unique information about advertisement data from 1991-2016.
+
+> ### Key Points
+>
+> * LTS dataset is supported in the same format at every update
+> * LTS beads are more than just a bunch of beads: one LTS package is suitable for use in a large variety of research trends
 

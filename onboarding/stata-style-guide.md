@@ -13,6 +13,18 @@ keypoints: null
 
 # Stata style guide
 
+> ### Overview
+>
+> Questions
+>
+> * How to name variables?
+> * What code style do we use?
+>
+> Objectives
+>
+> * Use verbose, helpful variable names.
+> * Make your code accessible to others.
+
 ## Files
 
 #### Use forward slash in path names

@@ -6,7 +6,7 @@ title: Setup
 
 This is a comprehensive list of what you are going to need throughout these lessons. We will go into details after a quick overview:
 
-> ## Key requirements
+> ### Key requirements
 >
 > * Python 3 installation with pip3 and virtualenv
 > * BEAD executable

@@ -19,6 +19,8 @@ keypoints:
 
 # Using the terminal
 
+> ### Overview
+>
 > Questions
 >
 > * How to navigate in the terminal?
@@ -29,6 +31,19 @@ keypoints:
 >
 > * Understanding how the command line interface works.
 > * Learn the most important command line operations.
+
+> Questions
+>
+> * How to navigate in the terminal?
+> * How to execute commands and start applications?
+> * What are some of the most important command line tools?
+>
+> Objectives
+>
+> * Understanding how the command line interface works.
+> * Learn the most important command line operations.
+
+## The Command Line Interface
 
 ## The Command Line Interface
 

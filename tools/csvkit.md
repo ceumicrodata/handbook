@@ -73,6 +73,7 @@ $ head -5 cars-tutorial.csv | csvlook -d ";" | csvformat -D "."
 | Buick Skylark 320         |  15 |         8 |          350 |        165 |  3 693 |         11.5 |    70 | US     |
 | Plymouth Satellite        |  18 |         8 |          318 |        150 |  3 436 |         11.0 |    70 | US     |
 | AMC Rebel SST             |  16 |         8 |          304 |        150 |  3 433 |         12.0 |    70 | US     |
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -221,6 +222,7 @@ $ csvgrep -c MPG -m 46.6 -d ";" cars-tutorial.csv | csvlook | csvformat -D "."
 | Car       |  MPG | Cylinders | Displacement | Horsepower | Weight | Acceleration | Model | Origin |
 | --------- | ---- | --------- | ------------ | ---------- | ------ | ------------ | ----- | ------ |
 | Mazda GLC | 46.6 |         4 |           86 |         65 |  2 110 |         17.9 |    80 | Japan  |
+
 ```
 {% endtab %}
 {% endtabs %}
@@ -229,7 +231,7 @@ The command yields an output showing only cars with a 46.6 miles per gallon cons
 
 It is also possible to filter and separate the file based on a string variable. In the following example three different csv files are created based on the origin variable. We know from the `csvstat` command that there are three possible categories for origin: US, Japan and Europe.
 
-```text
+```bash
 $ csvgrep -c Origin -m US -d ";" cars-tutorial.csv > cars-tutorial-us.csv
 $ csvgrep -c Origin -m Japan -d ";" cars-tutorial.csv > cars-tutorial-japan.csv
 $ csvgrep -c Origin -m Europe -d ";" cars-tutorial.csv > cars-tutorial-europe.csv

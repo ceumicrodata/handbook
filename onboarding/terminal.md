@@ -176,7 +176,7 @@ $ file picture.jpg
 {% endtab %}
 
 {% tab title="Output" %}
-```
+```text
 picture.jpg: JPEG image data, JFIF standard 1.01
 ```
 {% endtab %}
@@ -303,7 +303,7 @@ $ echo hello world!
 {% endtab %}
 
 {% tab title="Output" %}
-```
+```text
 hello world!
 ```
 {% endtab %}
@@ -335,10 +335,9 @@ For concise description, please visit the _File Permissions_ section of the foll
 * Official Ubuntu tutorial: [https://ubuntu.com/tutorials/command-line-for-beginners\#1-overview](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
 * The Linux Command Line by William Shotts: [http://linuxcommand.org/tlcl.php](http://linuxcommand.org/tlcl.php) \(freely available\)
 
-****
-
 > ### Key Points
 >
 > * The computer can be controlled using a GUI or a CLI.
 > * Anything that you can do using the GUI can be done using a CLI.
 > * In the CLI, you have to issue commands with possibly some positional and optional arguments.
+

@@ -15,6 +15,20 @@ description: How to use the haflinger server
 
 # Server
 
+> ### Overview
+>
+> Questions
+>
+> * How to connect to haflinger server?
+> * What is the structure of the server?
+> * What is the general workflow on the server?
+>
+> Objectives
+>
+> * Learn how to set up connection with the server
+> * Understand the basic specifications of our server
+> * Study commands that are useful when working on the server
+
 ## The server and some basic information
 
 Microdata currently uses one server.

@@ -127,105 +127,113 @@ $ csvcut -c Car,MPG,Origin -d ";" cars-tutorial.csv | head -5 | csvlook
 
   The following command shows the summary statistics for the car, miles per gallon consumption and origin columns.
 
-  ```text
-  $ csvcut -c 1,2,9 -d ";" cars-tutorial.csv | csvstat | csvformat -D "."
-  ```
+{% tabs %}
+{% tab title="Bash" %}
+```bash
+$ csvcut -c 1,2,9 -d ";" cars-tutorial.csv | csvstat | csvformat -D "."
+```
+{% endtab %}
 
-  ```text
-  "  1. ""Car"""
+{% tab title="Output" %}
+```text
+"  1. ""Car"""
 
-    Type of data:          Text
-    Contains null values:  False
-    Unique values:         308
-    Longest value:         36 characters
-    Most common values:    Toyota Corolla (9x)
-                           Ford Pinto (6x)
-                           Ford Maverick (5x)
-                           AMC Matador (5x)
-                           Volkswagen Rabbit (5x)
+  Type of data:          Text
+  Contains null values:  False
+  Unique values:         308
+  Longest value:         36 characters
+  Most common values:    Toyota Corolla (9x)
+                         Ford Pinto (6x)
+                         Ford Maverick (5x)
+                         AMC Matador (5x)
+                         Volkswagen Rabbit (5x)
 
-  "  2. ""MPG"""
+"  2. ""MPG"""
 
-    Type of data:          Number
-    Contains null values:  False
-    Unique values:         130
-    Smallest value:        0
-    Largest value:         46.6
-    Sum:                   9 358.8
-    Mean:                  23.051
-    Median:                22.35
-    StDev:                 8.402
-    Most common values:    13 (20x)
-                           14 (19x)
-                           18 (17x)
-                           15 (16x)
-                           26 (14x)
+  Type of data:          Number
+  Contains null values:  False
+  Unique values:         130
+  Smallest value:        0
+  Largest value:         46.6
+  Sum:                   9 358.8
+  Mean:                  23.051
+  Median:                22.35
+  StDev:                 8.402
+  Most common values:    13 (20x)
+                         14 (19x)
+                         18 (17x)
+                         15 (16x)
+                         26 (14x)
 
-  "  3. ""Origin"""
+"  3. ""Origin"""
 
-    Type of data:          Text
-    Contains null values:  False
-    Unique values:         3
-    Longest value:         6 characters
-    Most common values:    US (254x)
-                           Japan (79x)
-                           Europe (73x)
+  Type of data:          Text
+  Contains null values:  False
+  Unique values:         3
+  Longest value:         6 characters
+  Most common values:    US (254x)
+                         Japan (79x)
+                         Europe (73x)
 
-  Row count: 406
-  ```
-
-  {: .output}
+Row count: 406
+```
+{% endtab %}
+{% endtabs %}
 
 * `csvsort` sorts the rows for the column specified \(either with a number or a name\) after the argument `-c`. Reversed order can be set by using `-r`.
 
   Based on the previous example, the highest value in miles per gallon is 46.6. If you want to search for this very fuel efficient car, one way is to sort the data in a reversed order.
 
-  ```text
-  $ csvcut -c 1,2 -d ";" cars-tutorial.csv | csvsort -c 2 -r | head -5 | csvlook | csvformat -D "."
-  ```
+{% tabs %}
+{% tab title="Bash" %}
+```bash
+$ csvcut -c 1,2 -d ";" cars-tutorial.csv | csvsort -c 2 -r | head -5 | csvlook | csvformat -D "."
+```
+{% endtab %}
 
-  {: .bash}
+{% tab title="Output" %}
+```text
+| Car                          |  MPG |
+| ---------------------------- | ---- |
+| Mazda GLC                    | 46.6 |
+| Honda Civic 1500 gl          | 44.6 |
+| Volkswagen Rabbit C (Diesel) | 44.3 |
+| Volkswagen Pickup            | 44.0 |
+```
+{% endtab %}
+{% endtabs %}
 
-  The output shows the four most fuel efficient cars. Mazda GLC, the most fuel efficient one has indeed a 46.6 miles per gallon consumption.
-
-  ```text
-  | Car                          |  MPG |
-  | ---------------------------- | ---- |
-  | Mazda GLC                    | 46.6 |
-  | Honda Civic 1500 gl          | 44.6 |
-  | Volkswagen Rabbit C (Diesel) | 44.3 |
-  | Volkswagen Pickup            | 44.0 |
-  ```
-
-  {: .output}
+The output shows the four most fuel efficient cars. Mazda GLC, the most fuel efficient one has indeed a 46.6 miles per gallon consumption.
 
 * `csvgrep` selects rows that match specific patterns, so in other words it can be used for filtering. The pattern may either be a string or an integer. The `-c` argument specifies the column in which the pattern is searched for \(either the column number or name can be used\), while -m defines the pattern.
 
   Following the previous examples, the car with the highest miles per gallon consumption \(which is 46.6\) is searched for.
 
-  ```text
-  $ csvgrep -c MPG -m 46.6 -d ";" cars-tutorial.csv | csvlook | csvformat -D "."
-  ```
+{% tabs %}
+{% tab title="Bash" %}
+```bash
+$ csvgrep -c MPG -m 46.6 -d ";" cars-tutorial.csv | csvlook | csvformat -D "."
+```
+{% endtab %}
 
-  {: .bash}
+{% tab title="Output" %}
+```text
+| Car       |  MPG | Cylinders | Displacement | Horsepower | Weight | Acceleration | Model | Origin |
+| --------- | ---- | --------- | ------------ | ---------- | ------ | ------------ | ----- | ------ |
+| Mazda GLC | 46.6 |         4 |           86 |         65 |  2 110 |         17.9 |    80 | Japan  |
+```
+{% endtab %}
+{% endtabs %}
 
-  The command yields the following output showing only cars with a 46.6 miles per gallon consumption. There is only one such car: Mazda GLC.
+The command yields an output showing only cars with a 46.6 miles per gallon consumption. There is only one such car: Mazda GLC.
 
-  ```text
-  | Car       |  MPG | Cylinders | Displacement | Horsepower | Weight | Acceleration | Model | Origin |
-  | --------- | ---- | --------- | ------------ | ---------- | ------ | ------------ | ----- | ------ |
-  | Mazda GLC | 46.6 |         4 |           86 |         65 |  2 110 |         17.9 |    80 | Japan  |
-  ```
+It is also possible to filter and separate the file based on a string variable. In the following example three different csv files are created based on the origin variable. We know from the `csvstat` command that there are three possible categories for origin: US, Japan and Europe.
 
-  {: .output}
-
-  It is also possible to filter and separate the file based on a string variable. In the following example three different csv files are created based on the origin variable. We know from the `csvstat` command that there are three possible categories for origin: US, Japan and Europe.
-
-  ```text
-  $ csvgrep -c Origin -m US -d ";" cars-tutorial.csv > cars-tutorial-us.csv
-  $ csvgrep -c Origin -m Japan -d ";" cars-tutorial.csv > cars-tutorial-japan.csv
-  $ csvgrep -c Origin -m Europe -d ";" cars-tutorial.csv > cars-tutorial-europe.csv
-  ```
+```text
+$ csvgrep -c Origin -m US -d ";" cars-tutorial.csv > cars-tutorial-us.csv
+$ csvgrep -c Origin -m Japan -d ";" cars-tutorial.csv > cars-tutorial-japan.csv
+$ csvgrep -c Origin -m Europe -d ";" cars-tutorial.csv > cars-tutorial-europe.csv
+```
 
 * `csvstack` appends datasets with identical column names. There might be cases where it makes sense to specify the `-g` argument which adds a column identifying the source csv. In the following example it is not needed.
 

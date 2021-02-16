@@ -19,6 +19,17 @@ keypoints:
 
 # Using the terminal
 
+> Questions
+>
+> * How to navigate in the terminal?
+> * How to execute commands and start applications?
+> * What are some of the most important command line tools?
+>
+> Objectives
+>
+> * Understanding how the command line interface works.
+> * Learn the most important command line operations.
+
 ## The Command Line Interface
 
 You probably mostly use your computer via something called a GUI, or Graphical User Interface. Practically any modern operating system comes with a GUI. It is the GUI that, for example, allows you to instruct your computer to run applications by double clicking on an application's icon instead of issuing your commands in writing.
@@ -321,4 +332,14 @@ For concise description, please visit the _File Permissions_ section of the foll
 * The Unix Shell: [https://swcarpentry.github.io/shell-novice/](https://swcarpentry.github.io/shell-novice/)
 * Official Ubuntu tutorial: [https://ubuntu.com/tutorials/command-line-for-beginners\#1-overview](https://ubuntu.com/tutorials/command-line-for-beginners#1-overview)
 * The Linux Command Line by William Shotts: [http://linuxcommand.org/tlcl.php](http://linuxcommand.org/tlcl.php) \(freely available\)
+
+
+
+> ### Key Points
+>
+> * The computer can be controlled using a GUI or a CLI.
+> * Anything that you can do using the GUI can be done using a CLI.
+> * In the CLI, you have to issue commands with possibly some positional and optional arguments.
+
+
 

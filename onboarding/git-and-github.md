@@ -30,7 +30,7 @@ description: A quick introduction
 > * How does the basic collaborative workflow look like?
 > * What are some of the most important git commands?
 >
-> Anwers
+> Objectives
 >
 > * Understand the basic terminology of Git and Github
 > * Install and setup git

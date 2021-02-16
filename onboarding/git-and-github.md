@@ -20,6 +20,23 @@ description: A quick introduction
 
 # Git and GitHub
 
+> ### Overview
+>
+> Questions
+>
+> * What are the basic terms used by version control systems?
+> * Which files are contained within the .git directory?
+> * How to install git?
+> * How does the basic collaborative workflow look like?
+> * What are some of the most important git commands?
+>
+> Anwers
+>
+> * Understand the basic terminology of Git and Github
+> * Install and setup git
+> * Understand the collaborative workflow and commit message etiquette
+> * List some of the most useful commands that can be easily accessed in your everyday work
+
 ## Version Control Basics
 
 There are various Version Control Systems such as:

@@ -94,3 +94,19 @@ If you are newly installing Stata on your computer, follow these instructions.
 
 If you use Ubuntu 20.04 LTS or newer, you are good to go. Otherwise you should visit [Python's official page](https://www.python.org/downloads/) and download the latest python version for your operating system. Always follow the installation guide on Python's website.
 
+## Bead
+
+{% tabs %}
+{% tab title="Windows" %}
+
+{% endtab %}
+
+{% tab title="MacOS" %}
+
+{% endtab %}
+
+{% tab title="Linux" %}
+
+{% endtab %}
+{% endtabs %}
+

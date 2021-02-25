@@ -34,9 +34,9 @@ Bash is a commonly-used shell that gives you the power to do simple tasks more q
 
 ## Git
 
+Git is a version control system that lets you track who made changes to what when and has options for easily updating a shared or public version of your code on [github.com](https://github.com/). You will need a [supported web browser](https://help.github.com/articles/supported-browsers/).
 
-
-quickly.
+ You will need an account at [github.com](https://github.com/) for parts of the Git lesson. Basic GitHub accounts are free. We encourage you to create a GitHub account if you don't have one already. Please consider what personal information you'd like to reveal. For example, you may want to review these [instructions for keeping your email address private](https://help.github.com/articles/keeping-your-email-address-private/) provided at GitHub.
 
 {% tabs %}
 {% tab title="Windows" %}
@@ -54,9 +54,7 @@ quickly.
 
 ## Text Editor
 
-
-
-quickly.
+When you're writing code, it's nice to have a text editor that is optimized for writing code, with features like automatic color-coding of key words. The default text editor on macOS and Linux is usually set to Vim, which is not famous for being intuitive. If you accidentally find yourself stuck in it, hit the `Esc` key, followed by `:`+`Q`+`!` \(colon, lower-case 'q', exclamation mark\), then hitting `Return` to return to the shell.
 
 {% tabs %}
 {% tab title="Windows" %}
@@ -74,9 +72,9 @@ quickly.
 
 ## Stata
 
+In MicroData we use Stata 16 MP. If you do not have a Stata license, please let your instructor know so that they can request one for you.
 
-
-quickly.
+If you are newly installing Stata on your computer, follow these instructions.
 
 {% tabs %}
 {% tab title="Windows" %}

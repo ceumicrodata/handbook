@@ -32,6 +32,66 @@ Bash is a commonly-used shell that gives you the power to do simple tasks more q
 {% endtab %}
 {% endtabs %}
 
+## Git
+
+
+
+quickly.
+
+{% tabs %}
+{% tab title="Windows" %}
+
+{% endtab %}
+
+{% tab title="MacOS" %}
+
+{% endtab %}
+
+{% tab title="Linux" %}
+
+{% endtab %}
+{% endtabs %}
+
+## Text Editor
+
+
+
+quickly.
+
+{% tabs %}
+{% tab title="Windows" %}
+
+{% endtab %}
+
+{% tab title="MacOS" %}
+
+{% endtab %}
+
+{% tab title="Linux" %}
+
+{% endtab %}
+{% endtabs %}
+
+## Stata
+
+
+
+quickly.
+
+{% tabs %}
+{% tab title="Windows" %}
+
+{% endtab %}
+
+{% tab title="MacOS" %}
+
+{% endtab %}
+
+{% tab title="Linux" %}
+
+{% endtab %}
+{% endtabs %}
+
 ## Python 3
 
 If you use Ubuntu 20.04 LTS or newer, you are good to go. Otherwise you should visit [Python's official page](https://www.python.org/downloads/) and download the latest python version for your operating system. Always follow the installation guide on Python's website.

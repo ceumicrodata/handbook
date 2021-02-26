@@ -93,23 +93,6 @@ The .git directory contains:
 * objects directory - stores all the commits
 * refs directory - holds pointers to commits \(e.g "branch" and "tag"\) 
 
-### Install, setup git
-
-* Supported browsers: current versions of Chrome, Firefox, Safari, Microsoft Edge    
-* Create a [GitHub](https://github.com/) account              
-* Install [git](https://git-scm.com/downloads)   
-  * If you are on a Mac, git should already be installed.        
-  * If you are using a Windows machine, this will also install a program called _Git Bash_, which provides a text-based interface for executing commands on your computer.
-* Configure installation    
-  * `git config --global user.name "your-full-name"`    
-  * `git config --global user.email "your-email-address"`     
-* SSH key: for faster usage \(no password will be needed afterwards\)    
-  * Check if you already have: Is it anything in .ssh? `ls .ssh`    
-    * if no, create a new one and [add to ssh agent](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)                             
-    * if yes, go to next step        
-  * [Add new SSH key](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account) to your github account           
-* Download [Sublime Merge](https://www.sublimemerge.com/download) \(recommended git client\) 
-
 ### Git workflow
 
 #### Making changes

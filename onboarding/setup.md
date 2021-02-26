@@ -95,15 +95,21 @@ When you're writing code, it's nice to have a text editor that is optimized for 
 
 {% tabs %}
 {% tab title="Windows" %}
+nano is a basic editor and the default that we use, it is installed along with Git.
 
+Other editors that you can use are [Notepad++](https://notepad-plus-plus.org/) or [Sublime Text](https://www.sublimetext.com/). **Be aware that you must add its installation directory to your system path.** Please ask your instructor to help you do this.
 {% endtab %}
 
 {% tab title="MacOS" %}
+nano is a basic editor and the default that we use. See the Git installation [video tutorial](https://www.youtube.com/watch?v=9LQhwETCdwY) for an example on how to open nano. It should be pre-installed.
 
+Other editors that you can use are [BBEdit](https://www.barebones.com/products/bbedit/) or [Sublime Text](https://www.sublimetext.com/).
 {% endtab %}
 
 {% tab title="Linux" %}
+nano is a basic editor and the default that instructors use in the workshop. It should be pre-installed.
 
+Other editors that you can use are [Gedit](https://wiki.gnome.org/Apps/Gedit), [Kate](https://kate-editor.org/) or [Sublime Text](https://www.sublimetext.com/).
 {% endtab %}
 {% endtabs %}
 

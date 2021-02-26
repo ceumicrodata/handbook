@@ -101,51 +101,6 @@ It is important to mention that we should not create a new bead with a name alre
 
 A _box_ is where beads are saved to and loaded from. It also gives names to beads and provide minimal search functionality. Currently, boxes are implemented a flat directories on the file system.
 
-## Installing `bead`
-
-1. install python if not already installed.
-
-   Latest release depends on Python 3.8.5.
-
-2. download latest version from [https://github.com/e3krisztian/bead/releases/tag/v0.8.1](https://github.com/e3krisztian/bead/releases/tag/v0.8.1)
-
-   you will need only the platform specific binary:
-
-   * `bead` for linux & mac
-   * `bead.cmd` for windows
-
-3. put the downloaded file in a location, that is on the PATH
-
-   for Linux known good locations are:
-
-   * `$HOME/bin`  \(single-user, laptop, desktop, traditional location\)
-   * `$HOME/.local/bin` \(single-user, laptop, desktop, new XDG standard?\)
-   * `/usr/local/bin` \(system, servers, multi-user\)
-
-   for windows the python/scripts directory is a good candidate.
-
-4. \(linux and mac only\): make the file executable
-
-For user install, the directories do not exist by default and they are only added to the `PATH` if exist.
-
-E.g. the following commands would install version v0.8.1 \(latest release at the time of writing\) on linux:
-
-```text
-# ensure user bin directory existst (for user specific scripts)
-mkdir -p ~/.local/bin
-# download bead
-cd ~/.local/bin
-wget https://github.com/e3krisztian/bead/releases/download/v0.8.1/bead
-# make executable
-chmod +x bead
-# go back to work directory
-cd -
-```
-
-
-
-\(source: [https://stackoverflow.com/c/ceu-microdata/questions/18](https://stackoverflow.com/c/ceu-microdata/questions/18)\)
-
 ## Basic workflow
 
 ![](../.gitbook/assets/workflows.png)

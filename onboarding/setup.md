@@ -115,7 +115,7 @@ Other editors that you can use are [Gedit](https://wiki.gnome.org/Apps/Gedit), [
 
 ## Stata
 
-In MicroData we use Stata 16 MP. If you do not have a Stata license, please let your instructor know so that they can request one for you.
+In MicroData we use the statistical package [Stata](https://www.stata.com/products/)[™](https://korenmiklos.github.io/2020-08-23-eea/license.html), version Stata 16 MP. If you do not have a Stata license, please let your instructor know so that they can request one for you.
 
 If you are newly installing Stata on your computer, follow these instructions.
 
@@ -139,17 +139,44 @@ If you use Ubuntu 20.04 LTS or newer, you are good to go. Otherwise you should v
 
 ## Bead
 
-{% tabs %}
-{% tab title="Windows" %}
+For user install, the directories do not exist by default and they are only added to the `PATH` if exist.
 
-{% endtab %}
+1. install python if not already installed.
 
-{% tab title="MacOS" %}
+   Latest release depends on Python 3.8.5.
 
-{% endtab %}
+2. download latest version from [https://github.com/e3krisztian/bead/releases/tag/v0.8.1](https://github.com/e3krisztian/bead/releases/tag/v0.8.1)
 
-{% tab title="Linux" %}
+   you will need only the platform specific binary:
 
-{% endtab %}
-{% endtabs %}
+   * `bead` for linux & mac
+   * `bead.cmd` for windows
+
+3. put the downloaded file in a location, that is on the PATH
+
+   for Linux known good locations are:
+
+   * `$HOME/bin`  \(single-user, laptop, desktop, traditional location\)
+   * `$HOME/.local/bin` \(single-user, laptop, desktop, new XDG standard?\)
+   * `/usr/local/bin` \(system, servers, multi-user\)
+
+   for windows the python/scripts directory is a good candidate.
+
+4. \(linux and mac only\): make the file executable
+
+E.g. the following commands would install version v0.8.1 \(latest release at the time of writing\) on linux:
+
+```text
+# ensure user bin directory existst (for user specific scripts)
+mkdir -p ~/.local/bin
+# download bead
+cd ~/.local/bin
+wget https://github.com/e3krisztian/bead/releases/download/v0.8.1/bead
+# make executable
+chmod +x bead
+# go back to work directory
+cd -
+```
+
+\(source: [https://stackoverflow.com/c/ceu-microdata/questions/18](https://stackoverflow.com/c/ceu-microdata/questions/18)\)
 

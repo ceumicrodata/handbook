@@ -53,5 +53,51 @@ If you choose the PIM option AFTER you entered the password, you also must type 
 * When the encryption is running turn off sleep mode and do not turn off the computer!
 * When the encryption is ready and you restart your machine, you should see “System drive” in your VeraCrypt window.
 
+## Linux \(Ubuntu 18.04\)
+
+The new Dell XPS/Ubuntu laptops at MicroData are already encrypted.
+
+I strongly advise to encrypt the whole disk with luks when you install your OS instead of encrypting a single folder. The latter is also feasible but much less convenient.
+
+To create an encrypted folder use ecryptfs. First you need to install it by opening up a terminal and issuing the following command \(you will get prompted for a password\):
+
+```text
+sudo apt-get -y install ecryptfs-utils
+```
+
+Create a new directory that we will encrypt. In this example, it is the directory called `secure` within the `home` folder of the currently logged in user:
+
+```text
+mkdir ~/secure
+```
+
+Now we encrypt it by mounting it with encryptfs:
+
+```text
+sudo mount -t ecryptfs ~/secure ~/secure
+```
+
+You will get prompted for your password and then a passphrase. Choose a strong passphrase. You have to select a cipher. Select `aes: blocksize = 16; min keysize = 16; max keysize = 32`. Yo have to select a key size. Select 32. You will be asked if you want to enable plaintext passthrough. Select no. You will be asked if you want to enable filename encryption. Select yes. When you are asked for a Filename Encryption Key \(FNEK\) Signature just press enter. When it asks if you would like to proceed with the mount, select yes. When it asks if you would like to append sig \[list of chars\] to \[/root/.ecryptfs/sig-cache.txt\] in order to avoid this warning in the future select yes.
+
+Your encrypted folder is now ready. To unmount it, type:
+
+```text
+sudo umount ~/secure
+```
+
+You can mount it again anytime by
+
+```text
+sudo mount -t ecryptfs ~/secure/ ~/secure/ -o ecryptfs_cipher=aes,ecryptfs_key_bytes=32,ecryptfs_passthrough=no,ecryptfs_enable_filename_crypto=yes
+```
+
+Just type your passphrase and press enter when it asks for your FNEK.
+
+## Mac
+
+Create an encrypted .dmg disk image, which can be mounted. Using Disk Utility, select "Create new image" and choose "Encryption". Create a long-enough password to make it secure. Give the image a short but memorable name \(say, `Data3`\). You can easily set up an image of even 20GB or more. Put the .dmg file somewhere where you can easily access it.
+
+Double-click the .dmg file to mount it. After you enter the password, the encrypted "drive" will be mounted under `/Volumes/name-of-image`. [source](https://www.howtogeek.com/183826/how-to-create-an-encrypted-file-container-disk-image-on-a-mac/)
+
 \(source: [https://stackoverflow.com/c/ceu-microdata/questions/32](https://stackoverflow.com/c/ceu-microdata/questions/32) \)
 

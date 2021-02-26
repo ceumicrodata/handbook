@@ -11,7 +11,8 @@
 * [Git and GitHub](onboarding/git-and-github.md)
 * [Server](onboarding/server.md)
 * [Bead](onboarding/bead.md)
-* [Working with data](onboarding/working-with-data.md)
+* [Working with data](onboarding/working-with-data/README.md)
+  * [Storing CAT3 data](onboarding/working-with-data/storing-cat3-data.md)
 * [Best practices](onboarding/best-practices.md)
 * [Stata style guide](onboarding/stata-style-guide.md)
 

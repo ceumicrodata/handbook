@@ -1,0 +1,57 @@
+---
+description: How do I create an encrypted folder on my computer?
+---
+
+# Storing CAT3 data
+
+CAT3 data can only be stored on ecrypted medium. How do I create such a folder on Windows, Mac and Ubuntu?
+
+## Encryption tutorial for windows systems
+
+How to choose the best data protection, encryption technology? [https://www.youtube.com/watch?v=12pQG8sHILY](https://www.youtube.com/watch?v=12pQG8sHILY)
+
+_Check your computer have a built-in SED SSD or HDD_
+
+If you have a Self-Encrypting Drive \(SED\) SSD you can turn on that. Find a proper YouTube video how to turn on SED or write to me.
+
+Check you SSD here: /Control\_panel/Device\_manager/Disk\_drives
+
+_Turn on Windows Bitlocker._
+
+The latest Windows products have built in Bitlocker software. Only in Win 7 PRO version DON’T have.
+
+Tutorial for Win 8/10:
+
+[https://www.youtube.com/watch?v=5o9zGAOOg4c](https://www.youtube.com/watch?v=5o9zGAOOg4c)
+
+_Use VeraCrypt for Full Disk Encryption \(FDE\)_
+
+[https://www.youtube.com/watch?v=i\_WkMELC790&t=178s](https://www.youtube.com/watch?v=i_WkMELC790&t=178s) In my case FDE successfully created with VeraCrypt 1.19 on my Dell Latitude E6430, WIN 7 Pro, with Micron C400 RealSSD 2.5”. Steps:
+
+* Download and install VeraCrypt. [https://www.veracrypt.fr/en/Downloads.html](https://www.veracrypt.fr/en/Downloads.html)
+* Run and click Create Volume.
+* Choose: Encrypt the system partition or entire system drive.
+* Type of system protection – Normal.
+* Encrypt the whole drive – Attention: The program says if you have Recovery drive the VeraCrypt boot loader can cause damage.
+
+Check Disk Management. \(Write “partition” to Search field.\)
+
+Despite the attention I choose “NO” because I want a FDE and there were no problems with the boot.
+
+* Encryption of host protected area I choose “YES”. If you have SDD and ALSO a HDD \(RAID system\) choose “NO”
+* Encryption options: AES – SHA 256. If you choose complicated encryption algorithm the encryption process takes more time.
+* Password: Choose minimum 20 characters. Write it somewhere! \(Phone, Paper etc.\) I used this site for help: [http://www.xorbin.com/tools/password-generator](http://www.xorbin.com/tools/password-generator)
+
+When you will enter the code when your system boot, you must use US/EN keyboard settings. So be careful with @\#$ characters. \(US keyboard Shift+2, Shift+3, Shift+4\)
+
+If you choose the PIM option AFTER you entered the password, you also must type numbers as a second password. If you choose a big number for PIM, the boot time will dramatically increase! I don’t use PIM number but I have a very strong password!
+
+* Do the encryption choose “game” with you mouse. 
+* Save a rescue disk. It is good if the booting menu or the BIOS have some errors. With a rescue disk, you can decrypt your hard disk drive. I save the rescue disk iso file to a USB drive and skip this step because my DVD burner doesn’t work. If you have a DVD burner do this step.
+* Wipe mode: I choose zero because of the encryption speed.
+* When you restart your machine, you can try your password.
+* When the encryption is running turn off sleep mode and do not turn off the computer!
+* When the encryption is ready and you restart your machine, you should see “System drive” in your VeraCrypt window.
+
+\(source: [https://stackoverflow.com/c/ceu-microdata/questions/32](https://stackoverflow.com/c/ceu-microdata/questions/32) \)
+

@@ -53,6 +53,12 @@ If you choose the PIM option AFTER you entered the password, you also must type 
 * When the encryption is running turn off sleep mode and do not turn off the computer!
 * When the encryption is ready and you restart your machine, you should see “System drive” in your VeraCrypt window.
 
+## Mac
+
+Create an encrypted .dmg disk image, which can be mounted. Using Disk Utility, select "Create new image" and choose "Encryption". Create a long-enough password to make it secure. Give the image a short but memorable name \(say, `Data3`\). You can easily set up an image of even 20GB or more. Put the .dmg file somewhere where you can easily access it.
+
+Double-click the .dmg file to mount it. After you enter the password, the encrypted "drive" will be mounted under `/Volumes/name-of-image`. [source](https://www.howtogeek.com/183826/how-to-create-an-encrypted-file-container-disk-image-on-a-mac/)
+
 ## Linux \(Ubuntu 18.04\)
 
 The new Dell XPS/Ubuntu laptops at MicroData are already encrypted.
@@ -92,12 +98,6 @@ sudo mount -t ecryptfs ~/secure/ ~/secure/ -o ecryptfs_cipher=aes,ecryptfs_key_b
 ```
 
 Just type your passphrase and press enter when it asks for your FNEK.
-
-## Mac
-
-Create an encrypted .dmg disk image, which can be mounted. Using Disk Utility, select "Create new image" and choose "Encryption". Create a long-enough password to make it secure. Give the image a short but memorable name \(say, `Data3`\). You can easily set up an image of even 20GB or more. Put the .dmg file somewhere where you can easily access it.
-
-Double-click the .dmg file to mount it. After you enter the password, the encrypted "drive" will be mounted under `/Volumes/name-of-image`. [source](https://www.howtogeek.com/183826/how-to-create-an-encrypted-file-container-disk-image-on-a-mac/)
 
 \(source: [https://stackoverflow.com/c/ceu-microdata/questions/32](https://stackoverflow.com/c/ceu-microdata/questions/32) \)
 

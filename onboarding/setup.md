@@ -63,15 +63,17 @@ Git is a version control system that lets you track who made changes to what whe
 
 {% tabs %}
 {% tab title="Windows" %}
-
+Git should be installed on your computer as part of your Bash install \(described above\).
 {% endtab %}
 
 {% tab title="MacOS" %}
+ [Video Tutorial](https://www.youtube.com/watch?v=9LQhwETCdwY)
 
+ **For OS X 10.9 and higher**, install Git for Mac by downloading and running the most recent "mavericks" installer from [this list](http://sourceforge.net/projects/git-osx-installer/files/). Because this installer is not signed by the developer, you may have to right click \(control click\) on the .pkg file, click Open, and click Open on the pop up window. After installing Git, there will not be anything in your `/Applications` folder, as Git is a command line program. **For older versions of OS X \(10.5-10.8\)** use the most recent available installer labelled "snow-leopard" [available here](http://sourceforge.net/projects/git-osx-installer/files/).
 {% endtab %}
 
 {% tab title="Linux" %}
-
+ If Git is not already available on your machine you can try to install it via your distro's package manager. For Debian/Ubuntu run `sudo apt-get install git` and for Fedora run `sudo dnf install git`.
 {% endtab %}
 {% endtabs %}
 

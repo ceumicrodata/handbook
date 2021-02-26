@@ -77,6 +77,18 @@ Git should be installed on your computer as part of your Bash install \(describe
 {% endtab %}
 {% endtabs %}
 
+After installation, the further steps are recommended:
+
+* Configure installation    
+  * `git config --global user.name "your-full-name"`    
+  * `git config --global user.email "your-email-address"`     
+* SSH key: for faster usage \(no password will be needed afterwards\)    
+  * Check if you already have: Is it anything in .ssh? `ls .ssh`    
+    * if no, create a new one and [add to ssh agent](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)                             
+    * if yes, go to next step        
+  * [Add new SSH key](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account) to your github account           
+* Download [Sublime Merge](https://www.sublimemerge.com/download) \(recommended git client\) 
+
 ## Text Editor
 
 When you're writing code, it's nice to have a text editor that is optimized for writing code, with features like automatic color-coding of key words. The default text editor on macOS and Linux is usually set to Vim, which is not famous for being intuitive. If you accidentally find yourself stuck in it, hit the `Esc` key, followed by `:`+`Q`+`!` \(colon, lower-case 'q', exclamation mark\), then hitting `Return` to return to the shell.

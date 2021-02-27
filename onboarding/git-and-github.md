@@ -95,11 +95,9 @@ The .git directory contains:
 
 #### Git LFS
 
-Git Large File Storage \(LFS\) is a useful Git extension if someone has to version large files—even those as large as a couple GB in size—with Git. Large files make fetching and pulling quite slow, so it is recommended to `git lfs install` in the repo with files larger than 1-10 MB size \(depending on project\) and then `git lfs track` the given large files. To have a list of which files to track in Git LFS, you can type in the command line: `find . -type f -size +1M`, it finds large files \(grater than eg. 1MB\) in a given folder.
+GitHub recommends repositories remain small, ideally less than 1 GB, and less than 5 GB is strongly recommended. Smaller repositories are faster to clone and easier to work with and maintain. Individual files in a repository are strictly limited to a 100 MB maximum size limit, and git gives a warning for updating files larger than 50 MB.Git Large File Storage \(LFS\) is a useful Git extension if someone has to version large files—even those as large as a couple GB in size—with Git. Git LFS replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server like GitHub.com or GitHub Enterprise. You can download the extension here: [https://git-lfs.github.com/](https://git-lfs.github.com/). Furhter informations about installation for Mac/Windows/Linux can be found here: [https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage](https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage).
 
-Git LFS replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server like GitHub.com or GitHub Enterprise. You can download the extension here: [https://git-lfs.github.com/](https://git-lfs.github.com/). Furhter informations about installation for Mac/Windows/Linux can be found here: [https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage](https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage).
-
-
+ Large files make fetching and pulling quite slow, so it is recommended to `git lfs install` in the repo with files larger than 1-10 MB size \(depending on project\) and then `git lfs track` the given large files. To have a list of which files to track in Git LFS, you can type in the command line: `find . -type f -size +1M`, it finds large files \(grater than eg. 1MB\) in a given folder.
 
 ### Git workflow
 

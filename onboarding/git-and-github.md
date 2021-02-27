@@ -93,6 +93,14 @@ The .git directory contains:
 * objects directory - stores all the commits
 * refs directory - holds pointers to commits \(e.g "branch" and "tag"\) 
 
+#### Git LFS
+
+Git Large File Storage \(LFS\) is a useful Git extension if someone has to version large files—even those as large as a couple GB in size—with Git. Large files make fetching and pulling quite slow, so it is recommended to `git lfs install` in the repo with files larger than 1-10 MB size \(depending on project\) and then `git lfs track` the given large files. To have a list of which files to track in Git LFS, you can type in the command line: `find . -type f -size +1M`, it finds large files \(grater than eg. 1MB\) in a given folder.
+
+Git LFS replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server like GitHub.com or GitHub Enterprise. You can download the extension here: [https://git-lfs.github.com/](https://git-lfs.github.com/). Furhter informations about installation for Mac/Windows/Linux can be found here: [https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage](https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage).
+
+
+
 ### Git workflow
 
 #### Making changes

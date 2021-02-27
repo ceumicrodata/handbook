@@ -223,6 +223,22 @@ This script has create a text file in `output/greeting`. Let us verify its conte
 Hello World!
 ```
 
+Load specific version of an input in bead
+
+I want to roll back analysis. I have cherry picked by bead meta, but how do I load the exact bead versions into the input folder?
+
+You need to `bead input delete` it first, and then `bead input add` the version you would like to use. `bead input load` and `bead input unload` do not touch the bead meta, they only load the data specified in the meta to the input folder or delete them from the input folder \(to free up disk\).
+
+Bead input have a time option. For example: you have two versions with different time stamps. address\_balance\_20180823T120149294589+0200.zip address\_balance\_20200317T111341998516+0100.zip
+
+If you want to use version 20180823 you can type:
+
+`bead input add address_balance -t 20180823`
+
+You have to use the bead name and the yyyymmdd part of the timestamp with the -t option.
+
+\(source: [https://stackoverflow.com/c/ceu-microdata/questions/40](https://stackoverflow.com/c/ceu-microdata/questions/40)\)
+
 ### Visually display the bead chain
 
 Bead web is a new feature of version 0.8.1. You can check the details with `bead web -h`

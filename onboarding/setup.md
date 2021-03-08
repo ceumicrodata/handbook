@@ -87,7 +87,7 @@ After installation, the further steps are recommended:
     * if no, create a new one and [add to ssh agent](https://help.github.com/en/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)                             
     * if yes, go to next step        
   * [Add new SSH key](https://help.github.com/en/articles/adding-a-new-ssh-key-to-your-github-account) to your github account           
-* Download [Sublime Merge](https://www.sublimemerge.com/download) \(recommended git client\) 
+* Download [Sublime Merge](https://www.sublimemerge.com/download) \(recommended git client\)
 
 ## Text Editor
 
@@ -180,3 +180,4 @@ cd -
 
 \(source: [https://stackoverflow.com/c/ceu-microdata/questions/18](https://stackoverflow.com/c/ceu-microdata/questions/18)\)
 
+A useful script to install required programs on Linux can be found here: https://github.com/ceumicrodata/handbook/blob/master/post_install.sh

@@ -47,7 +47,7 @@ You can connect to the graphical interface \(windows-like\) on haflinger.ceu.hu 
 
 ### Linux
 
-You can connect to the servers from a Terminal window using either of the following commands \(substitute your username and port number appropriately\):
+You can connect to the server from a Terminal window using the following command \(substitute your username and port number appropriately\):
 
 ```text
   $ ssh USER@haflinger.ceu.hu -p PORT -X
@@ -55,7 +55,7 @@ You can connect to the servers from a Terminal window using either of the follow
 
 ### MacOS
 
-You can connect to the servers from a Terminal window using either of the following commands \(substitute your username and port number appropriately\)
+You can connect to the server from a Terminal window using the following command \(substitute your username and port number appropriately\)
 
 ```bash
   $ ssh USER@haflinger.ceu.hu -p PORT
@@ -117,15 +117,15 @@ This allows you to connect to the haflinger server by typing the `ssh haflinger`
 
 ## Structure of the server and general workflow
 
-When connecting to the server, you are directed to your home folder \`/home/USER\_NAME'. Only you have access to your home folder and you can use it for developing your own projects.
+When connecting to the server, you are directed to your home folder \`/home/USER\_NAME'. Only you have access to your home folder. This folder should only be used to store configuration files (like ssh keys, etc.).
 
-For Microdata project work, however, you should be working in your sandbox located at `/srv/sandbox/USER_NAME`. Working in your sandbox allows others to check your work and develop projects collaboratively.
+For any project work you should be working in your sandbox located at `/srv/sandbox/USER_NAME`. Working in your sandbox allows others to check your work and develop projects collaboratively. Folders with limited access for certain projects are located in `/srv/project`. In case you need a separate project folder with access limitation you should contact a project manager.
 
 When saving your bead, a copy of your work is created in .zip format in one of the beadboxes. The beadboxes are located at `/srv/bead-box/`. For more information on the use of bead, please visit the corresponding episode on this website.
 
 ### Creating alias to your sandbox
 
-You can create aliases that simplifies your access to you sandbox. For that, you need to add the following commands to your `.bashrc` file: \(substitute your username appropriately\)
+You can create aliases that simplifiy your access to you sandbox and other directories. For that, you need to add the following commands to your `.bashrc` file: \(substitute your username appropriately\)
 
 ```text
 alias sandbox='cd /srv/sandbox/USER_NAME'
@@ -134,6 +134,8 @@ alias sandbox='cd /srv/sandbox/USER_NAME'
 The `.bashrc` is located in your home folder \(`home/USER`\).
 
 Then, you can access your sandbox by typing `sandbox` to the command line.
+
+You can create similar aliases for other frequently used locations similarly.
 
 ## Useful server tools
 
@@ -152,7 +154,7 @@ It is worth noting that on Ubuntu systems you don't need any additional client f
 
 ### Screen
 
-Working in screen allows users to exit the servers without terminating the running processes. Therefore, you should always work in screen when running complex programs that run for longer time. For instructions on how to open and close a screen window, see the 'Useful server commands' section below.
+Working in screen allows users to exit the server without terminating the running processes. Processes started in a screen will also continue running in case of a connection issue. Therefore, you should always work in screen when running complex programs that run for longer time. For instructions on how to open and close a screen window, see the 'Useful server commands' section below.
 
 ### Virtual environment
 
@@ -212,7 +214,7 @@ The servers run both python2 or python3. You can access them by typing `python2`
 | `pip3 install -r requirements.txt` | Install requirements for virtual environment listed in requirements.txt |
 | `pip3 install -r requirements_packages.txt -f packages/` | Install every requirement that are contained in a folder \(as files\) |
 | `pip freeze` | Show downloaded python libraries |
-| `pip freeze -> requirements.txt` | List the currently downloaded python packages |
+| `pip freeze -> requirements.txt` | Export the currently downloaded python packages to a text file |
 | `exit` | Terminate connection with the server |
 
 ## Contacts

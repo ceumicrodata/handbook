@@ -108,10 +108,10 @@ This allows you to connect to the haflinger server by typing the `ssh haflinger`
 Add the following lines to your `.bashrc` file located in your home folder \(by typing `nano .bashrc`\):
 
 ```bash
-alias haflinger='ssh USER@haflinger.ceu.hu -p PORT'
+alias haflinger='ssh USER@haflinger.ceu.hu -p PORT -X'
 ```
 
-This allows you to connect to the haflinger server by typing the `ssh haflinger` command.
+This allows you to connect to the haflinger server by typing the `haflinger` command.
 
 #### Windows
 
@@ -199,7 +199,7 @@ You can access the STATA program with graphical user interface on the haflinger.
 
 ### Python
 
-The servers run both python2 or python3. You can access them by typing `python2` for python2 \(current version 2.7.18\) and `python` for python3 \(current version 3.8.5\). To leave the python shell and return to the system shell, type the python command `exit()`.
+The servers run both python2 and python3. You can access them by typing `python2` for python2 \(current version 2.7.18\) and `python` for python3 \(current version 3.8.5\). To leave the python shell and return to the system shell, type the python command `exit()`.
 
 ## Useful server commands:
 

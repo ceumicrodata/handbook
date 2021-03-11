@@ -9,7 +9,7 @@ description: To-dos before starting the onboarding process
 >
 > Make sure that you have a signed contract. Even though some lessons are useful in general, it is best if you have full access to the microdata resources \(e.g. server, slack, github, etc.\) first. To gain access to every resource, you need a CEU-issued e-mail address, which you should receive shortly after signing your contract.
 
-Follow the checklist below to make sure the new member has access to every resource.
+A project manager should go through the checklist below to make sure you have access to every resource.
 
 * Add new member to the ceumicrodata Slack. You can follow [these steps.](https://slack.com/intl/en-hu/help/articles/201330256-Invite-new-members-to-your-workspace)
 * Send invitation to GitHub team. This has to be done by a GitHub team owner. You can find the owners of the team [here.](https://github.com/orgs/ceumicrodata/people)
@@ -18,6 +18,6 @@ Follow the checklist below to make sure the new member has access to every resou
 * Add them to the Political Connections dropbox folder \(if needed\). Any member can do this. If you need help, [follow this guide.](https://help.dropbox.com/files-folders/share/share-with-others)
 * Request a CEU-issued e-mail address. Ask a project administrator for help with this.
 * Request CEU VPN access. Ask a project administrator for help with this.
-* Once the VPN access is ready, request server access to percheron1 and percheron2. Write to the admin Slack channel with the VPN username and an e-mail address that the new member uses.
+* Once the VPN access is ready, request server access to haflinger. Write to the admin Slack channel with the VPN username and an e-mail address that the new member uses.
 * Invite them to the microdata stackoverflow \(requires CEU e-mail address\). To invite, direct them to [this page.](https://stackoverflow.com/c/ceu-microdata) They can auto-join after registering with a CEU-issued e-mail address.
 

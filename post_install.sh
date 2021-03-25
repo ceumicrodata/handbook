@@ -8,6 +8,7 @@ sudo apt-get install chromium-browser
 
 # VPN
 sudo apt-get install openconnect
+sudo apt-get install network-manager-openconnect network-manager-openconnect-gnome
 
 # htop
 sudo apt-get install htop
@@ -29,8 +30,8 @@ sudo apt-get install jupyter-notebook
   mkdir /tmp/zoom
   cd /tmp/zoom
   wget https://zoom.us/client/latest/zoom_amd64.deb
-  sudo dpkg -i zoom_amd64.deb
-  # rm zoom_amd64.deb
+  sudo apt install ./zoom_amd64.deb
+# rm zoom_amd64.deb
   sudo apt-get install -f
 )
 

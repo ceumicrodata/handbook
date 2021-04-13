@@ -137,32 +137,25 @@ If you use Ubuntu 20.04 LTS or newer, you are good to go. Otherwise you should v
 
 ## Bead
 
-For user install, the directories do not exist by default and they are only added to the `PATH` if exist.
+0. (windows only:) Install Git Bash
+1. Install python if not already installed.
 
-1. install python if not already installed.
+   Latest release depends on Python 3.8.5., python 3 only (requires at least 3.6, may not even run on 3.6).
+   You can check the version of your Python from the terminal with `pyton -V`.
 
-   Latest release depends on Python 3.8.5.
+2. Download latest version from [https://github.com/e3krisztian/bead/releases/tag/v0.8.1](https://github.com/e3krisztian/bead/releases/tag/v0.8.1)
 
-2. download latest version from [https://github.com/e3krisztian/bead/releases/tag/v0.8.1](https://github.com/e3krisztian/bead/releases/tag/v0.8.1)
+   you will need only the platform specific binary: `bead`
 
-   you will need only the platform specific binary:
-
-   * `bead` for linux & mac
-   * `bead.cmd` for windows
-
-3. put the downloaded file in a location, that is on the PATH
-
-   for Linux known good locations are:
+3. Put the downloaded file in a location, that is on the PATH
 
    * `$HOME/bin`  \(single-user, laptop, desktop, traditional location\)
    * `$HOME/.local/bin` \(single-user, laptop, desktop, new XDG standard?\)
    * `/usr/local/bin` \(system, servers, multi-user\)
 
-   for windows the python/scripts directory is a good candidate.
-
 4. \(linux and mac only\): make the file executable
 
-E.g. the following commands would install version v0.8.1 \(latest release at the time of writing\) on linux:
+E.g. the following commands would install version v0.8.1 \(latest release at the time of writing\) on linux and mac:
 
 ```text
 # ensure user bin directory existst (for user specific scripts)
@@ -172,11 +165,9 @@ cd ~/.local/bin
 wget https://github.com/e3krisztian/bead/releases/download/v0.8.1/bead
 # make executable
 chmod +x bead
-# go back to work directory
-cd -
 ```
+At the end, you can check whether your installation was successful by typing `bead version` to the terminal, then it should show v0.8.1.
 
 \(source: [https://stackoverflow.com/c/ceu-microdata/questions/18](https://stackoverflow.com/c/ceu-microdata/questions/18)\)
 
 A useful script to install required programs on Linux can be found here: [https://github.com/ceumicrodata/handbook/blob/master/post\_install.sh](https://github.com/ceumicrodata/handbook/blob/master/post_install.sh)
-

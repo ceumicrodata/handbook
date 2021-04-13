@@ -162,7 +162,7 @@ E.g. the following commands would install version v0.8.1 \(latest release at the
 mkdir -p ~/.local/bin
 # download bead
 cd ~/.local/bin
-wget https://github.com/e3krisztian/bead/releases/download/v0.8.1/bead
+curl -sLo bead https://github.com/e3krisztian/bead/releases/download/v0.8.1/bead
 # make executable
 chmod +x bead
 ```

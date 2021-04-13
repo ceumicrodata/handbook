@@ -140,8 +140,8 @@ If you use Ubuntu 20.04 LTS or newer, you are good to go. Otherwise you should v
 0. (windows only:) Install Git Bash
 1. Install python if not already installed.
 
-   Latest release depends on Python 3.8.5., python 3 only (requires at least 3.6, may not even run on 3.6).
-   You can check the version of your Python from the terminal with `pyton -V`.
+   Latest release depends on Python 3.8.5., Python 3 only (requires at least 3.6, may not even run on 3.6?).
+   You can check the version of your Python from the terminal with `python -V`.
 
 2. Download latest version from [https://github.com/e3krisztian/bead/releases/tag/v0.8.1](https://github.com/e3krisztian/bead/releases/tag/v0.8.1)
 

@@ -12,7 +12,7 @@ This is a comprehensive list of what you are going to need throughout these less
 > * BEAD executable
 > * Git installation, Git Bash on Windows
 
-Let's go through them one by one.
+A useful script to install required programs on Linux can be found here: [https://github.com/ceumicrodata/handbook/blob/master/post\_install.sh](https://github.com/ceumicrodata/handbook/blob/master/post_install.sh). Let's go through them one by one.
 
 ## The Bash Shell
 
@@ -181,5 +181,3 @@ We are going to install make through the package manager chocolatey, therefore f
 ​
 2. Installing gnu-make
     * type in the powershell `choco install make`.
-
-A useful script to install required programs on Linux can be found here: [https://github.com/ceumicrodata/handbook/blob/master/post\_install.sh](https://github.com/ceumicrodata/handbook/blob/master/post_install.sh)

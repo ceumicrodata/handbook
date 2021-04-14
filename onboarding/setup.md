@@ -174,10 +174,9 @@ At the end, you can check whether your installation was successful by typing `be
 
 Linux and Mac users don't have to install it. Windows users should follow the next steps:
 
-1. Installing chocolatey
+1. Install chocolatey
 We are going to install make through the package manager chocolatey, therefore first we have to install chocolatey. Follow the instructions on: [chocolatey website](https://chocolatey.org/install)
     * search for powershell in the windows start menu and run it as administrator
     * run the command in the field under the second point (install with powershell.exe)
-​
-2. Installing gnu-make
+2. Install gnu-make
     * type in the powershell `choco install make`.

@@ -137,23 +137,20 @@ If you use Ubuntu 20.04 LTS or newer, you are good to go. Otherwise you should v
 
 ## Bead
 
-0. (windows only:) Install Git Bash
-1. Install python if not already installed.
+1. \(windows only:\) Install Git Bash
+2. Install python if not already installed.
 
-   Latest release depends on Python 3.8.5., python 3 only (requires at least 3.6, may not even run on 3.6).
-   You can check the version of your Python from the terminal with `pyton -V`.
+   Latest release depends on Python 3.8.5., python 3 only \(requires at least 3.6, may not even run on 3.6\). You can check the version of your Python from the terminal with `pyton -V`.
 
-2. Download latest version from [https://github.com/e3krisztian/bead/releases/tag/v0.8.1](https://github.com/e3krisztian/bead/releases/tag/v0.8.1)
+3. Download latest version from [https://github.com/e3krisztian/bead/releases/tag/v0.8.1](https://github.com/e3krisztian/bead/releases/tag/v0.8.1)
 
    you will need only the platform specific binary: `bead`
 
-3. Put the downloaded file in a location, that is on the PATH
-
+4. Put the downloaded file in a location, that is on the PATH
    * `$HOME/bin`  \(single-user, laptop, desktop, traditional location\)
    * `$HOME/.local/bin` \(single-user, laptop, desktop, new XDG standard?\)
    * `/usr/local/bin` \(system, servers, multi-user\)
-
-4. \(linux and mac only\): make the file executable
+5. \(linux and mac only\): make the file executable
 
 E.g. the following commands would install version v0.8.1 \(latest release at the time of writing\) on linux and mac:
 
@@ -166,6 +163,7 @@ curl -sLo bead https://github.com/e3krisztian/bead/releases/download/v0.8.1/bead
 # make executable
 chmod +x bead
 ```
+
 At the end, you can check whether your installation was successful by typing `bead version` to the terminal, then it should show v0.8.1.
 
 \(source: [https://stackoverflow.com/c/ceu-microdata/questions/18](https://stackoverflow.com/c/ceu-microdata/questions/18)\)
@@ -175,8 +173,12 @@ At the end, you can check whether your installation was successful by typing `be
 Linux and Mac users don't have to install it. Windows users should follow the next steps:
 
 1. Install chocolatey
-We are going to install make through the package manager chocolatey, therefore first we have to install chocolatey. Follow the instructions on: [chocolatey website](https://chocolatey.org/install)
-    * search for powershell in the windows start menu and run it as administrator
-    * run the command in the field under the second point (install with powershell.exe)
+
+   We are going to install make through the package manager chocolatey, therefore first we have to install chocolatey. Follow the instructions on: [chocolatey website](https://chocolatey.org/install)
+
+   * search for powershell in the windows start menu and run it as administrator
+   * run the command in the field under the second point \(install with powershell.exe\)
+
 2. Install gnu-make
-    * type in the powershell `choco install make`.
+   * type in the powershell `choco install make`.
+

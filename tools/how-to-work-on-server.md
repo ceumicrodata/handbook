@@ -1,4 +1,4 @@
-# How to work on haflinger
+# How to work on server
 
 This section provides an overview of the standard workflow and etiquette when working on the department's computational server.
 
@@ -20,7 +20,7 @@ If you are connected to the server via VNC, you do not need to start a screen. I
 
 ## Work at the proper location
 
-You shall not work in your home folder. Please always navigate to the proper sandbox or project folder before beginning your work. For the basic architecture of the server, please check the Server](https://handbook.microdata.io/onboarding/server) episode.
+You shall not work in your home folder. Please always navigate to the proper sandbox or project folder before beginning your work. For the basic architecture of the server, please check the Server\]\([https://handbook.microdata.io/onboarding/server](https://handbook.microdata.io/onboarding/server)\) episode.
 
 ## Work in virtual environments
 
@@ -36,7 +36,7 @@ Always check the resources you use via `htop`. If your process has a memory/CPU 
 
 ## Clean up
 
-Before disconnecting always make sure that you do not have any leftover sessions using resources (unless you are running a longer process within a screen). Remove unused virtual environments, zap unused bead workspaces, close software instances with data in memory, etc.
+Before disconnecting always make sure that you do not have any leftover sessions using resources \(unless you are running a longer process within a screen\). Remove unused virtual environments, zap unused bead workspaces, close software instances with data in memory, etc.
 
 ## Close your connection
 
@@ -49,3 +49,4 @@ Use Slack to communicate any planned and persistent server use with a heavy foot
 ## Get help
 
 You can always get help by revisiting this handbook. If you cannot find the answers you are looking for, ask a project manager. Remember: if you are unsure, it is better to ask before you act.
+

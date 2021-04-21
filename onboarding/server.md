@@ -117,7 +117,7 @@ This allows you to connect to the haflinger server by typing the `haflinger` com
 
 ## Structure of the server and general workflow
 
-When connecting to the server, you are directed to your home folder \`/home/USER\_NAME'. Only you have access to your home folder. This folder should only be used to store configuration files (like ssh keys, etc.).
+When connecting to the server, you are directed to your home folder \`/home/USER\_NAME'. Only you have access to your home folder. This folder should only be used to store configuration files \(like ssh keys, etc.\).
 
 For any project work you should be working in your sandbox located at `/srv/sandbox/USER_NAME`. Working in your sandbox allows others to check your work and develop projects collaboratively. Folders with limited access for certain projects are located in `/srv/project`. In case you need a separate project folder with access limitation you should contact a project manager.
 

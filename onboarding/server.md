@@ -217,6 +217,32 @@ The servers run both python2 and python3. You can access them by typing `python2
 | `pip freeze -> requirements.txt` | Export the currently downloaded python packages to a text file |
 | `exit` | Terminate connection with the server |
 
+## Debugging
+
+In case you cannot create new virtualenvs or there is any other issue that might be related to reaching your home folder quota, here is how you can debug it:
+Check if it is really a quota problem. Type
+```cd
+du -sh ./
+```
+If it gives you anything close to 500M, you are proably dealing with a quota issue.
+2. Clean up your home folder. In case you have any work in your home folder (you shouldn't!) move it somewhere else. Close any running screens and applications then delete all files in your cache:
+```find ~/.cache/ -type f -delete```
+3. Check if the quota problem persists. If yes, let me know. If not, you need to take one last step so that it doesn't fill up again.
+4. Set your cache folder to your sandbox. Add the following to your `~/.bashrc` file (switch user with your username):
+```STATATMP="/srv/sandbox/user"
+export STATATMP
+export TMPDIR='/srv/sandbox/user/'
+export XDG_CACHE_HOME='/srv/sandbox/user'
+export PIP_REQUIRE_VIRTUALENV=true
+```
+5. If you use other shells (e.g. fish) you need to configure them as well. Fish users need to add the following to `~/.config/fish/config.fish` (if the file does not exist, you need to create it, switch user with your username):
+```set -x STATATMP "/srv/sandbox/user"
+set -x TMPDIR '/srv/sandbox/user'
+set -x XDG_CACHE_HOME '/srv/sandbox/user'
+set -x PIP_REQUIRE_VIRTUALENV true
+```
+For any other shell consult it's documentation on setting environment variables.
+
 ## Contacts
 
 * If you have technical difficulties with the server, please contact a Project Manager.

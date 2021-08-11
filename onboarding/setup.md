@@ -113,21 +113,74 @@ Other editors that you can use are [Gedit](https://wiki.gnome.org/Apps/Gedit), [
 
 ## Stata
 
-In MicroData we use the statistical package [Stata](https://www.stata.com/products/)[™](https://korenmiklos.github.io/2020-08-23-eea/license.html), version Stata 16 MP. If you do not have a Stata license, please let your instructor know so that they can request one for you.
+In MicroData we use the statistical package [Stata](https://www.stata.com/products/)[™](https://korenmiklos.github.io/2020-08-23-eea/license.html), version Stata 17 MP. If you do not have a single user Stata license, please let your instructor know so that they can request one for you. We prefer to use the server version of the Stata. You can start  Stata from VNC bash command line by the help of `xstata-mp` command. 
 
-If you are newly installing Stata on your computer, follow these instructions.
+If you are newly installing single user Stata on your computer, follow these instructions.
 
 {% tabs %}
 {% tab title="Windows" %}
+
+1. Go to https://download.stata.com/download/
+2. Log in using your username and password.
+3. Download and launch the installer: SetupStata17.exe version 64.bit.
+4. Once the installation is done, start Stata from the Start Menu. The first time you do this, you will have to activate your licence.
+5. Choose version StataMP.
+6. Enter the serial number provided and press enter.
+7. Enter the code and press enter.
+8. Enter the authorization and press enter.
+9. It should return “Good. The serial number, code, and authorization make sense. Shall we continue?” Type Y and press enter.
+10. When it asks for the first line, it should say “CEU”.
+11. When it asks for the second line, it should say “CEU”.
+12. It will ask for confirmation. Type “Y” and press enter.
 
 {% endtab %}
 
 {% tab title="MacOS" %}
 
+1. Go to https://download.stata.com/download/
+2. Download and launch the installer: Stata17.dmg
+3. Once the installation is done, start Stata from the Start Menu. The first time you do this, you will have to activate your licence.
+4. Choose version StataMP.
+5. Enter the serial number provided and press enter.
+6. Enter the code and press enter.
+7. Enter the authorization and press enter.
+8. It should return “Good. The serial number, code, and authorization make sense. Shall we continue?” Type Y and press enter.
+9. When it asks for the first line, it should say “CEU”.
+10. When it asks for the second line, it should say “CEU”.
+11. It will ask for confirmation. Type “Y” and press enter.
+
 {% endtab %}
 
 {% tab title="Linux" %}
+1. Go to https://download.stata.com/download/
+2. Download Stata17Linux64.tar.gz.
+3. Open a terminal and navigate to the directory where your downloaded file is located (e.g. cd ~/Downloads/)
+4. Get superuser rights (sudo su)
+5. Create a new directory (e.g. mkdir stata_install)
+6. Move the downloaded file to this new directory (mv Stata17Linux64.tar.gz. stata_install/)
+7. Enter the directory (cd stata_install)
+8. Extract the installation files using tar xzf Stata17Linux64.tar.gz
+9. Create a directory for your stata installation (mkdir /usr/local/stata17)
+10. Navigate to the stata directory (cd /usr/local/stata17)
+11. Start the installation by executing the extracted install file (e.g. /home/username/Downloads/stata_install/install)
+12. Choose version StataMP.
+13. Whenever the installer asks if you want to proceed type “y” and press enter
+14. Once the installation is done, type ./stinit to activate your licence
+15. Whenever it asks you if you want to continue, type “Y” and press enter
+16. Enter the serial number provided and press enter
+17. Enter the code and press enter
+18. Enter the authorization and press enter
+19. It should return “Good. The serial number, code, and authorization make sense. Shall we continue?” Type Y and press enter.
+20. When it asks for the first line, it should say “CEU”
+21. When it asks for the second line, it should say “CEU”
+22. It will ask for confirmation. Type “Y” and press enter.
+23. Try to start stata by ./xstata. If it gives you the following error message (./stata: error while loading shared libraries: libpng12.so.0: cannot open shared object file: No such file or directory), continue with the steps below:
 
+`Issue the following commands one by one in your terminal window:
+apt-get install zlib1g-dev
+      wget http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb
+      dpkg -i libpng12-0_1.2.54-1ubuntu1_amd64.deb`
+      
 {% endtab %}
 {% endtabs %}
 

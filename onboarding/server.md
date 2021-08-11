@@ -248,8 +248,15 @@ set -x TMPDIR '/srv/sandbox/user'
 set -x XDG_CACHE_HOME '/srv/sandbox/user'
 set -x PIP_REQUIRE_VIRTUALENV true
 ```
-
 For any other shell consult it's documentation on setting environment variables.
+
+### Vncrestart
+
+When using VNC, you might experience bad behavior after a while (windows cannot be resized or the appications freeze etc).
+For the resolution of the above problem, you can use the `vncrestart` command from SSH or VNC terminal which will reset your VNC within 60 seconds.
+
+Important:
+Please keep in mind that resetting VNC will close all your opened applications and delete all your unsaved data.
 
 ## Contacts
 

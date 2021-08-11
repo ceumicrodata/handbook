@@ -193,9 +193,9 @@ For a short introduction on parallelization in Python, please visit the followin
 
 ### STATA
 
-You can access the STATA program with graphical user interface on the haflinger. The stata is located in the folders:
+You can access the STATA program with graphical user interface on the haflinger. 
+You can start Stata from VNC bash command line by the help of `xstata-mp` command.
 
-/usr/local/stata16/xstata-mp
 
 ### Python
 

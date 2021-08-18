@@ -39,7 +39,7 @@ The haflinger server has 504GB memory and 112 cores.
 
 ## Connecting to the server from different local operating systems
 
-First, you have to be connected to the CEU network through VPN. You can use the AnyConnect client or the openconnect package depending on your OS. For more information on VPN usage please visit [https://ceuedu.sharepoint.com/sites/itservices/SitePages/vpn.aspx](https://ceuedu.sharepoint.com/sites/itservices/SitePages/vpn.aspx) and [http://docs.microdata.io/vpn](http://docs.microdata.io/vpn).
+First, you have to be connected to the CEU network through VPN. You can use the AnyConnect client or the openconnect package depending on your OS. For more information on VPN usage please visit [https://ceuedu.sharepoint.com/sites/itservices/SitePages/vpn.aspx](https://ceuedu.sharepoint.com/sites/itservices/SitePages/vpn.aspx)
 
 You can access the shell \(command line\) on haflinger.ceu.hu by using a Secure Shell \(ssh\) client, such as Putty \([http://docs.microdata.io/putty](http://docs.microdata.io/putty)\). On UNIX-like systems the built-in ssh package allows you to connect without any additional software. This is where you can change your password, or where you can start batch jobs from the shell.
 
@@ -193,9 +193,7 @@ For a short introduction on parallelization in Python, please visit the followin
 
 ### STATA
 
-You can access the STATA program with graphical user interface on the haflinger. 
-You can start Stata from VNC bash command line by the help of `xstata-mp` command.
-
+You can access the STATA program with graphical user interface on the haflinger. You can start Stata from VNC bash command line by the help of `xstata-mp` command.
 
 ### Python
 
@@ -248,15 +246,14 @@ set -x TMPDIR '/srv/sandbox/user'
 set -x XDG_CACHE_HOME '/srv/sandbox/user'
 set -x PIP_REQUIRE_VIRTUALENV true
 ```
+
 For any other shell consult it's documentation on setting environment variables.
 
 ### Vncrestart
 
-When using VNC, you might experience bad behavior after a while (windows cannot be resized or the appications freeze etc).
-For the resolution of the above problem, you can use the `vncrestart` command from SSH or VNC terminal which will reset your VNC within 60 seconds.
+When using VNC, you might experience bad behavior after a while \(windows cannot be resized or the appications freeze etc\). For the resolution of the above problem, you can use the `vncrestart` command from SSH or VNC terminal which will reset your VNC within 60 seconds.
 
-Important:
-Please keep in mind that resetting VNC will close all your opened applications and delete all your unsaved data.
+Important: Please keep in mind that resetting VNC will close all your opened applications and delete all your unsaved data.
 
 ## Contacts
 

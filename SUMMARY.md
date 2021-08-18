@@ -25,6 +25,7 @@
 * [Make](tools/make.md)
 * [Julia](tools/julia.md)
 * [Csvkit](tools/csvkit.md)
+* [Release](tools/release.md)
 
 ## about us
 

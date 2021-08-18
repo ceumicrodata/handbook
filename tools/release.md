@@ -10,7 +10,7 @@ We are developing codes like software developers and we use terms from [software
 
 Alpha release in our terms when the codes and the outputs are ready and the bead is saved into the `latest`bead-box. 
 
-Tester is a person who knows the codes and gives feedbacks to the Developer. Tester can run tests on the alpha release like: descriptive statistics, figures or manual checkings. 
+Tester is a person who knows the codes and gives feedbacks to the developer. Tester can run tests on the alpha release like: descriptive statistics, figures or manual checkings. 
 
 Developer/maintainer is a person who is responsible for data inputs, developments outputs. Developer is also responsible to keep a bead up to date and to write Meta documentations and Readme-s.
 

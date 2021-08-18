@@ -42,9 +42,7 @@ The cegjegyzek updates are arriving every year at May and contains information t
 
 ## LTS
 
-The long-term support database idea comes from software development.
-
-[https://en.wikipedia.org/wiki/Long-term\_support](https://en.wikipedia.org/wiki/Long-term_support)
+The [long-term support](https://en.wikipedia.org/wiki/Long-term_support) \(LTS\) database idea comes from software development.
 
 Our LTS products will be upgrading every year at a given date. The users can count with the new versions and have enough time to prepare their scripts on them.
 

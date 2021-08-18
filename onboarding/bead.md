@@ -51,8 +51,6 @@ As a special case pure data can be thought of as _constant computation_ having o
 
 Data packages can be in one of two states. Under active development in a **workspace**, or packaged and stored as a **bead**. Beads are stored in a **box**, which is just a collection of completed beads.
 
-To see how workspaces are created from beads and vice versa, also see [usecases](https://github.com/ceumicrodata/handbook/tree/dfcf104bf45cbd4b8b4d012d12e4b250351126ac/onboarding/usecases.md)
-
 #### Workspace
 
 A _workspace_ is a directory, where the user works. It contains a prototype of a _bead_ - it is a computation under active development. At some time however it is supposed to have all the inputs, code and output of a computation.

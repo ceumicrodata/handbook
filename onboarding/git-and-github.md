@@ -93,12 +93,6 @@ The .git directory contains:
 * objects directory - stores all the commits
 * refs directory - holds pointers to commits \(e.g "branch" and "tag"\) 
 
-#### Git LFS
-
-GitHub recommends repositories remain small, ideally less than 1 GB, and less than 5 GB is strongly recommended. Smaller repositories are faster to clone and easier to work with and maintain. Individual files in a repository are strictly limited to a 100 MB maximum size limit, and git gives a warning for updating files larger than 50 MB. Git Large File Storage \(LFS\) is a useful Git extension if someone has to version large files—even those as large as a couple GB in size—with Git. It replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server like GitHub.com or GitHub Enterprise. You can download the extension here: [https://git-lfs.github.com/](https://git-lfs.github.com/). Furhter informations about installation for Mac/Windows/Linux can be found here: [https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage](https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage).
-
- To decide whether you need Git LFS or not, you can type in the command line: `find . -type f -size +1M`, it finds files greater than 1 MB in the given folder. Large files make fetching and pulling quite slow, so it is recommended to `git lfs install` in the repo with files larger than 1-10 MB size \(depending on the project\) and then `git lfs track` the given large files. For power users: `find . -size +1M | xargs git lfs track \"{}\"` finds and then tracks all files greater than 1 MB in a  given repository. LFS tracking modifies the .gitattributes file, so do not forget to commit that as well.
-
 ### Git workflow
 
 #### Making changes
@@ -149,6 +143,12 @@ Note, if someone pushes a commit to GitHub before you push your changes, you’l
 * **Pull**: Whenever you pull changes from GitHub, there may be a merge conflict! These are resolved in the exact same way as when merging local branches: that is, you need to edit the files to resolve the conflict, then add and commit the updated versions.
 
 ![](../.gitbook/assets/git_conflict.png)
+
+### Git LFS
+
+GitHub recommends repositories remain small, ideally less than 1 GB, and less than 5 GB is strongly recommended. Smaller repositories are faster to clone and easier to work with and maintain. Individual files in a repository are strictly limited to a 100 MB maximum size limit, and git gives a warning for updating files larger than 50 MB. Git Large File Storage \(LFS\) is a useful Git extension if someone has to version large files—even those as large as a couple GB in size—with Git. It replaces large files such as audio samples, videos, datasets, and graphics with text pointers inside Git, while storing the file contents on a remote server like GitHub.com or GitHub Enterprise. You can download the extension here: [https://git-lfs.github.com/](https://git-lfs.github.com/). Furhter informations about installation for Mac/Windows/Linux can be found here: [https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage](https://docs.github.com/en/github/managing-large-files/installing-git-large-file-storage).
+
+ To decide whether you need Git LFS or not, you can type in the command line: `find . -type f -size +1M`, it finds files greater than 1 MB in the given folder. Large files make fetching and pulling quite slow, so it is recommended to `git lfs install` in the repo with files larger than 1-10 MB size \(depending on the project\) and then `git lfs track` the given large files. For power users: `find . -size +1M | xargs -d '\n' git lfs track \"{}\"` finds and then tracks all files greater than 1 MB in a  given repository. LFS tracking modifies the .gitattributes file, so do not forget to commit that as well.
 
 ### Useful commands
 

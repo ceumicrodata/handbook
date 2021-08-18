@@ -20,10 +20,12 @@
 
 * [Datasets](tools/datasets.md)
 * [Tools](tools/tools.md)
-* [How to work on server](tools/how-to-work-on-server.md)
+* [How to work on server](tools/how-to-work-on-server/README.md)
+  * [PostgreSQL](tools/how-to-work-on-server/postgresql.md)
 * [Make](tools/make.md)
 * [Julia](tools/julia.md)
 * [Csvkit](tools/csvkit.md)
+* [Release](tools/release.md)
 
 ## about us
 

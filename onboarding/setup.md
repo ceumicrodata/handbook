@@ -185,20 +185,17 @@ If you use Ubuntu 20.04 LTS or newer, you are good to go. Otherwise you should v
 1. \(windows only:\) Install Git Bash
 2. Install python if not already installed.
 
+Latest release depends on Python 3.8.5., Python 3 only \(requires at least 3.7\). You can check the version of your Python from the terminal with `python -V`.
 
-   Latest release depends on Python 3.8.5., Python 3 only (requires at least 3.7).
-   You can check the version of your Python from the terminal with `python -V`.
-
-
-3. Download latest version from [https://github.com/e3krisztian/bead/releases/tag/v0.8.1](https://github.com/e3krisztian/bead/releases/tag/v0.8.1)
+1. Download latest version from [https://github.com/e3krisztian/bead/releases/tag/v0.8.1](https://github.com/e3krisztian/bead/releases/tag/v0.8.1)
 
    you will need only the platform specific binary: `bead`
 
-4. Put the downloaded file in a location, that is on the PATH
+2. Put the downloaded file in a location, that is on the PATH
    * `$HOME/bin`  \(single-user, laptop, desktop, traditional location\)
    * `$HOME/.local/bin` \(single-user, laptop, desktop, new XDG standard?\)
    * `/usr/local/bin` \(system, servers, multi-user\)
-5. \(linux and mac only\): make the file executable
+3. \(linux and mac only\): make the file executable
 
 E.g. the following commands would install version v0.8.1 \(latest release at the time of writing\) on linux and mac:
 

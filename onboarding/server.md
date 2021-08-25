@@ -69,13 +69,35 @@ For a graphical server connection a useful tool is XQuartz. Using XQuartz you ca
 
 ### Windows
 
-PuTTy provides a CLI for the server. On Windows you can download a simple REAL VNC viewer from: [vncviewer](https://cp.webgalaxy.hu/haflinger/vncviewer.exe) After installation you have to use the following server address along with your server password: `haflinger.ceu.hu:VNCPORT`
+PuTTy provides a CLI for the server.
+
+#### VNC
+
+On Windows you can download a simple REAL VNC viewer from: [vncviewer](https://cp.webgalaxy.hu/haflinger/vncviewer.exe) After installation you have to use the following server address along with your server password: `haflinger.ceu.hu:VNCPORT`
 
 A good example how you can start the viewer from the cmd. You have to change the "%vnc\_port%" part to your own port number.
 
 ```bash
   $ vncviewer.exe -SecurityNotificationTimeout=0 -WarnUnencrypted=0 -Quality=High -Scaling=100%x100% haflinger.ceu.hu:%vnc_port%
 ```
+
+#### Xserver and git-bash
+
+You can also connect to the X server from git-bash terminal by the help of [vcxsrv](https://sourceforge.net/projects/vcxsrv/files/).  
+  
+Install the application then open`Xlaunch`and use the default settings: Multiple window, start no client, clipboard. Just click next as long as an X appears on the tray. X server has started. 
+
+Open git-bash and type `cd $HOME` You are now in your Windows home folder. Just check it with `pwd`Create a new file called .bash\_profile: `nano .bash_profile` Into the profile file save the following options: `export DISPLAY=localhost:0.0`Save the file and restart git-bash.
+
+Connect to your remote server using the following command:
+
+```text
+$ ssh USER@haflinger.ceu.hu -p PORT -Y -v
+```
+
+The option`-v` is used to diagnose the X connection problems. You can leave later if everything works well.
+
+Log in with your own haflinger password then e.g. type `xstata-mp`. The Stata comes up in a new window. Be careful this is not a VNC session, if you close the Stata window you close the session. 
 
 ### Private and public keys for easier connection
 

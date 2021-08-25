@@ -18,7 +18,7 @@ In general, you should comply with GDPR and the local privacy protection laws. Y
 
 ## Confidentiality
 
-As a rule of thumb consider any information, research data and material to be confidential unless it has already been made publicly available by MicroData. Any personal data or dataset containing personal information is strictly confidential. In case you intend to share any information or data with any person or organization outside MicroData make sure to obtain a written approval of a Principal Investigator first.
+As a rule of thumb consider any information, research data and material to be confidential unless it has already been made publicly available by MicroData. Any personal data or dataset containing personal information is strictly confidential and should be stored on encrypted medium. In case you intend to share any information or data with any person or organization outside MicroData make sure to obtain a written approval of a Principal Investigator first.
 
 ## Scientific Integrity
 

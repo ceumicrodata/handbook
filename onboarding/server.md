@@ -107,7 +107,7 @@ For easier server access you can create private/public key pairs as follows:
 2. Enter the path to the file where it is going to be located. Make sure you locate it in your `.ssh` folder and name it as `microdata_kulcs` \(or any alternative filename\).
 3. Enter a Passphrase or just simply press Enter. The public and private keys are created automatically. The public key ends with the string `.pub`.
 4. Copy the public key to the `$HOME/USER/.ssh` folder on the server. \(substitute your username appropriately\)
-5. An alternative solution for point 4 is using the following code: `ssh-copy-id -i ~/.ssh/id_rsa USER@haflinger.ceu.hu -p PORT`. \(a useful [source](https://www.ssh.com/ssh/keygen/) for the whole process\)
+5. An alternative solution for point 4 is using the following code: `ssh-copy-id -i ~/.ssh/microdata_kulcs USER@haflinger.ceu.hu -p PORT`. \(a useful [source](https://www.ssh.com/ssh/keygen/) for the whole process\)
 
 Finally, you can alias the command that connects you to server:
 
@@ -136,6 +136,47 @@ alias haflinger='ssh USER@haflinger.ceu.hu -p PORT -X'
 This allows you to connect to the haflinger server by typing the `haflinger` command.
 
 #### Windows
+
+Open git-bash and type`cd $HOME`. Create a new folder called .ssh:`mkdir .ssh` and cd into the .ssh folder. From the folder run `ssh-keygen.exe` Now you can follow the "For easier server access you can create private/public key pairs steps" second and third point. 
+
+If you don't have the .ssh folder at`$HOME/USER` at the server you have to create it there also. Login from git-bash. The logout command is `exit.` Use it now! 
+
+When you generated the public and private keys called `microdata_kulcs`push it to the server from your local machine .ssh folder. 
+
+`user@DESKTOP: ssh-copy-id -i microdata_kulcs -p PORT USER@haflinger.ceu.hu` 
+
+If you done it well a file called authorized\_keys created in the `/home/USER/.ssh/authorized_keys`
+
+Connect back to the server and change the folder permissions: 
+
+`user@haflinger: chmod 700 ~/.ssh`
+
+`user@haflinger: chmod 600 ~/.ssh/authorized_keys`
+
+Exit from the server.
+
+Open the .bash\_profile with nano and put an alias into the profile file: 
+
+`alias haflinger='ssh -p PORT -Y -v USER@haflinger.ceu.hu'`
+
+Now your bash\_profile consists two line the the export display and the alias. 
+
+The final step is to add the ssh agent to the profile file. The agent handles the private and public keys. 
+
+The final .bash\_profile looks like this: 
+
+```bash
+export DISPLAY=localhost:0.0
+
+alias haflinger='ssh -p PORT -Y -v USER@haflinger.ceu.hu'
+
+if [ -z "$SSH_AUTH_SOCK" ] ; then 
+  eval ssh-agent -s 
+  ssh-add ~/.ssh/microdata_kulcs 
+fi
+```
+
+Start the Xlaunch. Restart the git-bash and type `haflinger` If everything worked well you are now on the haflinger X server.
 
 ## Structure of the server and general workflow
 

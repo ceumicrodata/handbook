@@ -34,7 +34,7 @@ description: Key datasets in MicroData
 
 ## Main datasets
 
-The three main important datasets are the `merleg-LTS-2020`, the `cegjegyzek-LTS-2020` and the `procurement-LTS-2020`. The meaning of LTS is `long-term support` and `2020` is the input year when the data arrived.
+The three main important datasets are the `merleg-LTS-2020`, the `cegjegyzek-LTS-2020` and the `kozbeszerzes-LTS-2020`. The meaning of LTS is `long-term support` and `2020` is the input year when the data arrived.
 
 The merleg data updates are arriving in December and contains information of the previous tax year. In the 2020 version the last tax year is 2019. The merleg database are processed version of the income statements, the balance sheet \(assets and liabilities\) and the additional annexes.
 
@@ -78,7 +78,7 @@ More about Hungarian tax\_id character meanings:
 
 ## Detailed meta information about the main datasets
 
-### merleg-LTS-2020
+### Merleg-LTS-2020
 
 The detailed variable descriptions and development history are in the merleg-LTS-2020 bead output folder. The most important merleg related variables are the following:
 
@@ -311,7 +311,7 @@ Two firms \(identified by frame id\) are connected if they share an address \(hq
     valid_till
 ```
 
-### Procurement-LTS-2020
+### Kozbeszerzes-LTS-2020
 
 ### The bead chain
 

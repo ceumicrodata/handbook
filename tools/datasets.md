@@ -34,9 +34,9 @@ description: Key datasets in MicroData
 
 ## Main datasets
 
-The three main important datasets are the `merleg-LTS-2019`, the `cegjegyzek-LTS-2019` and the `procurement-LTS-2019`. The meaning of LTS is `long-term support` and `2019` is the input year when the data arrived.
+The three main important datasets are the `merleg-LTS-2020`, the `cegjegyzek-LTS-2020` and the `procurement-LTS-2020`. The meaning of LTS is `long-term support` and `2020` is the input year when the data arrived.
 
-The merleg data updates are arriving in December and contains information of the previous tax year. In the 2019 version the last tax year is 2018. The merleg database are processed version of the income statements, the balance sheet \(assets and liabilities\) and the additional annexes.
+The merleg data updates are arriving in December and contains information of the previous tax year. In the 2020 version the last tax year is 2019. The merleg database are processed version of the income statements, the balance sheet \(assets and liabilities\) and the additional annexes.
 
 The cegjegyzek updates are arriving every year at May and contains information till that date.
 
@@ -78,18 +78,18 @@ More about Hungarian tax\_id character meanings:
 
 ## Detailed meta information about the main datasets
 
-### merleg-LTS-2019
+### merleg-LTS-2020
 
-The detailed variable descriptions and development history are in the merleg-LTS-2019 bead output folder. The most important merleg related variables are the following:
+The detailed variable descriptions and development history are in the merleg-LTS-2020 bead output folder. The most important merleg related variables are the following:
 
 ```text
 variable name                       type    format      variable label
 
 frame_id                            str15   %15s        Frame_id identify one firm. Only_originalid if not valid
 originalid                          long    %10.0g      Given year Taxid. Minus if taxid not valid
-year                                int     %9.0g       Year 1980-2018
+year                                int     %9.0g       Year 1980-2019
 sales                               double  %12.0g      Sales 1000HUF
-sales18                             double  %12.0f      Sales in 2018 price 1000HUF
+sales19                             double  %12.0f      Sales in 2019 price 1000HUF
 emp                                 double  %9.0f       Employment clean v2
 export                              double  %12.0g      Export sales 1000HUF
 wbill                               double  %12.0g      Wage bill, Bérköltség 1000HUF
@@ -99,7 +99,7 @@ teaor03_2d                          byte    %9.0g       2 digit TEAOR03
 teaor08_2d                          byte    %9.0g       2 digit TEAOR08
 gdp                                 double  %10.0g      Gross Value Added: sales+aktivalt-ranyag 1000HUF
 gdp2                                double  %10.0g      Gross Value Added:(persexp+kecs+ereduzem+egyebbev)-egyebraf 1000HUF
-ppi18                               double  %10.0g      Producer price index 2018=1
+ppi19                               double  %10.0g      Producer price index 2019=1
 so3_with_mo3                        byte    %9.0g       State and local government owned dummy with ultimate owners from Complex
 so3                                 byte    %9.0g       State government owned dummy with ultimate owners
 fo3                                 byte    %8.0g       Foreign owned dummy with ultimate owners from Complex
@@ -107,7 +107,7 @@ do3                                 byte    %9.0g       Domestic owned dummy whi
 mo3                                 byte    %9.0g       Local government owned dummy which is not so3
 ```
 
-### Cegjegyzek-LTS-2019
+### Cegjegyzek-LTS-2020
 
 #### Organization of information in files
 
@@ -311,24 +311,24 @@ Two firms \(identified by frame id\) are connected if they share an address \(hq
     valid_till
 ```
 
-### Procurement-LTS-2019
+### Procurement-LTS-2020
 
 ### The bead chain
 
 ![](../.gitbook/assets/kozbeszerzes_lts_2019_flowchart.png)
 
-The input data is from the Procurement Authority website [http://www.kozbeszerzes.hu](http://www.kozbeszerzes.hu). The final bead is the `kozbeszerzes-LTS-2019`. The bead chain is made up of these elements:
+The input data is from the Procurement Authority website [http://www.kozbeszerzes.hu](http://www.kozbeszerzes.hu). The final bead is the `kozbeszerzes-LTS-2020`. The bead chain is made up of these elements:
 
 * `kceu_oldhtml`: Mock bead \(output only\). Contains tenders between 1997 and 2006. These files cannot be retrieved from the website anymore. The files are in html format in the output folder.
 * `kceu_newhtml`: Mock bead \(output only\). Contains tenders between 2007 and 2017. These files have been downloaded by the scripts of the `kceu_download` bead \(see below\). The files are in html format in the output folder.
-* `kceu_download`: Contains scripts for downloading tenders from the website for any arbitrary year. Currently it contains the 2018 tenders. The files are in html format in the output folder.
+* `kceu_download`: Contains scripts for downloading tenders from the website for any arbitrary year. Currently it contains the 2019 tenders. The files are in html format in the output folder.
 * `kceu_parsed`: Using the three above beads as input, it converts the tender html files to structured, hierarchical xml files by extracting the relevant pieces of information from the published notices. This bead mainly consists of an external parser and the modular parser. The external parser software works as a black box for us. The latter is an internal development which works for certain notice types, to improve the external parser performance. The output files are structured xml files for each tender.
 * `kceu_cleaned`: Using the `kceu_parsed` bead as input, it removes empty tags from the xml files, and converts foreign currencies to HUF.
 * `kceu_xml_to_csv`: Using the `kceu_cleaned` bead as input, it converts the xml \(separate files for each tender\) to different csv files. These are `part.csv` which contains the basic information of the tenders \(subject, cpv, value, etc.\), `requestor.csv`, `bidder.csv`, and the `winner.csv`, which list the relevant entities for each tender part. Note that the latter are intermediary products in the sense that entity resolution and deduplication is still to be carried out on these files \(see below\).
 * `kceu_er`: Using the csv files of the `kceu_xml_to_csv` bead \(and additional beads of firm and pir name indexes\) as input, it applies entity resolution on the tenders \(using `pir search tool` and `firm name search tool` developed within Microdata\): that is, it tries to identify the bidder, winner, and requestor firms and institutions using our databases at Microdata. The outputs are the resolved winner, bidder, and requestor csv files which will contain unique identifier \(tax id or pir id\) for entities so that it can be merged with another Microdata products.
 * `kceu_duplicates`: Using the `part.csv` from the `kceu_xml_to_csv` bead, and the resolved csv files of the `kceu_er` beads, it identifies duplicate tenders. It is necessary because some tender result are announced multiple times at the official website for some reason \(this is more frequent for older tenders\). The identification is based on similarity of requestors and bidders, subject, value, and decision date. The output is a `duplicates.csv` file which list the duplicate tender ids and indicates which lines to drop and which to keep.
 * `kceu_hand_inputs`: Despite all our effort to convert every existing procurement data creation process into beads to guarantee reproducibility, there are some remaining files for which we could not identify the source code and/or are unique hand collected inputs that do not fit into standard bead structure. The output files of this empty bead serve as inputs for the `procurement_prepare` bead.
-* `procurement_prepare`: This bead combines the output files of `kceu_xml_to_csv`, `kceu_er`, `kceu_duplicates`, and generates a tender part – bidder level datafile \(`all_bids.dta`\). Moreover, using mostly `merleg-LTS-2019` and some other inputs such as probabilistic firm coloring, it prepares some auxiliary files which contain information on firms, pir entities, firms political connections, and election results.
+* `procurement_prepare`: This bead combines the output files of `kceu_xml_to_csv`, `kceu_er`, `kceu_duplicates`, and generates a tender part – bidder level datafile \(`all_bids.dta`\). Moreover, using mostly `merleg-LTS-2020` and some other inputs such as probabilistic firm coloring, it prepares some auxiliary files which contain information on firms, pir entities, firms political connections, and election results.
 * `procurement_data`: This bead builds solely upon the input files prepared in the `procurement_prepare` bead. Combining these files, it produces two types of output data ready for analysis: a tender – bidder level dataset called `procurement_bids_data`, which contains all the necessary information from the tender \(subject, cpv, estimated value, final value, etc.\), the requestor and bidder entities \(location, NACE code, balance information, etc.\), as well as the outcome of the tender. `procurement_wins_data` is essentially the same file, but for each tender only the winning bidders are included. The other type of output data called `government_private_sales_data` is a yearly panel of firms. Besides the most important balance information, it is a yearly aggregate of each firm's procurement revenues, and based this the private revenues are also derived.
 
 ### Media and scraped datasets

@@ -68,7 +68,7 @@ Analysis sample contains all the variable definitions and sample limitations you
 
 **Join late**. It may be tempting to join your city information to the country-capital dataset early. But you don’t know what other users will need the data for. And you don’t want to join before your own data is clean enough. A clean data should be as close to the [third normal form](https://en.wikipedia.org/wiki/Database_normalization#Normal_forms) as possible.
 
-**Share your intermediate data products**. All the data cleaning you have done might be useful for others, too. If possible, share your intermediate products with other analysts by saving a \(bead\)\[FIXME: ref\].
+**Share your intermediate data products**. All the data cleaning you have done might be useful for others, too. If possible, share your intermediate products with other analysts by saving a [`bead`](https://handbook.microdata.io/onboarding/bead).
 
 ## Categories of data protection
 

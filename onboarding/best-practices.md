@@ -63,8 +63,7 @@ These guidelines help us share data among themselves. Always make the extra effo
 ## Code style guide
 
 1. Python code must follow [PEP-8](https://www.python.org/dev/peps/pep-0008/).
-2. Stata code must follow [this guide](http://www.stata-journal.com/sjpdf.html?articlenum=pr0018).
-3. Stata code should be no longer than 120 lines. If longer, break it up.
+2. Stata code must follow [this guide](https://handbook.microdata.io/onboarding/stata-style-guide).
 
 > ### Key Points
 >

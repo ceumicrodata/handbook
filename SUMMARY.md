@@ -15,6 +15,7 @@
   * [Storing CAT3 data](onboarding/working-with-data/storing-cat3-data.md)
 * [Best practices](onboarding/best-practices.md)
 * [Stata style guide](onboarding/stata-style-guide.md)
+* [Project management](onboarding/projects.md)
 
 ## Tools
 

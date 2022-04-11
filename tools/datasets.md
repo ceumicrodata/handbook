@@ -311,6 +311,89 @@ Two firms \(identified by frame id\) are connected if they share an address \(hq
     valid_till
 ```
 
+### Manager DB
+The Manager Database (bead name: `manager-db`) is a product derived directly from `cegjegyzek-LTS`. It creates annual snapshots at each firm: which personids were present in a managerial or supervisor role on June 21 of the year at that firm? To save space, it also converts person ids to integers.
+
+The distribution of observations by year:
+```
+. tab year
+
+       year |      Freq.     Percent        Cum.
+------------+-----------------------------------
+       1985 |     28,421        0.19        0.19
+       1986 |     30,543        0.21        0.40
+       1987 |     32,262        0.22        0.62
+       1988 |     34,466        0.24        0.86
+       1989 |     43,239        0.29        1.15
+       1990 |     80,453        0.55        1.70
+       1991 |    129,114        0.88        2.58
+       1992 |    185,419        1.26        3.85
+       1993 |    225,611        1.54        5.39
+       1994 |    262,548        1.79        7.18
+       1995 |    292,539        2.00        9.17
+       1996 |    325,777        2.22       11.39
+       1997 |    358,657        2.45       13.84
+       1998 |    396,858        2.71       16.55
+       1999 |    418,114        2.85       19.40
+       2000 |    443,218        3.02       22.42
+       2001 |    466,555        3.18       25.60
+       2002 |    486,076        3.32       28.92
+       2003 |    503,443        3.43       32.35
+       2004 |    526,839        3.59       35.95
+       2005 |    544,955        3.72       39.66
+       2006 |    562,152        3.83       43.50
+       2007 |    568,498        3.88       47.38
+       2008 |    607,264        4.14       51.52
+       2009 |    633,191        4.32       55.84
+       2010 |    646,992        4.41       60.25
+       2011 |    654,054        4.46       64.71
+       2012 |    654,001        4.46       69.17
+       2013 |    662,217        4.52       73.69
+       2014 |    668,125        4.56       78.24
+       2015 |    663,694        4.53       82.77
+       2016 |    643,644        4.39       87.16
+       2017 |    631,312        4.31       91.47
+       2018 |    625,928        4.27       95.74
+       2019 |    625,020        4.26      100.00
+------------+-----------------------------------
+      Total | 14,661,199      100.00
+```
+
+| Variables | Meaning | Non-missing observations |
+|---|---|---|
+| birth_year | Birth year of manager | 5.3m |                 
+| country_code | Country of manager home address (compliance with ISO 3166-2 unchecked) | 14.6m |                    
+| board    
+| position                  
+| cf | Corporation type         
+| spell_begin |                  
+| imputed |                 
+| ceo | 1 if manager is CEO | 14.7m |                 
+| year                   
+| first_year_as_owner | First observed year of person as an owner of the firm in `manager-db` (missing if not an owner) | 12.1m 
+| manager_enter_year | First observed year of person in `manager-db` | 14.6m
+| iso639 | Language code inferred from manager name | 1,000                   
+| person_id
+| frame_id_numeric                 
+| expat | 1 if manager is a foreign person |                 
+| male | 1 if manager is known to be male | 
+
+Only natural persons are kept, not liquidators and other firms. If a firm has no reported CEO in a given year, the following imputation rules are used:
+
+1. If the firm has 3 or fewer managers, all of them will be classified CEOs (4,389 firm-person-years)
+2. If the firm still has no CEO, its past CEOs will be imputed (4,647 firm-person-years)
+
+### CEO Panel
+The CEO Panel (bead name: `ceo-panel`) is a product derived directly from `manager-db`. It only keeps CEOs and fills in firms that do not have a reported CEO. Fill-in rules:
+
+Impute CEOs from the past, up to 3 years.
+    - 1 year: 43,000
+    - 2 years: 17,000
+    - 3 years: 10,000
+
+Total number of observations: 12,891,181 
+
+
 ### Kozbeszerzes-LTS-2020
 
 ### The bead chain

@@ -19,7 +19,7 @@ description: Key datasets in MicroData
 
 # Datasets
 
-> ### Overview
+> #### Overview
 >
 > Questions
 >
@@ -36,25 +36,25 @@ description: Key datasets in MicroData
 
 The three main important datasets are the `merleg-LTS-2020`, the `cegjegyzek-LTS-2020` and the `kozbeszerzes-LTS-2020`. The meaning of LTS is `long-term support` and `2020` is the input year when the data arrived.
 
-The merleg data updates are arriving in December and contains information of the previous tax year. In the 2020 version the last tax year is 2019. The merleg database are processed version of the income statements, the balance sheet \(assets and liabilities\) and the additional annexes.
+The merleg data updates are arriving in December and contains information of the previous tax year. In the 2020 version the last tax year is 2019. The merleg database are processed version of the income statements, the balance sheet (assets and liabilities) and the additional annexes.
 
 The cegjegyzek updates are arriving every year at May and contains information till that date.
 
 ## LTS
 
-The [long-term support](https://en.wikipedia.org/wiki/Long-term_support) \(LTS\) database idea comes from software development.
+The [long-term support](https://en.wikipedia.org/wiki/Long-term\_support) (LTS) database idea comes from software development.
 
 Our LTS products will be upgrading every year at a given date. The users can count with the new versions and have enough time to prepare their scripts on them.
 
 Every time when we make a new LTS there is a possibility to add new feature request. Before every version update the team talk trough which feature requests will be in each releases.
 
-[https://docs.google.com/document/d/16wEJFy-XFKkRMMKUDPx3gia73hs8odiOf-Ov1Ytj6QY/edit\#heading=h.718700q5qmgh](https://docs.google.com/document/d/16wEJFy-XFKkRMMKUDPx3gia73hs8odiOf-Ov1Ytj6QY/edit#heading=h.718700q5qmgh)
+[https://docs.google.com/document/d/16wEJFy-XFKkRMMKUDPx3gia73hs8odiOf-Ov1Ytj6QY/edit#heading=h.718700q5qmgh](https://docs.google.com/document/d/16wEJFy-XFKkRMMKUDPx3gia73hs8odiOf-Ov1Ytj6QY/edit#heading=h.718700q5qmgh)
 
 ## Primary keys
 
-The `Primary key` constraint uniquely identifies each record in a table. Primary keys must contain UNIQUE values, and cannot contain NULL values. A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns \(fields\).
+The `Primary key` constraint uniquely identifies each record in a table. Primary keys must contain UNIQUE values, and cannot contain NULL values. A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns (fields).
 
-[https://www.w3schools.com/sql/sql\_primarykey.asp](https://www.w3schools.com/sql/sql_primarykey.asp)
+[https://www.w3schools.com/sql/sql\_primarykey.asp](https://www.w3schools.com/sql/sql\_primarykey.asp)
 
 ### Frame\_id
 
@@ -82,7 +82,7 @@ More about Hungarian tax\_id character meanings:
 
 The detailed variable descriptions and development history are in the merleg-LTS-2020 bead output folder. The most important merleg related variables are the following:
 
-```text
+```
 variable name                       type    format      variable label
 
 frame_id                            str15   %15s        Frame_id identify one firm. Only_originalid if not valid
@@ -113,7 +113,7 @@ mo3                                 byte    %9.0g       Local government owned d
 
 **Entities**
 
-In the different relation files contain fields \(owner\_id, manager\_id, frame\_id, person\_id\_1, person\_id\_2\) for entities designated with ids. In manage.csv and own.csv the type field \(manager\_type, owner\_type\) containing two-part strings separated with a hyphen, in the first part ‘HU’ stands for hungarian, domestic entity, while the second part designates whether it is a person \(‘P’\), a firm \(‘F’\), a municipality owned \(‘MO’\), a central government owned \(‘SO’\) or other unspecified \(‘O’\) type entity. The entity ids can take one of the following form:
+In the different relation files contain fields (owner\_id, manager\_id, frame\_id, person\_id\_1, person\_id\_2) for entities designated with ids. In manage.csv and own.csv the type field (manager\_type, owner\_type) containing two-part strings separated with a hyphen, in the first part ‘HU’ stands for hungarian, domestic entity, while the second part designates whether it is a person (‘P’), a firm (‘F’), a municipality owned (‘MO’), a central government owned (‘SO’) or other unspecified (‘O’) type entity. The entity ids can take one of the following form:
 
 **Frame ID**
 
@@ -125,7 +125,7 @@ If an ID starts with ‘P’ it uniquely designates a person with hungarian name
 
 **Public owned entity ID**
 
-For hungarian public \(i.e. state or municipality\) owned entities we used the pir id, which is a 6-digit number. The ‘SO001’ stands for state ownership through non specified entity. ‘10011953’ designates the Hungarian National Bank, which has no pir id. The ‘entity/pir.csv’ contains the pir number and the corresponding entity.
+For hungarian public (i.e. state or municipality) owned entities we used the pir id, which is a 6-digit number. The ‘SO001’ stands for state ownership through non specified entity. ‘10011953’ designates the Hungarian National Bank, which has no pir id. The ‘entity/pir.csv’ contains the pir number and the corresponding entity.
 
 **Mock ID**
 
@@ -142,24 +142,24 @@ Where:
 * CC: Two-character country code, e.g.: HU
 * SSSSS: Settlement code. For Hungarian addresses this is the KSH Code.
 * DD: District. For Budapest the actual district, 00 if unknown. For cities with suburbs it should be 01 for the city itself, and 02, 03, 04 etc. for the different suburbs.
-* AA: Larger administrative area \(county, only for hungarian addresses\)
-* WWWWW: Public way name. The same name should have the same ID across  settlements.
+* AA: Larger administrative area (county, only for hungarian addresses)
+* WWWWW: Public way name. The same name should have the same ID across settlements.
 * TT: Public way type/Street suffix. The same type should have the same ID across settlements. The key for this is in entity/official\_domain\_names.csv
-* N\(NNN\): The number of the building. If a building has a span of numbers, the lowest should be used. E.g. in case of Nador utca 9-15, number 9 is to be used.
+* N(NNN): The number of the building. If a building has a span of numbers, the lowest should be used. E.g. in case of Nador utca 9-15, number 9 is to be used.
 
 For now, we don’t identify floors and door numbers.
 
 #### Direct relations
 
-Direct relations are relations explicitly available in Corporate Registry. In these files the ‘source’ field contains a 4 part string separated by underscores designating the reference to the original CR data point, the 4 parts are the following: CR number \(cégjegyzékszám\), CR rubric \(rovat\), row number within rubric \(alrovat\_id\) and the group prefix \(the prefix of variable group within rubric row: ‘’, ‘p’, ‘pc’, etc.\)
+Direct relations are relations explicitly available in Corporate Registry. In these files the ‘source’ field contains a 4 part string separated by underscores designating the reference to the original CR data point, the 4 parts are the following: CR number (cégjegyzékszám), CR rubric (rovat), row number within rubric (alrovat\_id) and the group prefix (the prefix of variable group within rubric row: ‘’, ‘p’, ‘pc’, etc.)
 
 **ownership - relation/own.csv**
 
-The table contains the ownership relations as they are documented in Corporate Registry. The entity designated with ‘owner\_id’ is an owner in a hungarian corporation designated with the frame\_id. The ‘owner\_id’ can take a form of a person\_id, frame\_id or a tax\_id of a state or municipality owned entity. The ‘share’ field is a ratio which shows the realtive share of the owner entity in the corporation. The ‘share\_flag’ tells us about the quality of the data \(empty string - no share data was avaialble, 0.0 - could not be tested against share emission data, 1 - total share counts add up to share emission data, 2.1-2.2 the share was corrected using emission data, 3 - messy share data\). The ‘share\_source’ indicates from which original data field the share comes from.
+The table contains the ownership relations as they are documented in Corporate Registry. The entity designated with ‘owner\_id’ is an owner in a hungarian corporation designated with the frame\_id. The ‘owner\_id’ can take a form of a person\_id, frame\_id or a tax\_id of a state or municipality owned entity. The ‘share’ field is a ratio which shows the realtive share of the owner entity in the corporation. The ‘share\_flag’ tells us about the quality of the data (empty string - no share data was avaialble, 0.0 - could not be tested against share emission data, 1 - total share counts add up to share emission data, 2.1-2.2 the share was corrected using emission data, 3 - messy share data). The ‘share\_source’ indicates from which original data field the share comes from.
 
 **signature rights and board members - relation/manage.csv**
 
-This table contains the significant employees and board members \(‘manager\_id’\) for a specific corporation \(‘frame\_id’\). The data comes from rubric 13 \(signature rigths\) and 15 \(board members\) of the Corporate Registry. The ‘position’, ‘board’, ‘liquidator’, ‘self-liquidator’ fields designate the role played by the entity within the corporation. The ‘position’ field can be one of the following values: ‘1’ - CEO, ‘2’ - significant manager, 3 - other employee, 0 - no specific information.
+This table contains the significant employees and board members (‘manager\_id’) for a specific corporation (‘frame\_id’). The data comes from rubric 13 (signature rigths) and 15 (board members) of the Corporate Registry. The ‘position’, ‘board’, ‘liquidator’, ‘self-liquidator’ fields designate the role played by the entity within the corporation. The ‘position’ field can be one of the following values: ‘1’ - CEO, ‘2’ - significant manager, 3 - other employee, 0 - no specific information.
 
 #### Indirect relations
 
@@ -169,17 +169,17 @@ The outputs are temporal edge lists. Each record in the output csv files contain
 
 **Firm network based on common owner or manager**
 
-Two firms \(identified by frame id\) are connected if they share an entity \(manager or owner, identified by manager\_id or owner\_id\) at a given time period. The output contains mixed connections \(i.e. person X is a manager at firm A and an owner of firm B at a given time period\). The role of the person \(or entity, an owner may be a firm for example\) in the two firms is conserved by corresponding position variables taking the values "o" for owner and "m" for manager. If you need a network based on only ownership connections you can easily filter this output to those edges where both position variables take the value "o". The same way it works for a manager based network.
+Two firms (identified by frame id) are connected if they share an entity (manager or owner, identified by manager\_id or owner\_id) at a given time period. The output contains mixed connections (i.e. person X is a manager at firm A and an owner of firm B at a given time period). The role of the person (or entity, an owner may be a firm for example) in the two firms is conserved by corresponding position variables taking the values "o" for owner and "m" for manager. If you need a network based on only ownership connections you can easily filter this output to those edges where both position variables take the value "o". The same way it works for a manager based network.
 
 **Person network based on common firm**
 
-Two people \(identified by manager\_id or owner\_id, but ONLY IF it is a proper person id\) are connected if they are present at the same firm \(as a manager or owner\) at a given time period. The output contains mixed connections \(i.e. person A is a manager at firm X while person B is an owner of firm X at a given time period\). The roles of the people in the firm are conserved by corresponding position variables taking the values "o" for owner and "m" for manager.
+Two people (identified by manager\_id or owner\_id, but ONLY IF it is a proper person id) are connected if they are present at the same firm (as a manager or owner) at a given time period. The output contains mixed connections (i.e. person A is a manager at firm X while person B is an owner of firm X at a given time period). The roles of the people in the firm are conserved by corresponding position variables taking the values "o" for owner and "m" for manager.
 
 **Firm network based on common address**
 
-Two firms \(identified by frame id\) are connected if they share an address \(hq, site or branch, identified by address\_id\) at a given time period. The output contains mixed connections \(i.e. Firm A has it's HQ at address X and Firm B has a branch at the same location\). The role of the address in the two firms is conserved by corresponding type variables taking the values "h" for HQ, "b" for branch, and "s" for site.
+Two firms (identified by frame id) are connected if they share an address (hq, site or branch, identified by address\_id) at a given time period. The output contains mixed connections (i.e. Firm A has it's HQ at address X and Firm B has a branch at the same location). The role of the address in the two firms is conserved by corresponding type variables taking the values "h" for HQ, "b" for branch, and "s" for site.
 
-```text
+```
 ## Schema
 
 ####entity/county_settlement.csv
@@ -312,9 +312,11 @@ Two firms \(identified by frame id\) are connected if they share an address \(hq
 ```
 
 ### Manager DB
+
 The Manager Database (bead name: `manager-db`) is a product derived directly from `cegjegyzek-LTS`. It creates annual snapshots at each firm: which personids were present in a managerial or supervisor role on June 21 of the year at that firm? To save space, it also converts person ids to integers.
 
 The distribution of observations by year:
+
 ```
 . tab year
 
@@ -359,24 +361,24 @@ The distribution of observations by year:
       Total | 14,661,199      100.00
 ```
 
-| Variables | Meaning | Non-missing observations |
-|---|---|---|
-| birth_year | Birth year of manager | 5.3m |                 
-| country_code | Country of manager home address (compliance with ISO 3166-2 unchecked) | 14.6m |                    
-| board    
-| position                  
-| cf | Corporation type         
-| spell_begin |                  
-| imputed |                 
-| ceo | 1 if manager is CEO | 14.7m |                 
-| year                   
-| first_year_as_owner | First observed year of person as an owner of the firm in `manager-db` (missing if not an owner) | 12.1m 
-| manager_enter_year | First observed year of person in `manager-db` | 14.6m
-| iso639 | Language code inferred from manager name | 1,000                   
-| person_id
-| frame_id_numeric                 
-| expat | 1 if manager is a foreign person |                 
-| male | 1 if manager is known to be male | 
+| Variables              | Meaning                                                                                         | Non-missing observations |
+| ---------------------- | ----------------------------------------------------------------------------------------------- | ------------------------ |
+| birth\_year            | Birth year of manager                                                                           | 5.3m                     |
+| country\_code          | Country of manager home address (compliance with ISO 3166-2 unchecked)                          | 14.6m                    |
+| board                  |                                                                                                 |                          |
+| position               |                                                                                                 |                          |
+| cf                     | Corporation type                                                                                |                          |
+| spell\_begin           |                                                                                                 |                          |
+| imputed                |                                                                                                 |                          |
+| ceo                    | 1 if manager is CEO                                                                             | 14.7m                    |
+| year                   |                                                                                                 |                          |
+| first\_year\_as\_owner | First observed year of person as an owner of the firm in `manager-db` (missing if not an owner) | 12.1m                    |
+| manager\_enter\_year   | First observed year of person in `manager-db`                                                   | 14.6m                    |
+| iso639                 | Language code inferred from manager name                                                        | 1,000                    |
+| person\_id             |                                                                                                 |                          |
+| frame\_id\_numeric     |                                                                                                 |                          |
+| expat                  | 1 if manager is a foreign person                                                                |                          |
+| male                   | 1 if manager is known to be male                                                                |                          |
 
 Only natural persons are kept, not liquidators and other firms. If a firm has no reported CEO in a given year, the following imputation rules are used:
 
@@ -384,35 +386,32 @@ Only natural persons are kept, not liquidators and other firms. If a firm has no
 2. If the firm still has no CEO, its past CEOs will be imputed (4,647 firm-person-years)
 
 ### CEO Panel
+
 The CEO Panel (bead name: `ceo-panel`) is a product derived directly from `manager-db`. It only keeps CEOs and fills in firms that do not have a reported CEO. Fill-in rules:
 
-Impute CEOs from the past, up to 3 years.
-    - 1 year: 43,000
-    - 2 years: 17,000
-    - 3 years: 10,000
+Impute CEOs from the past, up to 3 years. - 1 year: 43,000 - 2 years: 17,000 - 3 years: 10,000
 
-Total number of observations: 12,891,181 
-
+Total number of observations: 12,891,181
 
 ### Kozbeszerzes-LTS-2020
 
 ### The bead chain
 
-![](../.gitbook/assets/kozbeszerzes_lts_2019_flowchart.png)
+![](../.gitbook/assets/kozbeszerzes\_lts\_2019\_flowchart.png)
 
 The input data is from the Procurement Authority website [http://www.kozbeszerzes.hu](http://www.kozbeszerzes.hu). The final bead is the `kozbeszerzes-LTS-2020`. The bead chain is made up of these elements:
 
-* `kceu_oldhtml`: Mock bead \(output only\). Contains tenders between 1997 and 2006. These files cannot be retrieved from the website anymore. The files are in html format in the output folder.
-* `kceu_newhtml`: Mock bead \(output only\). Contains tenders between 2007 and 2017. These files have been downloaded by the scripts of the `kceu_download` bead \(see below\). The files are in html format in the output folder.
+* `kceu_oldhtml`: Mock bead (output only). Contains tenders between 1997 and 2006. These files cannot be retrieved from the website anymore. The files are in html format in the output folder.
+* `kceu_newhtml`: Mock bead (output only). Contains tenders between 2007 and 2017. These files have been downloaded by the scripts of the `kceu_download` bead (see below). The files are in html format in the output folder.
 * `kceu_download`: Contains scripts for downloading tenders from the website for any arbitrary year. Currently it contains the 2019 tenders. The files are in html format in the output folder.
 * `kceu_parsed`: Using the three above beads as input, it converts the tender html files to structured, hierarchical xml files by extracting the relevant pieces of information from the published notices. This bead mainly consists of an external parser and the modular parser. The external parser software works as a black box for us. The latter is an internal development which works for certain notice types, to improve the external parser performance. The output files are structured xml files for each tender.
 * `kceu_cleaned`: Using the `kceu_parsed` bead as input, it removes empty tags from the xml files, and converts foreign currencies to HUF.
-* `kceu_xml_to_csv`: Using the `kceu_cleaned` bead as input, it converts the xml \(separate files for each tender\) to different csv files. These are `part.csv` which contains the basic information of the tenders \(subject, cpv, value, etc.\), `requestor.csv`, `bidder.csv`, and the `winner.csv`, which list the relevant entities for each tender part. Note that the latter are intermediary products in the sense that entity resolution and deduplication is still to be carried out on these files \(see below\).
-* `kceu_er`: Using the csv files of the `kceu_xml_to_csv` bead \(and additional beads of firm and pir name indexes\) as input, it applies entity resolution on the tenders \(using `pir search tool` and `firm name search tool` developed within Microdata\): that is, it tries to identify the bidder, winner, and requestor firms and institutions using our databases at Microdata. The outputs are the resolved winner, bidder, and requestor csv files which will contain unique identifier \(tax id or pir id\) for entities so that it can be merged with another Microdata products.
-* `kceu_duplicates`: Using the `part.csv` from the `kceu_xml_to_csv` bead, and the resolved csv files of the `kceu_er` beads, it identifies duplicate tenders. It is necessary because some tender result are announced multiple times at the official website for some reason \(this is more frequent for older tenders\). The identification is based on similarity of requestors and bidders, subject, value, and decision date. The output is a `duplicates.csv` file which list the duplicate tender ids and indicates which lines to drop and which to keep.
+* `kceu_xml_to_csv`: Using the `kceu_cleaned` bead as input, it converts the xml (separate files for each tender) to different csv files. These are `part.csv` which contains the basic information of the tenders (subject, cpv, value, etc.), `requestor.csv`, `bidder.csv`, and the `winner.csv`, which list the relevant entities for each tender part. Note that the latter are intermediary products in the sense that entity resolution and deduplication is still to be carried out on these files (see below).
+* `kceu_er`: Using the csv files of the `kceu_xml_to_csv` bead (and additional beads of firm and pir name indexes) as input, it applies entity resolution on the tenders (using `pir search tool` and `firm name search tool` developed within Microdata): that is, it tries to identify the bidder, winner, and requestor firms and institutions using our databases at Microdata. The outputs are the resolved winner, bidder, and requestor csv files which will contain unique identifier (tax id or pir id) for entities so that it can be merged with another Microdata products.
+* `kceu_duplicates`: Using the `part.csv` from the `kceu_xml_to_csv` bead, and the resolved csv files of the `kceu_er` beads, it identifies duplicate tenders. It is necessary because some tender result are announced multiple times at the official website for some reason (this is more frequent for older tenders). The identification is based on similarity of requestors and bidders, subject, value, and decision date. The output is a `duplicates.csv` file which list the duplicate tender ids and indicates which lines to drop and which to keep.
 * `kceu_hand_inputs`: Despite all our effort to convert every existing procurement data creation process into beads to guarantee reproducibility, there are some remaining files for which we could not identify the source code and/or are unique hand collected inputs that do not fit into standard bead structure. The output files of this empty bead serve as inputs for the `procurement_prepare` bead.
-* `procurement_prepare`: This bead combines the output files of `kceu_xml_to_csv`, `kceu_er`, `kceu_duplicates`, and generates a tender part – bidder level datafile \(`all_bids.dta`\). Moreover, using mostly `merleg-LTS-2020` and some other inputs such as probabilistic firm coloring, it prepares some auxiliary files which contain information on firms, pir entities, firms political connections, and election results.
-* `procurement_data`: This bead builds solely upon the input files prepared in the `procurement_prepare` bead. Combining these files, it produces two types of output data ready for analysis: a tender – bidder level dataset called `procurement_bids_data`, which contains all the necessary information from the tender \(subject, cpv, estimated value, final value, etc.\), the requestor and bidder entities \(location, NACE code, balance information, etc.\), as well as the outcome of the tender. `procurement_wins_data` is essentially the same file, but for each tender only the winning bidders are included. The other type of output data called `government_private_sales_data` is a yearly panel of firms. Besides the most important balance information, it is a yearly aggregate of each firm's procurement revenues, and based this the private revenues are also derived.
+* `procurement_prepare`: This bead combines the output files of `kceu_xml_to_csv`, `kceu_er`, `kceu_duplicates`, and generates a tender part – bidder level datafile (`all_bids.dta`). Moreover, using mostly `merleg-LTS-2020` and some other inputs such as probabilistic firm coloring, it prepares some auxiliary files which contain information on firms, pir entities, firms political connections, and election results.
+* `procurement_data`: This bead builds solely upon the input files prepared in the `procurement_prepare` bead. Combining these files, it produces two types of output data ready for analysis: a tender – bidder level dataset called `procurement_bids_data`, which contains all the necessary information from the tender (subject, cpv, estimated value, final value, etc.), the requestor and bidder entities (location, NACE code, balance information, etc.), as well as the outcome of the tender. `procurement_wins_data` is essentially the same file, but for each tender only the winning bidders are included. The other type of output data called `government_private_sales_data` is a yearly panel of firms. Besides the most important balance information, it is a yearly aggregate of each firm's procurement revenues, and based this the private revenues are also derived.
 
 ### Media and scraped datasets
 
@@ -420,8 +419,7 @@ We have scraped, parsed and cleaned version of the biggest online media provider
 
 We have firm year month unique information about advertisement data from 1991-2016.
 
-> ### Key Points
+> #### Key Points
 >
 > * LTS dataset is supported in the same format at every update
 > * LTS beads are more than just a bunch of beads: one LTS package is suitable for use in a large variety of research trends
-

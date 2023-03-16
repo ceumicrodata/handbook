@@ -23,7 +23,8 @@
 * [Tools](tools/tools.md)
 * [How to work on server](tools/how-to-work-on-server/README.md)
   * [PostgreSQL](tools/how-to-work-on-server/postgresql.md)
-* [Make](tools/make.md)
+* [Make](tools/make/README.md)
+  * [Make in Windows](tools/make/make-in-windows.md)
 * [Julia](tools/julia.md)
 * [Csvkit](tools/csvkit.md)
 * [Release](tools/release.md)
@@ -32,4 +33,3 @@
 
 * [People](about-us/people.md)
 * [Projects](about-us/projects.md)
-

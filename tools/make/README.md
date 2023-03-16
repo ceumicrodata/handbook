@@ -7,17 +7,17 @@ description: >-
 
 # Make
 
-## Getting Started <a id="getting-started"></a>
+## Getting Started <a href="#getting-started" id="getting-started"></a>
 
-### Why do we need Makefiles? <a id="why-do-makefiles-exist-"></a>
+### Why do we need Makefiles? <a href="#why-do-makefiles-exist" id="why-do-makefiles-exist"></a>
 
 Makefiles are used to help decide which parts of a large program need to be recompiled. In a data-intensive project it can be helpful in determining which data transformations or analysis codes need to be re-run due to a change. In general terms, it can be used when you need a series of instructions to run depending on what files have changed. This tutorial will focus on the data analysis use case.
 
 Here's an example dependency graph that you might build with Make. If any file's list of dependencies changes, then the file will get re-created:
 
-![An example of a data-intensive project](../.gitbook/assets/flowchart.png)
+![An example of a data-intensive project](../../.gitbook/assets/flowchart.png)
 
-### Running the Examples <a id="running-the-examples"></a>
+### Running the Examples <a href="#running-the-examples" id="running-the-examples"></a>
 
 To run these examples, you'll need a terminal and "make" installed. For each example, put the contents in a file called `Makefile`, and in that directory run the command `make`. Let's start with the simplest of Makefiles:
 
@@ -34,13 +34,13 @@ echo "hello world"
 hello world
 ```
 
-That's it! 
+That's it!&#x20;
 
-### Makefile Syntax <a id="makefile-syntax"></a>
+### Makefile Syntax <a href="#makefile-syntax" id="makefile-syntax"></a>
 
 A Makefile consists of a set of _rules_. A rule generally looks like this:
 
-```text
+```
 targets: prerequisites
    command
    command
@@ -48,10 +48,10 @@ targets: prerequisites
 ```
 
 * The _targets_ are file names, separated by spaces. Typically, there is only one per rule.
-* The _commands_ are a series of steps typically used to make the target\(s\). These _need to start with a tab character_, not spaces.
+* The _commands_ are a series of steps typically used to make the target(s). These _need to start with a tab character_, not spaces.
 * The _prerequisites_ are also file names, separated by spaces. These files need to exist before the commands for the target are run. These are also called _dependencies_
 
-### Beginner Examples <a id="beginner-examples"></a>
+### Beginner Examples <a href="#beginner-examples" id="beginner-examples"></a>
 
 The following Makefile has three separate _rules_. When you run `make sample.csv` in the terminal, it will create a dataset called sample.csv in a series of steps:
 
@@ -63,7 +63,7 @@ The following Makefile has three separate _rules_. When you run `make sample.csv
 * The top `stata` command is run, because all the `sample.csv` dependencies are finished
 * That's it: `sample.csv` is our last dataset to create.
 
-```text
+```
 sample.csv: consistent.csv
     stata -b create_sample.do # Runs third
 
@@ -76,22 +76,22 @@ source.csv:
 
 This makefile has a single target, called `some_file`. The default target is the first target, so in this case `some_file` will run. Notice that the command below does not create any actual file, it is a simple `echo` command.
 
-```text
+```
 some_file:
     echo "This line will always print"
 ```
 
 This file will make `some_file`, which is an actual file in this case. The first time we run this code the file `some_file` will be created. The second time you try to make it - since it's already made and the dependencies did not change - it will result in `make: 'some_file' is up to date.`
 
-```text
+```
 some_file:
     echo "This line will only print once"
     touch some_file
 ```
 
-Here, the target `some_file` "depends" on `other_file`. When we run `make`, the default target \(`some_file`, since it's first\) will get called. It will first look at its list of _dependencies_, and if any of them are older, it will first run the targets for those dependencies, and then run itself. The second time this is run, neither target will run because both targets exist.
+Here, the target `some_file` "depends" on `other_file`. When we run `make`, the default target (`some_file`, since it's first) will get called. It will first look at its list of _dependencies_, and if any of them are older, it will first run the targets for those dependencies, and then run itself. The second time this is run, neither target will run because both targets exist.
 
-```text
+```
 some_file: other_file
     echo "This will run second, because it depends on other_file"
     touch some_file
@@ -103,7 +103,7 @@ other_file:
 
 This will always run both targets, because `some_file` depends on `other_file`, which is never created.
 
-```text
+```
 some_file: other_file
     touch some_file
 
@@ -113,7 +113,7 @@ other_file:
 
 `clean` is often used as a target that removes the output of other targets, but it is not a special word in `make`.
 
-```text
+```
 some_file: 
     touch some_file
 
@@ -121,11 +121,11 @@ clean:
     rm -f some_file
 ```
 
-### Variables <a id="variables"></a>
+### Variables <a href="#variables" id="variables"></a>
 
 Variables can only be strings. Here's an example of using them:
 
-```text
+```
 files = file1 file2
 some_file: $(files)
     echo "Look at this variable: " $(files)
@@ -142,7 +142,7 @@ clean:
 
 You can reference variables using `${}` or `$().`
 
-```text
+```
 x = dude
 
 all:
@@ -153,13 +153,13 @@ all:
     echo $x
 ```
 
-## Targets <a id="targets"></a>
+## Targets <a href="#targets" id="targets"></a>
 
-### The all target <a id="the-all-target"></a>
+### The all target <a href="#the-all-target" id="the-all-target"></a>
 
 Making multiple targets and you want all of them to run? Make an `all` target.
 
-```text
+```
 all: one two three
 
 one:
@@ -173,12 +173,12 @@ clean:
     rm -f one two three
 ```
 
-### Multiple targets <a id="multiple-targets"></a>
+### Multiple targets <a href="#multiple-targets" id="multiple-targets"></a>
 
-When there are multiple targets for a rule, the commands will be run for each target  
+When there are multiple targets for a rule, the commands will be run for each target\
 `$@` is an automatic variable that contains the target name.
 
-```text
+```
 all: file1 file2
 
 file1 file2:
@@ -190,13 +190,13 @@ file1 file2:
 #     echo $@
 ```
 
-## Automatic Variables and Wildcards <a id="automatic-variables-and-wildcards"></a>
+## Automatic Variables and Wildcards <a href="#automatic-variables-and-wildcards" id="automatic-variables-and-wildcards"></a>
 
-### \* Wildcard <a id="-wildcard"></a>
+### \* Wildcard <a href="#wildcard" id="wildcard"></a>
 
 Both `*` and `%` are called wildcards in Make, but they mean entirely different things. `*` searches your filesystem for matching filenames. I suggest that you always wrap it in the `wildcard` function, because otherwise you may fall into a common pitfall described below. It's oddly unhelpful and I find it more confusing than useful.
 
-```text
+```
 # Print out file information about every .csv file
 print: $(wildcard *.csv)
     ls -la  $?
@@ -206,9 +206,9 @@ print: $(wildcard *.csv)
 
 Danger: `*` may not be directly used in variable definitions
 
-Danger: When `*` matches no files, it is left as it is \(unless run in the `wildcard` function\)
+Danger: When `*` matches no files, it is left as it is (unless run in the `wildcard` function)
 
-```text
+```
 thing_wrong := *.csv # Don't do this! '*' will not get expanded
 thing_right := $(wildcard *.csv)
 
@@ -227,7 +227,7 @@ three: $(thing_right)
 four: $(wildcard *.csv)
 ```
 
-### % Wildcard <a id="-wildcard"></a>
+### % Wildcard <a href="#wildcard" id="wildcard"></a>
 
 `%` is really useful, but is somewhat confusing because of the variety of situations it can be used in.
 
@@ -242,11 +242,11 @@ See these sections on examples of it being used:
 * String Substitution
 * The vpath Directive
 
-### Automatic Variables <a id="automatic-variables"></a>
+### Automatic Variables <a href="#automatic-variables" id="automatic-variables"></a>
 
-There are many [automatic variables](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html), but often only a few show up:
+There are many [automatic variables](https://www.gnu.org/software/make/manual/html\_node/Automatic-Variables.html), but often only a few show up:
 
-```text
+```
 hey: one two
     # Outputs "hey", since this is the first target
     echo $@
@@ -269,22 +269,22 @@ clean:
     rm -f hey one two
 ```
 
-## Fancy Rules <a id="fancy-rules"></a>
+## Fancy Rules <a href="#fancy-rules" id="fancy-rules"></a>
 
-### Static Pattern Rules <a id="static-pattern-rules"></a>
+### Static Pattern Rules <a href="#static-pattern-rules" id="static-pattern-rules"></a>
 
 Make loves c compilation. And every time it expresses its love, things get confusing. Here's the syntax for a new type of rule called a static pattern:
 
-```text
+```
 targets ...: target-pattern: prereq-patterns ...
    commands
 ```
 
-The essence is that the given target is matched by the target-pattern \(via a `%` wildcard\). Whatever was matched is called the _stem_. The stem is then substituted into the prereq-pattern, to generate the target's prereqs.
+The essence is that the given target is matched by the target-pattern (via a `%` wildcard). Whatever was matched is called the _stem_. The stem is then substituted into the prereq-pattern, to generate the target's prereqs.
 
 A typical use case is to compile `.c` files into `.o` files. Here's the _manual way_:
 
-```text
+```
 objects = foo.o bar.o all.o
 all: $(objects)
 
@@ -305,7 +305,7 @@ clean:
 
 Here's the more _efficient way_, using a static pattern rule:
 
-```text
+```
 objects = foo.o bar.o all.o
 all: $(objects)
 
@@ -325,11 +325,11 @@ clean:
     rm -f *.c *.o all
 ```
 
-### Static Pattern Rules and Filter <a id="static-pattern-rules-and-filter"></a>
+### Static Pattern Rules and Filter <a href="#static-pattern-rules-and-filter" id="static-pattern-rules-and-filter"></a>
 
 While I introduce functions later on, I'll forshadow what you can do with them. The `filter` function can be used in Static pattern rules to match the correct files. In this example, I made up the `.raw` and `.result` extensions.
 
-```text
+```
 obj_files = foo.result bar.o lose.o
 src_files = foo.raw bar.c lose.c
 
@@ -347,7 +347,7 @@ clean:
     rm -f $(src_files)
 ```
 
-### Implicit Rules <a id="implicit-rules"></a>
+### Implicit Rules <a href="#implicit-rules" id="implicit-rules"></a>
 
 Perhaps the most confusing part of make is the magic rules and variables that are made. Here's a list of implicit rules:
 
@@ -364,7 +364,7 @@ As such, the important variables used by implicit rules are:
 * `CPPFLAGS`: Extra flags to give to the C preprosessor
 * `LDFLAGS`: Extra flags to give to compilers when they are supposed to invoke the linker
 
-```text
+```
 CC = gcc # Flag for implicit rules
 CFLAGS = -g # Flag for implicit rules. Turn on debug info
 
@@ -379,7 +379,7 @@ clean:
     rm -f blah*
 ```
 
-### Pattern Rules <a id="pattern-rules"></a>
+### Pattern Rules <a href="#pattern-rules" id="pattern-rules"></a>
 
 Pattern rules are often used but quite confusing. You can look at them as two ways:
 
@@ -388,7 +388,7 @@ Pattern rules are often used but quite confusing. You can look at them as two wa
 
 Let's start with an example first:
 
-```text
+```
 # Define a pattern rule that compiles every .c file into a .o file
 %.o : %.c
         $(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
@@ -398,18 +398,18 @@ Pattern rules contain a '%' in the target. This '%' matches any nonempty string,
 
 Here's another example:
 
-```text
+```
 # Define a pattern rule that has no pattern in the prerequisites.
 # This just creates empty .c files when needed.
 %.c:
    touch $@
 ```
 
-### Double-Colon Rules <a id="double-colon-rules"></a>
+### Double-Colon Rules <a href="#double-colon-rules" id="double-colon-rules"></a>
 
 Double-Colon Rules are rarely used, but allow multiple rules to be defined for the same target. If these were single colons, a warning would be printed and only the second set of commands would run.
 
-```text
+```
 all: blah
 
 blah::
@@ -419,24 +419,24 @@ blah::
     echo "hello again"
 ```
 
-## Commands and execution <a id="commands-and-execution"></a>
+## Commands and execution <a href="#commands-and-execution" id="commands-and-execution"></a>
 
-### Command Echoing/Silencing <a id="command-echoing-silencing"></a>
+### Command Echoing/Silencing <a href="#command-echoing-silencing" id="command-echoing-silencing"></a>
 
-Add an `@` before a command to stop it from being printed  
+Add an `@` before a command to stop it from being printed\
 You can also run make with `-s` to add an `@` before each line
 
-```text
+```
 all: 
     @echo "This make line will not be printed"
     echo "But this will"
 ```
 
-### Command Execution <a id="command-execution"></a>
+### Command Execution <a href="#command-execution" id="command-execution"></a>
 
-Each command is run in a new shell \(or at least the effect is as such\)
+Each command is run in a new shell (or at least the effect is as such)
 
-```text
+```
 all: 
     cd ..
     # The cd above does not affect this line, because each command is effectively run in a new shell
@@ -450,39 +450,39 @@ all:
     echo `pwd`
 ```
 
-### Default Shell <a id="default-shell"></a>
+### Default Shell <a href="#default-shell" id="default-shell"></a>
 
 The default shell is `/bin/sh`. You can change this by changing the variable SHELL:
 
-```text
+```
 SHELL=/bin/bash
 
 cool:
     echo "Hello from bash"
 ```
 
-### Error handling with `-k`, `-i`, and `-` <a id="error-handling-with-k-i-and-"></a>
+### Error handling with `-k`, `-i`, and `-` <a href="#error-handling-with-k-i-and" id="error-handling-with-k-i-and"></a>
 
-Add `-k` when running make to continue running even in the face of errors. Helpful if you want to see all the errors of Make at once.  
-Add a `-` before a command to suppress the error  
+Add `-k` when running make to continue running even in the face of errors. Helpful if you want to see all the errors of Make at once.\
+Add a `-` before a command to suppress the error\
 Add `-i` to make to have this happen for every command.
 
-```text
+```
 one:
     # This error will be printed but ignored, and make will continue to run
     -false
     touch one
 ```
 
-### Interrupting or killing make <a id="interrupting-or-killing-make"></a>
+### Interrupting or killing make <a href="#interrupting-or-killing-make" id="interrupting-or-killing-make"></a>
 
 Note only: If you `ctrl+c` make, it will delete the newer targets it just made.
 
-### Recursive use of make <a id="recursive-use-of-make"></a>
+### Recursive use of make <a href="#recursive-use-of-make" id="recursive-use-of-make"></a>
 
 To recursively call a makefile, use the special `$(MAKE)` instead of `make` because it will pass the make flags for you and won't itself be affected by them.
 
-```text
+```
 new_contents = "hello:\n\ttouch inside_file"
 all:
     mkdir -p subdir
@@ -493,13 +493,13 @@ clean:
     rm -rf subdir
 ```
 
-### Use export for recursive make <a id="use-export-for-recursive-make"></a>
+### Use export for recursive make <a href="#use-export-for-recursive-make" id="use-export-for-recursive-make"></a>
 
 The export directive takes a variable and makes it accessible to sub-make commands. In this example, `cooly` is exported such that the makefile in subdir can use it.
 
-Note: export has the same syntax as sh, but they aren't related \(although similar in function\)
+Note: export has the same syntax as sh, but they aren't related (although similar in function)
 
-```text
+```
 new_contents = "hello:\n\\techo \$$(cooly)"
 
 all:
@@ -521,7 +521,7 @@ clean:
 
 You need to export variables to have them run in the shell as well.
 
-```text
+```
 one=this will only work locally
 export two=we can run subcommands with this
 
@@ -534,7 +534,7 @@ all:
 
 `.EXPORT_ALL_VARIABLES` exports all variables for you.
 
-```text
+```
 .EXPORT_ALL_VARIABLES:
 new_contents = "hello:\n\techo \$$(cooly)"
 
@@ -553,22 +553,22 @@ clean:
     rm -rf subdir
 ```
 
-### Arguments to make <a id="arguments-to-make"></a>
+### Arguments to make <a href="#arguments-to-make" id="arguments-to-make"></a>
 
 There's a nice [list of options](http://www.gnu.org/software/make/manual/make.html#Options-Summary) that can be run from make. Check out `--dry-run`, `--touch`, `--old-file`.
 
 You can have multiple targets to make, i.e. `make clean run test` runs the `clean` goal, then `run`, and then `test`.
 
-## Variables Pt. 2 <a id="variables-pt-2"></a>
+## Variables Pt. 2 <a href="#variables-pt-2" id="variables-pt-2"></a>
 
-### Flavors and modification <a id="flavors-and-modification"></a>
+### Flavors and modification <a href="#flavors-and-modification" id="flavors-and-modification"></a>
 
 There are two flavors of variables:
 
-* recursive \(use `=`\) - only looks for the variables when the command is _used_, not when it's _defined_.
-* simply expanded \(use `:=`\) - like normal imperative programming -- only those defined so far get expanded
+* recursive (use `=`) - only looks for the variables when the command is _used_, not when it's _defined_.
+* simply expanded (use `:=`) - like normal imperative programming -- only those defined so far get expanded
 
-```text
+```
 # Recursive variable. This will print "later" below
 one = one ${later_variable}
 # Simply expanded variable. This will not print "later" below
@@ -581,9 +581,9 @@ all:
     echo $(two)
 ```
 
-Simply expanded \(using `:=`\) allows you to append to a variable. Recursive definitions will give an infinite loop error.
+Simply expanded (using `:=`) allows you to append to a variable. Recursive definitions will give an infinite loop error.
 
-```text
+```
 one = hello
 # one gets defined as a simply expanded variable (:=) and thus can handle appending
 one := ${one} there
@@ -594,7 +594,7 @@ all:
 
 `?=` only sets variables if they have not yet been set
 
-```text
+```
 one = hello
 one ?= will not be set
 two ?= will be set
@@ -606,7 +606,7 @@ all:
 
 Spaces at the end of a line are not stripped, but those at the start are. To make a variable with a single space, use `$(nullstring)`
 
-```text
+```
 with_spaces = hello   # with_spaces has many spaces after "hello"
 after = $(with_spaces)there
 
@@ -620,7 +620,7 @@ all:
 
 An undefined variable is actually an empty string!
 
-```text
+```
 all: 
     # Undefined variables are just empty strings!
     echo $(nowhere)
@@ -628,7 +628,7 @@ all:
 
 Use `+=` to append
 
-```text
+```
 foo := start
 foo += more
 
@@ -636,13 +636,13 @@ all:
     echo $(foo)
 ```
 
-[String Substitution](https://makefiletutorial.com/#string-substitution) is also a really common and useful way to modify variables. Also check out [Text Functions](https://www.gnu.org/software/make/manual/html_node/Text-Functions.html#Text-Functions) and [Filename Functions](https://www.gnu.org/software/make/manual/html_node/File-Name-Functions.html#File-Name-Functions).
+[String Substitution](https://makefiletutorial.com/#string-substitution) is also a really common and useful way to modify variables. Also check out [Text Functions](https://www.gnu.org/software/make/manual/html\_node/Text-Functions.html#Text-Functions) and [Filename Functions](https://www.gnu.org/software/make/manual/html\_node/File-Name-Functions.html#File-Name-Functions).
 
-### Command line arguments and override <a id="command-line-arguments-and-override"></a>
+### Command line arguments and override <a href="#command-line-arguments-and-override" id="command-line-arguments-and-override"></a>
 
 You can override variables that come from the command line by using `override`. Here we ran make with `make option_one=hi`
 
-```text
+```
 # Overrides command line arguments
 override option_one = did_override
 # Does not override command line arguments
@@ -652,11 +652,11 @@ all:
     echo $(option_two)
 ```
 
-### List of commands and define <a id="list-of-commands-and-define"></a>
+### List of commands and define <a href="#list-of-commands-and-define" id="list-of-commands-and-define"></a>
 
 "define" is actually just a list of commands. It has nothing to do with being a function. Note here that it's a bit different than having a semi-colon between commands, because each is run in a separate shell, as expected.
 
-```text
+```
 one = export blah="I was set!"; echo $$blah
 
 define two
@@ -673,11 +673,11 @@ all:
     @$(two)
 ```
 
-### Target-specific variables <a id="target-specific-variables"></a>
+### Target-specific variables <a href="#target-specific-variables" id="target-specific-variables"></a>
 
 Variables can be assigned for specific targets
 
-```text
+```
 all: one = cool
 
 all: 
@@ -687,11 +687,11 @@ other:
     echo one is nothing: $(one)
 ```
 
-### Pattern-specific variables <a id="pattern-specific-variables"></a>
+### Pattern-specific variables <a href="#pattern-specific-variables" id="pattern-specific-variables"></a>
 
 You can assign variables for specific target _patterns_
 
-```text
+```
 %.c: one = cool
 
 blah.c: 
@@ -701,11 +701,11 @@ other:
     echo one is nothing: $(one)
 ```
 
-## Conditional part of Makefiles <a id="conditional-part-of-makefiles"></a>
+## Conditional part of Makefiles <a href="#conditional-part-of-makefiles" id="conditional-part-of-makefiles"></a>
 
-### Conditional if/else <a id="conditional-if-else"></a>
+### Conditional if/else <a href="#conditional-if-else" id="conditional-if-else"></a>
 
-```text
+```
 foo = ok
 
 all:
@@ -716,9 +716,9 @@ else
 endif
 ```
 
-### Check if a variable is empty <a id="check-if-a-variable-is-empty"></a>
+### Check if a variable is empty <a href="#check-if-a-variable-is-empty" id="check-if-a-variable-is-empty"></a>
 
-```text
+```
 nullstring =
 foo = $(nullstring) # end of line; there is a space here
 
@@ -731,11 +731,11 @@ ifeq ($(nullstring),)
 endif
 ```
 
-### Check if a variable is defined <a id="check-if-a-variable-is-defined"></a>
+### Check if a variable is defined <a href="#check-if-a-variable-is-defined" id="check-if-a-variable-is-defined"></a>
 
 ifdef does not expand variable references; it just sees if something is defined at all
 
-```text
+```
 bar =
 foo = $(bar)
 
@@ -748,11 +748,11 @@ ifdef bar
 endif
 ```
 
-### $\(makeflags\) <a id="-makeflags-"></a>
+### $(makeflags) <a href="#makeflags" id="makeflags"></a>
 
 This example shows you how to test make flags with `findstring` and `MAKEFLAGS`. Run this example with `make -i` to see it print out the echo statement.
 
-```text
+```
 bar =
 foo = $(bar)
 
@@ -763,13 +763,13 @@ ifneq (,$(findstring i, $(MAKEFLAGS)))
 endif
 ```
 
-## Functions <a id="functions"></a>
+## Functions <a href="#functions" id="functions"></a>
 
-### First Functions <a id="first-functions"></a>
+### First Functions <a href="#first-functions" id="first-functions"></a>
 
-_Functions_ are mainly just for text processing. Call functions with `$(fn, arguments)` or `${fn, arguments}`. You can make your own using the [call](https://www.gnu.org/software/make/manual/html_node/Call-Function.html#Call-Function) builtin function. Make has a decent amount of [builtin functions](https://www.gnu.org/software/make/manual/html_node/Functions.html).
+_Functions_ are mainly just for text processing. Call functions with `$(fn, arguments)` or `${fn, arguments}`. You can make your own using the [call](https://www.gnu.org/software/make/manual/html\_node/Call-Function.html#Call-Function) builtin function. Make has a decent amount of [builtin functions](https://www.gnu.org/software/make/manual/html\_node/Functions.html).
 
-```text
+```
 bar := ${subst not, totally, "I am not superman"}
 all: 
     @echo $(bar)
@@ -777,7 +777,7 @@ all:
 
 If you want to replace spaces or commas, use variables
 
-```text
+```
 comma := ,
 empty:=
 space := $(empty) $(empty)
@@ -790,7 +790,7 @@ all:
 
 Do NOT include spaces in the arguments after the first. That will be seen as part of the string.
 
-```text
+```
 comma := ,
 empty:=
 space := $(empty) $(empty)
@@ -802,11 +802,11 @@ all:
     @echo $(bar)
 ```
 
-### String Substitution <a id="string-substitution"></a>
+### String Substitution <a href="#string-substitution" id="string-substitution"></a>
 
 `$(patsubst pattern,replacement,text)` does the following:
 
-"Finds whitespace-separated words in text that match pattern and replaces them with replacement. Here pattern may contain a ‘%’ which acts as a wildcard, matching any number of any characters within a word. If replacement also contains a ‘%’, the ‘%’ is replaced by the text that matched the ‘%’ in pattern. Only the first ‘%’ in the pattern and replacement is treated this way; any subsequent ‘%’ is unchanged." \([GNU docs](https://www.gnu.org/software/make/manual/html_node/Text-Functions.html#Text-Functions)\)
+"Finds whitespace-separated words in text that match pattern and replaces them with replacement. Here pattern may contain a ‘%’ which acts as a wildcard, matching any number of any characters within a word. If replacement also contains a ‘%’, the ‘%’ is replaced by the text that matched the ‘%’ in pattern. Only the first ‘%’ in the pattern and replacement is treated this way; any subsequent ‘%’ is unchanged." ([GNU docs](https://www.gnu.org/software/make/manual/html\_node/Text-Functions.html#Text-Functions))
 
 The substitution reference `$(text:pattern=replacement)` is a shorthand for this.
 
@@ -814,7 +814,7 @@ There's another shorthand that that replaces only suffixes: `$(text:suffix=repla
 
 Note: don't add extra spaces for this shorthand. It will be seen as a search or replacement term.
 
-```text
+```
 foo := a.o b.o l.a c.o
 one := $(patsubst %.o,%.c,$(foo))
 # This is a shorthand for the above
@@ -828,12 +828,12 @@ all:
     echo $(three)
 ```
 
-### The foreach function <a id="the-foreach-function"></a>
+### The foreach function <a href="#the-foreach-function" id="the-foreach-function"></a>
 
-The foreach function looks like this: `$(foreach var,list,text)`. It converts one list of words \(separated by spaces\) to another. `var` is set to each word in list, and `text` is expanded for each word.  
+The foreach function looks like this: `$(foreach var,list,text)`. It converts one list of words (separated by spaces) to another. `var` is set to each word in list, and `text` is expanded for each word.\
 This appends an exclamation after each word:
 
-```text
+```
 foo := who are you
 # For each "word" in foo, output that same word with an exclamation after
 bar := $(foreach wrd,$(foo),$(wrd)!)
@@ -843,11 +843,11 @@ all:
     @echo $(bar)
 ```
 
-### The if function <a id="the-if-function"></a>
+### The if function <a href="#the-if-function" id="the-if-function"></a>
 
 `if` checks if the first argument is nonempty. If so runs the second argument, otherwise runs the third.
 
-```text
+```
 foo := $(if this-is-not-empty,then!,else!)
 empty :=
 bar := $(if $(empty),then!,else!)
@@ -857,11 +857,11 @@ all:
     @echo $(bar)
 ```
 
-### The call function <a id="the-call-function"></a>
+### The call function <a href="#the-call-function" id="the-call-function"></a>
 
 Make supports creating basic functions. You "define" the function just by creating a variable, but use the parameters `$(0)`, `$(1)`, etc. You then call the function with the special `call` function. The syntax is `$(call variable,param,param)`. `$(0)` is the variable, while `$(1)`, `$(2)`, etc. are the params.
 
-```text
+```
 sweet_new_fn = Variable Name: $(0) First: $(1) Second: $(2) Empty Variable: $(3)
 
 all:
@@ -869,34 +869,34 @@ all:
     @echo $(call sweet_new_fn, go, tigers)
 ```
 
-### The shell function <a id="the-shell-function"></a>
+### The shell function <a href="#the-shell-function" id="the-shell-function"></a>
 
 shell - This calls the shell, but it replaces newlines with spaces!
 
-```text
+```
 all: 
     @echo $(shell ls -la) # Very ugly because the newlines are gone!
 ```
 
-## Other Features <a id="other-features"></a>
+## Other Features <a href="#other-features" id="other-features"></a>
 
-### Include Makefiles <a id="include-makefiles"></a>
+### Include Makefiles <a href="#include-makefiles" id="include-makefiles"></a>
 
 The include directive tells make to read one or more other makefiles. It's a line in the makefile makefile that looks like this:
 
-```text
+```
 include filenames...
 ```
 
 This is particularly useful when you use compiler flags like `-M` that create Makefiles based on the source. For example, if some c files includes a header, that header will be added to a Makefile that's written by gcc. I talk about this more in the [Makefile Cookbook](https://makefiletutorial.com/#makefile-cookbook)
 
-### The vpath Directive <a id="the-vpath-directive"></a>
+### The vpath Directive <a href="#the-vpath-directive" id="the-vpath-directive"></a>
 
-Use vpath to specify where some set of prerequisites exist. The format is `vpath <pattern> <directories, space/colon separated>`  
-`<pattern>` can have a `%`, which matches any zero or more characters.  
+Use vpath to specify where some set of prerequisites exist. The format is `vpath <pattern> <directories, space/colon separated>`\
+`<pattern>` can have a `%`, which matches any zero or more characters.\
 You can also do this globallyish with the variable VPATH
 
-```text
+```
 vpath %.h ../headers ../other-directory
 
 some_binary: ../headers blah.h
@@ -913,21 +913,21 @@ clean:
     rm -f some_binary
 ```
 
-### Multiline <a id="multiline"></a>
+### Multiline <a href="#multiline" id="multiline"></a>
 
-The backslash \("\"\) character gives us the ability to use multiple lines when the commands are too long
+The backslash ("\\") character gives us the ability to use multiple lines when the commands are too long
 
-```text
+```
 some_file: 
     echo This line is too long, so \
         it is broken up into multiple lines
 ```
 
-### .phony <a id="-phony"></a>
+### .phony <a href="#phony" id="phony"></a>
 
 Adding `.PHONY` to a target will prevent make from confusing the phony target with a file name. In this example, if the file `clean` is created, make clean will still be run. `.PHONY` is great to use, but I'll skip it in the rest of the examples for simplicity.
 
-```text
+```
 some_file:
     touch some_file
     touch clean
@@ -938,12 +938,12 @@ clean:
     rm -f clean
 ```
 
-### .delete\_on\_error <a id="-delete_on_error"></a>
+### .delete\_on\_error <a href="#delete_on_error" id="delete_on_error"></a>
 
-The make tool will stop running a rule \(and will propogate back to prerequisites\) if a command returns a nonzero exit status.  
+The make tool will stop running a rule (and will propogate back to prerequisites) if a command returns a nonzero exit status.\
 `DELETE_ON_ERROR` will delete the target of a rule if the rule fails in this manner. This will happen for all targets, not just the one it is before like PHONY. It's a good idea to always use this, even though make does not for historical reasons.
 
-```text
+```
 .DELETE_ON_ERROR:
 all: one two
 
@@ -956,13 +956,13 @@ two:
     false
 ```
 
-## Makefile Cookbook <a id="makefile-cookbook"></a>
+## Makefile Cookbook <a href="#makefile-cookbook" id="makefile-cookbook"></a>
 
 Let's go through a really juicy Make example that works well for medium sized projects.
 
 The neat thing about this makefile is it automatically determines dependencies for you. All you have to do is put your C/C++ files in the `src/` folder.
 
-```text
+```
 # Thanks to Job Vranish (https://spin.atomicobject.com/2016/08/26/makefile-c-projects/)
 TARGET_EXEC := final_program
 
@@ -1013,6 +1013,4 @@ clean:
 # errors to show up.
 -include $(DEPS)
 ```
-
-
 

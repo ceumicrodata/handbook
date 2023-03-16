@@ -41,27 +41,27 @@ The haflinger server has 504GB memory and 112 cores.
 
 First, you have to be connected to the CEU network through VPN. You can use the AnyConnect client or the openconnect package depending on your OS. For more information on VPN usage please visit [https://ceuedu.sharepoint.com/sites/itservices/SitePages/vpn.aspx](https://ceuedu.sharepoint.com/sites/itservices/SitePages/vpn.aspx)
 
-You can access the shell \(command line\) on haflinger.ceu.hu by using a Secure Shell \(ssh\) client, such as Putty \([http://docs.microdata.io/putty](http://docs.microdata.io/putty)\). On UNIX-like systems the built-in ssh package allows you to connect without any additional software. This is where you can change your password, or where you can start batch jobs from the shell.
+You can access the shell (command line) on haflinger.ceu.hu by using a Secure Shell (ssh) client, such as Putty ([http://docs.microdata.io/putty](http://docs.microdata.io/putty)). On UNIX-like systems the built-in ssh package allows you to connect without any additional software. This is where you can change your password, or where you can start batch jobs from the shell.
 
-You can connect to the graphical interface \(windows-like\) on haflinger.ceu.hu via a VNC client. On UNIX-like systems using X-server \(e.g. Ubuntu\) you can simply allow X11 forwarding in an ssh connection by using the `-X` optional argument and don't need a VNC client.
+You can connect to the graphical interface (windows-like) on haflinger.ceu.hu via a VNC client. On UNIX-like systems using X-server (e.g. Ubuntu) you can simply allow X11 forwarding in an ssh connection by using the `-X` optional argument and don't need a VNC client.
 
 ### Linux
 
-You can connect to the server from a Terminal window using the following command \(substitute your username and port number appropriately\):
+You can connect to the server from a Terminal window using the following command (substitute your username and port number appropriately):
 
-```text
+```
   $ ssh USER@haflinger.ceu.hu -p PORT -X
 ```
 
 ### MacOS
 
-You can connect to the server from a Terminal window using the following command \(substitute your username and port number appropriately\)
+You can connect to the server from a Terminal window using the following command (substitute your username and port number appropriately)
 
 ```bash
   $ ssh USER@haflinger.ceu.hu -p PORT
 ```
 
-For a graphical server connection a useful tool is XQuartz. Using XQuartz you can enable X11 forwarding. In an XQuartz terminal you can connect to the graphical server by issuing the following command: \(substitute your username and port number appropriately\)
+For a graphical server connection a useful tool is XQuartz. Using XQuartz you can enable X11 forwarding. In an XQuartz terminal you can connect to the graphical server by issuing the following command: (substitute your username and port number appropriately)
 
 ```bash
   $ ssh USER@haflinger.ceu.hu -p PORT -y
@@ -83,37 +83,37 @@ A good example how you can start the viewer from the cmd. You have to change the
 
 #### Xserver and git-bash
 
-You can also connect to the X server from git-bash terminal by the help of [vcxsrv](https://sourceforge.net/projects/vcxsrv/files/).  
-  
-Install the application then open`Xlaunch`and use the default settings: Multiple window, start no client, clipboard. Just click next as long as an X appears on the tray. X server has started. 
+You can also connect to the X server from git-bash terminal by the help of [vcxsrv](https://sourceforge.net/projects/vcxsrv/files/).\
+\
+Install the application then open`Xlaunch`and use the default settings: Multiple window, start no client, clipboard. Just click next as long as an X appears on the tray. X server has started.&#x20;
 
 Open git-bash and type `cd $HOME` You are now in your Windows home folder. Just check it with `pwd`Create a new file called .bash\_profile: `nano .bash_profile` Into the profile file save the following options: `export DISPLAY=localhost:0.0`Save the file and restart git-bash.
 
 Connect to your remote server using the following command:
 
-```text
+```
 $ ssh USER@haflinger.ceu.hu -p PORT -Y -v
 ```
 
 The option`-v` is used to diagnose the X connection problems. You can leave later if everything works well.
 
-Log in with your own haflinger password then e.g. type `xstata-mp`. The Stata comes up in a new window. Be careful this is not a VNC session, if you close the Stata window you close the session. 
+Log in with your own haflinger password then e.g. type `xstata-mp`. The Stata comes up in a new window. Be careful this is not a VNC session, if you close the Stata window you close the session.&#x20;
 
 ### Private and public keys for easier connection
 
 For easier server access you can create private/public key pairs as follows:
 
 1. Start the key generation program by typing `ssh-keygen` on your local computer
-2. Enter the path to the file where it is going to be located. Make sure you locate it in your `.ssh` folder and name it as `microdata_kulcs` \(or any alternative filename\).
+2. Enter the path to the file where it is going to be located. Make sure you locate it in your `.ssh` folder and name it as `microdata_kulcs` (or any alternative filename).
 3. Enter a Passphrase or just simply press Enter. The public and private keys are created automatically. The public key ends with the string `.pub`.
-4. Copy the public key to the `$HOME/USER/.ssh` folder on the server. \(substitute your username appropriately\)
-5. An alternative solution for point 4 is using the following code: `ssh-copy-id -i ~/.ssh/microdata_kulcs USER@haflinger.ceu.hu -p PORT`. \(a useful [source](https://www.ssh.com/ssh/keygen/) for the whole process\)
+4. Copy the public key to the `$HOME/USER/.ssh` folder on the server. (substitute your username appropriately)
+5. An alternative solution for point 4 is using the following code: `ssh-copy-id -i ~/.ssh/microdata_kulcs USER@haflinger.ceu.hu -p PORT`. (a useful [source](https://www.ssh.com/ssh/keygen/) for the whole process)
 
 Finally, you can alias the command that connects you to server:
 
 #### MacOS
 
-Copy the following text into the `config` file which is located in your .ssh folder: \(substitute your usernames and port number appropriately\)
+Copy the following text into the `config` file which is located in your .ssh folder: (substitute your usernames and port number appropriately)
 
 ```bash
 Host haflinger
@@ -127,7 +127,7 @@ This allows you to connect to the haflinger server by typing the `ssh haflinger`
 
 #### Linux
 
-Add the following lines to your `.bashrc` file located in your home folder \(by typing `nano .bashrc`\):
+Add the following lines to your `.bashrc` file located in your home folder (by typing `nano .bashrc`):
 
 ```bash
 alias haflinger='ssh USER@haflinger.ceu.hu -p PORT -X'
@@ -137,17 +137,17 @@ This allows you to connect to the haflinger server by typing the `haflinger` com
 
 #### Windows
 
-Open git-bash and type`cd $HOME`. Create a new folder called .ssh:`mkdir .ssh` and cd into the .ssh folder. From the folder run `ssh-keygen.exe` Now you can follow the "For easier server access you can create private/public key pairs steps" second and third point. 
+Open git-bash and type`cd $HOME`. Create a new folder called .ssh:`mkdir .ssh` and cd into the .ssh folder. From the folder run `ssh-keygen.exe` Now you can follow the "For easier server access you can create private/public key pairs steps" second and third point.&#x20;
 
-If you don't have the .ssh folder at`$HOME/USER` at the server you have to create it there also. Login from git-bash. The logout command is `exit.` Use it now! 
+If you don't have the .ssh folder at`$HOME/USER` at the server you have to create it there also. Login from git-bash. The logout command is `exit.` Use it now!&#x20;
 
-When you generated the public and private keys called `microdata_kulcs`push it to the server from your local machine .ssh folder. 
+When you generated the public and private keys called `microdata_kulcs`push it to the server from your local machine .ssh folder.&#x20;
 
-`user@DESKTOP: ssh-copy-id -i microdata_kulcs -p PORT USER@haflinger.ceu.hu` 
+`user@DESKTOP: ssh-copy-id -i microdata_kulcs -p PORT USER@haflinger.ceu.hu`&#x20;
 
 If you done it well a file called authorized\_keys created in the `/home/USER/.ssh/authorized_keys`
 
-Connect back to the server and change the folder permissions: 
+Connect back to the server and change the folder permissions:&#x20;
 
 `user@haflinger: chmod 700 ~/.ssh`
 
@@ -155,15 +155,15 @@ Connect back to the server and change the folder permissions:
 
 Exit from the server.
 
-Open the .bash\_profile with nano and put an alias into the profile file: 
+Open the .bash\_profile with nano and put an alias into the profile file:&#x20;
 
 `alias haflinger='ssh -p PORT -Y -v USER@haflinger.ceu.hu'`
 
-Now your bash\_profile consists two line the the export display and the alias. 
+Now your bash\_profile consists two line the the export display and the alias.&#x20;
 
-The final step is to add the ssh agent to the profile file. The agent handles the private and public keys. 
+The final step is to add the ssh agent to the profile file. The agent handles the private and public keys.&#x20;
 
-The final .bash\_profile looks like this: 
+The final .bash\_profile looks like this:&#x20;
 
 ```bash
 export DISPLAY=localhost:0.0
@@ -180,7 +180,7 @@ Start the Xlaunch. Restart the git-bash and type `haflinger` If everything worke
 
 ## Structure of the server and general workflow
 
-When connecting to the server, you are directed to your home folder \`/home/USER\_NAME'. Only you have access to your home folder. This folder should only be used to store configuration files \(like ssh keys, etc.\).
+When connecting to the server, you are directed to your home folder \`/home/USER\_NAME'. Only you have access to your home folder. This folder should only be used to store configuration files (like ssh keys, etc.).
 
 For any project work you should be working in your sandbox located at `/srv/sandbox/USER_NAME`. Working in your sandbox allows others to check your work and develop projects collaboratively. Folders with limited access for certain projects are located in `/srv/project`. In case you need a separate project folder with access limitation you should contact a project manager.
 
@@ -188,13 +188,13 @@ When saving your bead, a copy of your work is created in .zip format in one of t
 
 ### Creating alias to your sandbox
 
-You can create aliases that simplifiy your access to you sandbox and other directories. For that, you need to add the following commands to your `.bashrc` file: \(substitute your username appropriately\)
+You can create aliases that simplifiy your access to you sandbox and other directories. For that, you need to add the following commands to your `.bashrc` file: (substitute your username appropriately)
 
-```text
+```
 alias sandbox='cd /srv/sandbox/USER_NAME'
 ```
 
-The `.bashrc` is located in your home folder \(`home/USER`\).
+The `.bashrc` is located in your home folder (`home/USER`).
 
 Then, you can access your sandbox by typing `sandbox` to the command line.
 
@@ -223,9 +223,9 @@ Working in screen allows users to exit the server without terminating the runnin
 
 When your code requires specific python packages, you should download them to a virtual environment. The Python environment on the server incorporates only the most basic Python packages so it is always recommended to work in a virtual environment. For instructions on how to create and activate a virtual environment, see the 'Useful server commands' section below.
 
-If your program runs from a `main.sh` file, you can easily automate the creation of the virtual environment by inserting the following script to your code. Substitute the name of the virtual environment and local package folder \(if applicable\) appropriately.
+If your program runs from a `main.sh` file, you can easily automate the creation of the virtual environment by inserting the following script to your code. Substitute the name of the virtual environment and local package folder (if applicable) appropriately.
 
-```text
+```
 virtualenv 'NAME_OF_THE_ENV'
 . 'NAME_OF_THE_ENV'/bin/activate
 pip install -r requirements.txt
@@ -238,7 +238,7 @@ deactivate
 
 To create a virtualenv and use it permanently, one can use [mkvirtualenv](https://virtualenvwrapper.readthedocs.io/en/latest/):
 
-```text
+```
 $ mkvirtualenv pandas
 (pandas) $ pip install pandas
 (pandas) $ python
@@ -250,9 +250,9 @@ $ workon pandas
 
 ### Parallelization
 
-Parallelization refers to the spreading the code processing work across multiple cores \(CPUs\). Parallelization is useful to fasten the running time of codes by optimizing the available resources.
+Parallelization refers to the spreading the code processing work across multiple cores (CPUs). Parallelization is useful to fasten the running time of codes by optimizing the available resources.
 
-For a short introduction on parallelization in Python, please visit the following website: [https://sebastianraschka.com/Articles/2014\_multiprocessing.html](https://sebastianraschka.com/Articles/2014_multiprocessing.html)
+For a short introduction on parallelization in Python, please visit the following website: [https://sebastianraschka.com/Articles/2014\_multiprocessing.html](https://sebastianraschka.com/Articles/2014\_multiprocessing.html)
 
 ### STATA
 
@@ -260,50 +260,48 @@ You can access the STATA program with graphical user interface on the haflinger.
 
 ### Python
 
-The servers run both python2 and python3. You can access them by typing `python2` for python2 \(current version 2.7.18\) and `python` for python3 \(current version 3.8.5\). To leave the python shell and return to the system shell, type the python command `exit()`.
+The servers run both python2 and python3. You can access them by typing `python2` for python2 (current version 2.7.18) and `python` for python3 (current version 3.8.5). To leave the python shell and return to the system shell, type the python command `exit()`.
 
 ## Useful server commands:
 
-| Code | Short description |
-| :--- | :--- |
-| `htop` | Check servers usage, CPU and memory \(see also `top`\) |
-| `screen` | Create screen running in the background. Ctrl-A-D to close the screen, Ctrl-D to shut down \(terminate\) the screen. |
-| `screen -r "number_of_screen` | Open previously created screen |
-| `virtualenv “name_of_virtualenv” -p python` | Create a Python3 virtual environment |
-| `virtualenv “name_of_virtualenv” -p python2` | Create a Python2 virtual environment |
-| `. [‘name_of_virtualenv’]/bin/activate` | Activate virtual environment |
-| `pip3 install -r requirements.txt` | Install requirements for virtual environment listed in requirements.txt |
-| `pip3 install -r requirements_packages.txt -f packages/` | Install every requirement that are contained in a folder \(as files\) |
-| `pip freeze` | Show downloaded python libraries |
-| `pip freeze -> requirements.txt` | Export the currently downloaded python packages to a text file |
-| `exit` | Terminate connection with the server |
+| Code                                                     | Short description                                                                                                  |
+| -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `htop`                                                   | Check servers usage, CPU and memory (see also `top`)                                                               |
+| `screen`                                                 | Create screen running in the background. Ctrl-A-D to close the screen, Ctrl-D to shut down (terminate) the screen. |
+| `screen -r "number_of_screen`                            | Open previously created screen                                                                                     |
+| `virtualenv “name_of_virtualenv” -p python`              | Create a Python3 virtual environment                                                                               |
+| `virtualenv “name_of_virtualenv” -p python2`             | Create a Python2 virtual environment                                                                               |
+| `. [‘name_of_virtualenv’]/bin/activate`                  | Activate virtual environment                                                                                       |
+| `pip3 install -r requirements.txt`                       | Install requirements for virtual environment listed in requirements.txt                                            |
+| `pip3 install -r requirements_packages.txt -f packages/` | Install every requirement that are contained in a folder (as files)                                                |
+| `pip freeze`                                             | Show downloaded python libraries                                                                                   |
+| `pip freeze -> requirements.txt`                         | Export the currently downloaded python packages to a text file                                                     |
+| `exit`                                                   | Terminate connection with the server                                                                               |
 
 ## Debugging
 
 In case you cannot create new virtualenvs or there is any other issue that might be related to reaching your home folder quota, here is how you can debug it:
 
-1. Check if it is really a quota problem. Type
+1.  Check if it is really a quota problem. Type
 
-   ```text
-   du -sh ./
-   ```
+    ```
+    du -sh ./
+    ```
 
-   If it gives you anything close to 500M, you are proably dealing with a quota issue.
-
-2. Clean up your home folder. In case you have any work in your home folder \(you shouldn't!\) move it somewhere else. Close any running screens and applications then delete all files in your cache: `find ~/.cache/ -type f -delete`
+    If it gives you anything close to 500M, you are proably dealing with a quota issue.
+2. Clean up your home folder. In case you have any work in your home folder (you shouldn't!) move it somewhere else. Close any running screens and applications then delete all files in your cache: `find ~/.cache/ -type f -delete`
 3. Check if the quota problem persists. If yes, let me know. If not, you need to take one last step so that it doesn't fill up again.
-4. Set your cache folder to your sandbox. Add the following to your `~/.bashrc` file \(switch user with your username\):
+4.  Set your cache folder to your sandbox. Add the following to your `~/.bashrc` file (switch user with your username):
 
-   ```text
-   export STATATMP
-   export TMPDIR='/srv/sandbox/user/'
-   export XDG_CACHE_HOME='/srv/sandbox/user'
-   export PIP_REQUIRE_VIRTUALENV=true
-   ```
+    ```
+    export STATATMP
+    export TMPDIR='/srv/sandbox/user/'
+    export XDG_CACHE_HOME='/srv/sandbox/user'
+    export PIP_REQUIRE_VIRTUALENV=true
+    ```
+5. If you use other shells (e.g. fish) you need to configure them as well. Fish users need to add the following to `~/.config/fish/config.fish` (if the file does not exist, you need to create it, switch user with your username):
 
-5. If you use other shells \(e.g. fish\) you need to configure them as well. Fish users need to add the following to `~/.config/fish/config.fish` \(if the file does not exist, you need to create it, switch user with your username\):
-
-```text
+```
 set -x STATATMP "/srv/sandbox/user"
 set -x TMPDIR '/srv/sandbox/user'
 set -x XDG_CACHE_HOME '/srv/sandbox/user'
@@ -314,7 +312,7 @@ For any other shell consult it's documentation on setting environment variables.
 
 ### Vncrestart
 
-When using VNC, you might experience bad behavior after a while \(windows cannot be resized or the appications freeze etc\). For the resolution of the above problem, you can use the `vncrestart` command from SSH or VNC terminal which will reset your VNC within 60 seconds.
+When using VNC, you might experience bad behavior after a while (windows cannot be resized or the appications freeze etc). For the resolution of the above problem, you can use the `vncrestart` command from SSH or VNC terminal which will reset your VNC within 60 seconds.
 
 Important: Please keep in mind that resetting VNC will close all your opened applications and delete all your unsaved data.
 
@@ -322,5 +320,4 @@ Important: Please keep in mind that resetting VNC will close all your opened app
 
 * If you have technical difficulties with the server, please contact a Project Manager.
 * For VPN-related problems, please contact CEU HelpDesk at helprequest@ceu.hu.
-* If you have a problem with a specific application \(e.g., Stata, Matlab\), a Project Manager can help you decide whether the problem is with the operating system or with the application. In the latter case, he can put you in touch with Stata or Matlab support.
-
+* If you have a problem with a specific application (e.g., Stata, Matlab), a Project Manager can help you decide whether the problem is with the operating system or with the application. In the latter case, he can put you in touch with Stata or Matlab support.

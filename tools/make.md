@@ -15,7 +15,7 @@ Makefiles are used to help decide which parts of a large program need to be reco
 
 Here's an example dependency graph that you might build with Make. If any file's list of dependencies changes, then the file will get re-created:
 
-![An example of a data-intensive project](../../.gitbook/assets/flowchart.png)
+![An example of a data-intensive project](../.gitbook/assets/flowchart.png)
 
 ### Running the Examples <a href="#running-the-examples" id="running-the-examples"></a>
 

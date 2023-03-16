@@ -46,4 +46,4 @@ $ ls
 $ make
 ```
 
-Afterward you should see the `trial.log` crated by the `Makefile`.
+Afterward, you should see the `trial.log` created by the `Makefile`.

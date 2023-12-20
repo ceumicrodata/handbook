@@ -99,6 +99,52 @@ The option`-v` is used to diagnose the X connection problems. You can leave late
 
 Log in with your own haflinger password then e.g. type `xstata-mp`. The Stata comes up in a new window. Be careful this is not a VNC session, if you close the Stata window you close the session.&#x20;
 
+#### Ms Visual Studio Code
+
+You can download the Visual studio code from here: [visual](https://code.visualstudio.com/download)
+
+After the installation you need to install these extensions: 
+
+"Remote-SSH", "Remote-SSH: Editing Configuration Files", "Jupyter Keymap". 
+
+You have to set up two configurations files: 
+
+Open VS Code and press the “Ctrl + Shift + P” shortcut to access the Command Palette.
+Choose Preferences: Remote-SSH: Open SSH Configuration File. 
+Then choose your user config file like: Users/yourusername/.ssh/config on your local computer.
+
+Copy these settings into the config file: 
+
+```
+Host haflinger.ceu.edu
+  HostName haflinger.ceu.edu
+  User yourusername
+  Port 2222
+ ``` 
+The second is the setting.json file:
+
+Open VS Code and press the “Ctrl + Shift + P” shortcut to access the Command Palette.
+Type “Settings.json” in the search bar and select the specific settings.json file you want to edit. 
+
+Choose Preferences: Open User Settings (JSON) and copy these settings into the .json file: 
+
+```
+{
+    "remote.SSH.serverInstallPath": {
+        "haflinger.ceu.edu": "/srv/sandbox/yourusername"
+    },
+    "remote.SSH.remotePlatform": {
+        "haflinger.ceu.edu": "linux"
+    },
+    "editor.codeActionsOnSave": {}
+}
+```
+
+Open VS Code and press the “Ctrl + Shift + P” shortcut to access the Command Palette.
+Choose Remote-SSH: Add New SSH Host.
+
+Your new host will be: `ssh yourusername@haflinger.ceu.edu`
+
 ### Private and public keys for easier connection
 
 For easier server access you can create private/public key pairs as follows:

@@ -29,9 +29,7 @@ Julia shell commands:
 
 If you log in to you CEU account you can find basic tutorials with [Julia LinkedinLearning](https://www.linkedin.com/learning/learning-julia?u=139332290)
 
-###
-
-Recomended extensions for server usage:
+### Recomended extensions for server usage:
 
 [Kezdi.jl](https://github.com/codedthinking/Kezdi.jl) is a Julia package that provides a Stata-like interface for data manipulation and analysis. It is designed to be easy to use for Stata users who are transitioning to Julia.1
 

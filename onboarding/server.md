@@ -105,7 +105,9 @@ You can download the Visual studio code from here: [visual](https://code.visuals
 
 After the installation you need to install these extensions: 
 
-"Remote-SSH", "Remote-SSH: Editing Configuration Files", "Jupyter Keymap". 
+"Remote-SSH", "Remote-SSH: Editing Configuration Files", "Jupyter Keymap", "Julia", "StataRun"
+
+Recommended extensions: Makey, Python, GitHub Copilot (shareware) 
 
 You have to set up two configurations files: 
 
@@ -144,6 +146,8 @@ Open VS Code and press the “Ctrl + Shift + P” shortcut to access the Command
 Choose Remote-SSH: Add New SSH Host.
 
 Your new host will be: `ssh yourusername@haflinger.ceu.edu`
+
+You have to install all locally installed extensions when you are connected to the server. 
 
 ### Private and public keys for easier connection
 

@@ -1,3 +1,7 @@
+---
+title: Jupyter Notebook
+---
+
 # Jupyter Notebook from VS Code terminal 
 
 ## Jupyter Notebook

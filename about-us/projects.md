@@ -6,4 +6,4 @@ description: 'Research activities and partners, grants'
 
 Our project website: 
 
-https://macromanagers.eu/
+[Macromanagers](https://macromanagers.eu/)

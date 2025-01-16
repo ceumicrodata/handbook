@@ -26,6 +26,7 @@
 * [Make](tools/make.md)
   * [Make in Windows](tools/make/make-in-windows.md)
 * [Julia](tools/julia.md)
+* [Jupyter Notebook](tools/jupyter-notebook.md)
 * [Csvkit](tools/csvkit.md)
 * [Release](tools/release.md)
 
